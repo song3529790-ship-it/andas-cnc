@@ -3,201 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Andas Industrial | Precision CNC Machining Excellence | Dongguan China</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800&display=swap');
-        body { font-family: 'Urbanist', sans-serif; overflow-x: hidden; }
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700;800&family=Orbitron:wght@700&display=swap');
         
-        /* Scheme B: High-speed Dynamic CNC Path Animation */
-        .dynamic-cnc-bg {
+        body { font-family: 'Urbanist', sans-serif; scroll-behavior: smooth; overflow-x: hidden; background-color: #f8fafc; }
+        .tech-font { font-family: 'Orbitron', sans-serif; }
+
+        /* Dynamic Industrial Background Logic */
+        .industrial-hero {
             background: #050a14;
             position: relative;
             overflow: hidden;
+            min-height: 100vh;
         }
-        .cnc-line {
+        /* Animated Machining Path Simulation */
+        .cnc-path {
             position: absolute;
-            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
-            height: 1px;
-            width: 100%;
-            opacity: 0.2;
-            animation: scan 8s linear infinite;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+            transform: perspective(1000px) rotateX(45deg) scale(2);
+            animation: move-grid 20s linear infinite;
         }
-        @keyframes scan {
-            0% { top: -10%; }
-            100% { top: 110%; }
+        @keyframes move-grid {
+            0% { transform: perspective(1000px) rotateX(45deg) scale(2) translateY(0); }
+            100% { transform: perspective(1000px) rotateX(45deg) scale(2) translateY(80px); }
         }
-        .laser-grid {
-            position: absolute;
-            width: 200%; height: 200%;
-            background-image: radial-gradient(#1e293b 1px, transparent 1px);
-            background-size: 40px 40px;
-            transform: rotate(15deg);
-            top: -50%; left: -50%;
-            opacity: 0.3;
-        }
-        
-        /* Floating WhatsApp Wave Effect */
+
         .wa-float {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            z-index: 100;
-            background: #25d366;
-            color: white;
-            width: 65px; height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            animation: pulse-wa 2s infinite;
+            position: fixed; bottom: 30px; right: 30px; z-index: 100;
+            background: #25d366; color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 35px; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            animation: pulse-wa 2s infinite; transition: all 0.3s;
         }
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
         @keyframes pulse-wa {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+
+        .section-dark { background: #0f172a; color: white; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .process-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
     </style>
 </head>
-<body class="bg-white">
+<body>
 
-    <a href="https://wa.me/8615710829371?text=Hi%20Song,%20I%20saw%20your%20CNC%20factory%20website.%20I%20have%20a%20project%20and%20want%20to%20send%20you%20a%20STEP%20file%20for%20a%20quote." class="wa-float" target="_blank">
+    <a href="https://wa.me/8615710829371?text=Hi%20Song,%20I%20have%20a%20project%20for%20quote.%20Sending%20STEP%20files%20now." 
+       target="_blank" class="wa-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-black text-xl">A</div>
-                <span class="text-xl font-extrabold text-slate-900 tracking-tighter uppercase">Andas <span class="text-blue-600">Industrial</span></span>
+                <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center text-white font-black text-xl">A</div>
+                <span class="text-xl font-bold tracking-tight text-slate-800 uppercase">Andas <span class="text-blue-600">Industrial</span></span>
             </div>
-            <div class="hidden md:flex items-center space-x-10 text-sm font-bold text-slate-600 uppercase tracking-widest">
-                <a href="#home" class="hover:text-blue-600 transition">Home</a>
-                <a href="#capabilities" class="hover:text-blue-600 transition">Capabilities</a>
-                <a href="#products" class="hover:text-blue-600 transition text-blue-600">Showcase</a>
-                <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition">Get A Quote</a>
+            <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-widest text-slate-600">
+                <a href="#home" class="hover:text-blue-600">Home</a>
+                <a href="#capabilities" class="hover:text-blue-600">Capabilities</a>
+                <a href="#materials" class="hover:text-blue-600">Materials</a>
+                <a href="#workflow" class="hover:text-blue-600">Workflow</a>
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition">Request Quote</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="dynamic-cnc-bg min-h-screen flex items-center relative">
-        <div class="cnc-line" style="animation-delay: 0s;"></div>
-        <div class="cnc-line" style="animation-delay: 2s; opacity: 0.1;"></div>
-        <div class="cnc-line" style="animation-delay: 4s;"></div>
-        <div class="laser-grid"></div>
-        
+    <section id="home" class="industrial-hero flex items-center">
+        <div class="cnc-path"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-white space-y-8">
-                <div class="inline-flex items-center space-x-3 bg-blue-500/20 border border-blue-500/30 px-5 py-2 rounded-full">
-                    <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-                    <span class="text-blue-400 text-xs font-black uppercase tracking-widest">ISO 9001:2015 Precision Plant</span>
+            <div class="space-y-8">
+                <div class="inline-flex items-center space-x-3 bg-blue-500/10 border border-blue-500/20 px-5 py-2 rounded-full">
+                    <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span></span>
+                    <span class="text-blue-400 text-[10px] font-black uppercase tracking-[0.2em]">High-Precision Machining Facility</span>
                 </div>
-                <h1 class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tighter">
-                    Crafting The <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Future of Metal.</span>
+                <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-tight tech-font">
+                    PRECISION <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 italic">REDEFINED.</span>
                 </h1>
-                <p class="text-slate-400 text-lg leading-relaxed max-w-xl">
-                    From Aerospace components to High-End consumer electronics. We turn complex CAD designs into high-precision reality with ±0.005mm accuracy. 
+                <p class="text-slate-400 text-lg leading-relaxed max-w-lg">
+                    Advanced manufacturing solutions for aerospace, automotive, and high-end consumer electronics. We specialize in ±0.005mm tolerances and rapid prototyping.
                 </p>
                 <div class="flex flex-wrap gap-5">
-                    <a href="https://wa.me/8615710829371?text=Hi%20Song,%20I'm%20ready%20to%20send%20drawings." target="_blank" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition flex items-center shadow-2xl shadow-blue-600/30">
-                        <i class="fab fa-whatsapp mr-3 text-2xl"></i> Inquiry Now
+                    <a href="https://wa.me/8615710829371" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-700 transition shadow-2xl shadow-blue-600/30">
+                        Start Inquiry
                     </a>
-                    <a href="#products" class="px-10 py-5 rounded-2xl font-black text-lg border border-slate-700 hover:bg-slate-800 transition text-white">
-                        View Samples
+                    <a href="#capabilities" class="px-10 py-5 border border-slate-700 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-slate-800 transition">
+                        Our Capabilities
                     </a>
                 </div>
             </div>
             <div class="hidden md:block">
-                <div class="glass-card p-10 rounded-[3rem] space-y-6">
-                    <div class="flex justify-between border-b border-white/10 pb-4">
-                        <span class="text-slate-400 uppercase text-xs font-bold">Capacity</span>
-                        <span class="text-white font-bold">50+ CNC Centers</span>
-                    </div>
-                    <div class="flex justify-between border-b border-white/10 pb-4">
-                        <span class="text-slate-400 uppercase text-xs font-bold">Materials</span>
-                        <span class="text-white font-bold">AL6061, SUS304, Titanium</span>
-                    </div>
-                    <div class="flex justify-between border-b border-white/10 pb-4">
-                        <span class="text-slate-400 uppercase text-xs font-bold">Surface Finish</span>
-                        <span class="text-white font-bold">Anodizing, PVD, Mirror EDM</span>
+                <div class="bg-slate-900/50 backdrop-blur-xl p-10 rounded-[3rem] border border-slate-800 shadow-2xl">
+                    <h3 class="text-blue-400 font-black italic mb-6 uppercase tracking-widest text-xs">Technical Status</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between border-b border-slate-800 pb-4">
+                            <span class="text-slate-500 font-bold uppercase text-[10px]">CNC Accuracy</span>
+                            <span class="text-white font-bold">±0.005 mm</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-4">
+                            <span class="text-slate-500 font-bold uppercase text-[10px]">In-House Centers</span>
+                            <span class="text-white font-bold">50+ Machine Units</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-4">
+                            <span class="text-slate-500 font-bold uppercase text-[10px]">Certification</span>
+                            <span class="text-white font-bold text-blue-500">ISO 9001:2015</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-24 bg-slate-50">
+    <section class="py-12 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em] mb-10">Global Manufacturing Partners</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale">
+                <span class="text-2xl font-black">SIEMENS</span>
+                <span class="text-2xl font-black">TESLA</span>
+                <span class="text-2xl font-black">DJI</span>
+                <span class="text-2xl font-black">FOXCONN</span>
+                <span class="text-2xl font-black">TOYOTA</span>
+                <span class="text-2xl font-black">HUAWEI</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="capabilities" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-4xl font-black uppercase tracking-tighter">Precision Showcase</h2>
-                <p class="text-slate-500">Real parts manufactured for Global Industry Leaders.</p>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="space-y-4">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter italic">One-Stop Solution</h2>
+                    <p class="text-slate-500 max-w-md">From rapid prototyping to high-volume mass production, we handle the most complex engineering challenges.</p>
+                </div>
+                <div class="h-px bg-slate-200 flex-grow hidden md:block mb-6 ml-10"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-4 rounded-[2rem] shadow-sm hover:shadow-xl transition group">
-                    <div class="aspect-square bg-slate-100 rounded-[1.5rem] overflow-hidden mb-6">
-                        <img src="part1.jpg" alt="CNC Part" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <h3 class="font-bold text-xl px-2 uppercase">Aerospace Component</h3>
+                <div class="group p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] transition-all duration-500 hover:bg-blue-600">
+                    <i class="fas fa-microchip text-4xl text-blue-600 mb-8 group-hover:text-white"></i>
+                    <h3 class="text-xl font-black mb-4 group-hover:text-white uppercase">CNC Milling</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-100 italic">Advanced 3/5-axis centers specializing in AL6061, SUS304, and complex aerospace components.</p>
                 </div>
-                <div class="bg-white p-4 rounded-[2rem] shadow-sm hover:shadow-xl transition group">
-                    <div class="aspect-square bg-slate-100 rounded-[1.5rem] overflow-hidden mb-6">
-                        <img src="part2.jpg" alt="CNC Part" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <h3 class="font-bold text-xl px-2 uppercase">Medical Prototype</h3>
+                <div class="group p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] transition-all duration-500 hover:bg-blue-600">
+                    <i class="fas fa-bolt text-4xl text-blue-600 mb-8 group-hover:text-white"></i>
+                    <h3 class="text-xl font-black mb-4 group-hover:text-white uppercase">Mirror EDM</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-100 italic">Sodick technology for ultra-fine surface finishes and high-precision mold inserts.</p>
                 </div>
-                <div class="bg-white p-4 rounded-[2rem] shadow-sm hover:shadow-xl transition group">
-                    <div class="aspect-square bg-slate-100 rounded-[1.5rem] overflow-hidden mb-6">
-                        <img src="part3.jpg" alt="CNC Part" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <h3 class="font-bold text-xl px-2 uppercase">High-End Consumer Tech</h3>
+                <div class="group p-10 bg-slate-50 border border-slate-100 rounded-[2.5rem] transition-all duration-500 hover:bg-blue-600">
+                    <i class="fas fa-fill-drip text-4xl text-blue-600 mb-8 group-hover:text-white"></i>
+                    <h3 class="text-xl font-black mb-4 group-hover:text-white uppercase">Injection Molding</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed group-hover:text-blue-100 italic">Large-scale facility with 450T to 1200T injection machines for durable plastic production.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
-            <div class="space-y-10">
-                <h2 class="text-5xl font-black italic text-blue-400">Ready To Start?</h2>
+    <section id="materials" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-4xl font-black uppercase tracking-tighter">Material & Finish</h2>
+                <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <div class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>AL 6061 / 7075</span></div>
+                    <div class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>SUS 304 / 316 / 440C</span></div>
+                    <div class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Titanium Grade 5</span></div>
+                    <div class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Brass / Copper</span></div>
+                    <div class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>PEEK / POM / Delrin</span></div>
+                    <div class="flex items-center space-x-3"><i class="fas fa-check text-blue-500"></i><span>Carbon Fiber</span></div>
+                </div>
+                <div class="pt-6">
+                    <p class="text-slate-500 italic text-sm">We provide full surface treatments including: Anodizing (Type II/III), Powder Coating, PVD, Mirror Polishing, and Laser Engraving.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-inner">
+                    <img src="part1.jpg" alt="Sample 1" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-inner">
+                    <img src="part2.jpg" alt="Sample 2" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-inner">
+                    <img src="part3.jpg" alt="Sample 3" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-inner">
+                    <img src="part4.jpg" alt="Sample 4" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black uppercase text-center mb-16 tracking-tighter">Your Project Journey</h2>
+            <div class="grid md:grid-cols-5 gap-4">
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">01</div>
+                    <h4 class="font-black uppercase text-[10px] tracking-widest">RFQ Drawings</h4>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">02</div>
+                    <h4 class="font-black uppercase text-[10px] tracking-widest">DFM Review</h4>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">03</div>
+                    <h4 class="font-black uppercase text-[10px] tracking-widest">CNC Program</h4>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">04</div>
+                    <h4 class="font-black uppercase text-[10px] tracking-widest">QC Inspection</h4>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-2xl flex items-center justify-center mx-auto text-xl font-bold">05</div>
+                    <h4 class="font-black uppercase text-[10px] tracking-widest">Global Logistics</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 section-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-5xl font-black italic tracking-tighter">READY FOR <br><span class="text-blue-500 uppercase">PRECISION?</span></h2>
                 <div class="space-y-6">
                     <div class="flex items-center space-x-5">
-                        <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-500 text-xl"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
-                            <p class="text-slate-400 text-xs uppercase font-bold tracking-widest">Address</p>
-                            <p class="font-bold">3F, Block B, Xiaodong High-Tech Park, Hechang Rd, Shatu, Changan, Dongguan, China</p>
+                            <p class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Plant Address</p>
+                            <p class="font-bold text-sm">3F, Block B, Xiaodong High-Tech Park, Changan, Dongguan, China</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-5">
-                        <div class="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fab fa-whatsapp"></i></div>
+                        <div class="w-14 h-14 bg-green-600/20 rounded-2xl flex items-center justify-center text-green-500 text-xl"><i class="fab fa-whatsapp"></i></div>
                         <div>
-                            <p class="text-slate-400 text-xs uppercase font-bold tracking-widest">WhatsApp</p>
-                            <p class="font-bold">+86 157 1082 9371</p>
+                            <p class="text-[10px] uppercase font-black text-slate-500 tracking-widest">Direct Line / WhatsApp</p>
+                            <p class="font-bold text-sm">+86 157 1082 9371</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-5">
-                        <div class="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-envelope"></i></div>
+                        <div class="w-14 h-14 bg-indigo-600/20 rounded-2xl flex items-center justify-center text-indigo-500 text-xl"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <p class="text-slate-400 text-xs uppercase font-bold tracking-widest">Email (For RFQ Drawings)</p>
-                            <p class="font-bold underline">sales@andas-industrial.com</p>
+                            <p class="text-[10px] uppercase font-black text-slate-500 tracking-widest">RFQ Engineering Team</p>
+                            <p class="font-bold text-sm">sales@andas-industrial.com</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-white p-12 rounded-[3rem] text-slate-900 text-center">
-                <div class="mb-8">
-                    <i class="fas fa-paper-plane text-5xl text-blue-600"></i>
+            <div class="bg-white p-12 rounded-[3rem] text-slate-900 text-center shadow-2xl">
+                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8 text-4xl">
+                    <i class="fab fa-whatsapp"></i>
                 </div>
-                <h3 class="text-3xl font-black mb-4">Send Files via WhatsApp</h3>
-                <p class="text-slate-500 mb-10 leading-relaxed">The fastest way to get a quote. Please send your **STEP/IGS/PDF** files. Our engineers are online.</p>
-                <a href="https://wa.me/8615710829371?text=Hi%20Song,%20I%20have%20drawings%20to%20quote.%20Sending%20files%20now." target="_blank" class="block w-full bg-slate-900 py-6 text-white font-black rounded-2xl hover:bg-blue-600 transition shadow-xl shadow-slate-900/20 uppercase tracking-widest">
-                    Start Consultation
+                <h3 class="text-3xl font-black mb-4 tracking-tighter uppercase italic">Instant Inquiry</h3>
+                <p class="text-slate-500 mb-10 leading-relaxed text-sm italic">"The fastest way to get a quote. Send your **STEP/IGS/PDF** files. Our lead engineers are standing by."</p>
+                <a href="https://wa.me/8615710829371?text=Hi%20Song,%20I'm%20from%20website.%20I%20have%20drawings%20to%20quote." target="_blank" class="block w-full bg-slate-900 py-6 text-white font-black rounded-2xl hover:bg-blue-600 transition shadow-xl shadow-slate-900/20 uppercase tracking-[0.2em] text-[10px]">
+                    Consult Now
                 </a>
             </div>
         </div>
     </section>
+
+    <footer class="py-12 bg-black text-center text-slate-700 text-[10px] font-black uppercase tracking-[0.5em]">
+        Andas Industrial Co., Limited | Precision | Quality | Dongguan 2026
+    </footer>
 
 </body>
 </html>
