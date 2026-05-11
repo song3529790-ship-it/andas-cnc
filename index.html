@@ -1,428 +1,154 @@
-html
+<!-- 导航栏 -->
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">ANDAS<span>PRECISION</span></div>
+            <ul class="nav-links">
+                <li><a href="#home"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a></li>
+                <li><a href="#capabilities"><span class="lang-zh">加工能力</span><span class="lang-en">Capabilities</span></a></li>
+                <li><a href="#specs"><span class="lang-zh">技術規格</span><span class="lang-en">Specifications</span></a></li>
+                <li><a href="#contact"><span class="lang-zh">聯繫我們</span><span class="lang-en">Contact</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-<!DOCTYPE html>
+<!-- Hero区域 -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1><span class="lang-zh-main">ANDAS PRECISION</span><span class="lang-en-main" style="display:none;">ANDAS PRECISION</span></h1>
+            <p class="lang-zh">專業三軸、四軸CNC批量加工服務精度達<span style="color:var(--primary-gold);">0.01mm - 0.03mm</span>，ISO 9001認證
+            <p class="lang-en" style="display:none;">Professional 3-axis & 4-axis CNC batch machining servicesPrecision up to <span style="color:var(--primary-gold);">0.01mm - 0.03mm</span>, ISO 9001 certified
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">0.01mm</span>
+                    <span class="stat-label lang-zh">最高精度</span>
+                    <span class="stat-label lang-en">Max Precision</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3-4 Axis</span>
+                    <span class="stat-label lang-zh">加工設備</span>
+                    <span class="stat-label lang-en">Equipment</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">ISO 9001</span>
+                    <span class="stat-label lang-zh">品質認證</span>
+                    <span class="stat-label lang-en">Certified</span>
+                </div>
+            </div>
+            
+            <a href="#contact" class="btn lang-zh">立即詢價</a>
+            <a href="#contact" class="btn lang-en" style="display:none;">Get Quote</a>
+        </div>
+    </div>
+</section>
 
-<html lang="zh-Hant">
+<!-- 加工能力 -->
+<section class="section" id="capabilities" style="background:var(--secondary-darker);">
+    <div class="container">
+        <h2 class="section-title"><span class="lang-zh">加工能力</span><span class="lang-en" style="display:none;">Capabilities</span></h2>
+        <div class="capabilities-grid">
+            <div class="cap-card">
+                <i class="fas fa-cogs"></i>
+                <h3><span class="lang-zh">三軸CNC加工</span><span class="lang-en" style="display:none;">3-Axis Machining</span></h3>
+                <p class="lang-zh">適用於各種複雜零件的高精度銑削加工。
+                <p class="lang-en" style="display:none;">High precision milling for complex parts.
+            </div>
+            <div class="cap-card">
+                <i class="fas fa-sync-alt"></i>
+                <h3><span class="lang-zh">四軸CNC加工</span><span class="lang-en" style="display:none;">4-Axis Machining</span></h3>
+                <p class="lang-zh">提升效率，實現多面加工，縮短交貨周期。
+                <p class="lang-en" style="display:none;">Multi-face processing to shorten lead times.
+            </div>
+            <div class="cap-card">
+                <i class="fas fa-ruler-combined"></i>
+                <h3><span class="lang-zh">精密公差控制</span><span class="lang-en" style="display:none;">Tight Tolerance</span></h3>
+                <p class="lang-zh">穩定實現 0.01mm 至 0.03mm 的高精度加工。
+                <p class="lang-en" style="display:none;">Stable precision from 0.01mm to 0.03mm.
+            </div>
+        </div>
+    </div>
+</section>
 
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Andas Precision | 專業CNC批量加工製造</title>
-<!-- 预加载关键资源 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-<!-- 字体加载 -->
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- 图标库 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-
-<style>
-    /* ============================================
-       全局重置与基础设定
-       ============================================ */
-    :root {
-        --primary-black: #000000;
-        --primary-gold: #ffc107;
-        --primary-gray: #f0f0f0;
-        --secondary-dark: #0a0a0a;
-        --secondary-darker: #050505;
-        --text-light: #ffffff;
-        --text-dark: #333333;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'JetBrains Mono', monospace;
-        background-color: var(--primary-black);
-        color: var(--text-light);
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    ul {
-        list-style: none;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 12px 30px;
-        background-color: var(--primary-gold);
-        color: var(--primary-black);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-    }
-
-    .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
-    }
-
-    .section {
-        padding: 80px 0;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        text-align: center;
-        color: var(--primary-gold);
-    }
-
-    /* ============================================
-       导航栏
-       ============================================ */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 20px 0;
-        border-bottom: 1px solid rgba(255, 193, 7, 0.1);
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--text-light);
-    }
-
-    .logo span {
-        color: var(--primary-gold);
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 30px;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-        padding: 5px 0;
-    }
-
-    .nav-links a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary-gold);
-        transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-        width: 100%;
-    }
-
-    /* ============================================
-       Hero区域
-       ============================================ */
-    .hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-    }
-
-    .hero-content h1 {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        color: var(--text-light);
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto 40px;
-        color: var(--primary-gray);
-    }
-
-    .hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        margin-top: 50px;
-        flex-wrap: wrap;
-    }
-
-    .stat-item {
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--primary-gold);
-        display: block;
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-        color: var(--text-light);
-        text-transform: uppercase;
-    }
-
-    /* ============================================
-       能力/服务区域
-       ============================================ */
-    .capabilities-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-    }
-
-    .cap-card {
-        background: var(--secondary-dark);
-        padding: 40px 30px;
-        border: 1px solid rgba(255, 193, 7, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .cap-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--primary-gold);
-    }
-
-    .cap-card i {
-        font-size: 3rem;
-        color: var(--primary-gold);
-        margin-bottom: 20px;
-    }
-
-    .cap-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--text-light);
-    }
-
-    /* ============================================
-       技术规格表格
-       ============================================ */
-    .specs-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 50px;
-        background: var(--secondary-dark);
-        border: 1px solid rgba(255, 193, 7, 0.1);
-    }
-
-    .specs-table th, .specs-table td {
-        padding: 15px;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .specs-table th {
-        background: rgba(255, 193, 7, 0.05);
-        color: var(--primary-gold);
-        font-weight: 600;
-    }
-
-    .specs-table tr:last-child td {
-        border-bottom: none;
-    }
-
-    /* ============================================
-       联系我们区域
-       ============================================ */
-    .contact-wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 50px;
-        align-items: center;
-    }
-
-    .contact-info h3 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: var(--primary-gold);
-    }
-
-    .contact-info p {
-        margin-bottom: 30px;
-        color: var(--primary-gray);
-    }
-
-    .contact-methods {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .contact-method {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 1.1rem;
-    }
-
-    .contact-method i {
-        width: 50px;
-        height: 50px;
-        background: var(--primary-gold);
-        color: var(--primary-black);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        font-size: 1.2rem;
-    }
-
-    /* 表单样式 */
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--primary-gold);
-        font-weight: 500;
-    }
-
-    .form-group input, .form-group textarea {
-        width: 100%;
-        padding: 12px 15px;
-        background: var(--secondary-dark);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--text-light);
-        font-family: inherit;
-        font-size: 1rem;
-        border-radius: 4px;
-    }
-
-    .form-group textarea {
-        resize: vertical;
-        min-height: 150px;
-    }
-
-    /* ============================================
-       侧边栏悬浮按钮 (LINE & WhatsApp)
-       ============================================ */
-    .sidebar {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        z-index: 1001;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .side-btn {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        color: white;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        transition: transform 0.3s ease;
-    }
-
-    .side-btn:hover {
-        transform: scale(1.1);
-    }
-
-    .whatsapp-btn {
-        background: #25D366;
-    }
-
-    .line-btn {
-        background: #00C300;
-    }
-
-    /* ============================================
-       页脚
-       ============================================ */
-    footer {
-        background: var(--secondary-darker);
-        padding: 40px 0;
-        text-align: center;
-        border-top: 1px solid rgba(255, 193, 7, 0.1);
-    }
-
-    footer p {
-        color: var(--primary-gray);
-        font-size: 0.9rem;
-    }
-
-    /* ============================================
-       双语切换逻辑
-       ============================================ */
-    .lang-en { display: none; }
-    
-    body.en-active .lang-zh { display: none; }
-    body.en-active .lang-en { display: inline; }
-    body.en-active .lang-zh-main { display: none; }
-    body.en-active .lang-en-main { display: block; }
-
-    /* ============================================
-       响应式设计
-       ============================================ */
-    @media (max-width: 768px) {
-        .nav-links {
-            display: none; /* 简化移动端导航 */
-        }
+<!-- 技术规格 -->
+<section class="section" id="specs">
+    <div class="container">
+        <h2 class="section-title"><span class="lang-zh">技術規格</span><span class="lang-en" style="display:none;">Specifications</span></h2>
         
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
         
-        .hero-stats {
-            gap: 20px;
-        }
-        
-        .section-title {
-            font-size: 2rem;
+            /* 切换语言函数 */
+    function switchLanguage(lang) {
+        if(lang === 'en') {
+            document.body.classList.add('en-active');
+            localStorage.setItem('preferredLang', 'en');
+        } else {
+            document.body.classList.remove('en-active');
+            localStorage.setItem('preferredLang', 'zh');
         }
     }
-</style>
-</body>
-</html>
+
+    /* 移动端菜单 */
+    function initMobileMenu() {
+        const toggle = document.getElementById('mobileToggle');
+        const links = document.getElementById('mobileLinks');
+        toggle.addEventListener('click', () => {
+            links.classList.toggle('active');
+        });
+    }
+
+    /* 表单提交处理 (模拟) */
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('.submit-btn');
+        
+        // 简单验证
+        const name = form.querySelector('input[name=\"name\"]').value;
+        const email = form.querySelector('input[name=\"email\"]').value;
+        const message = form.querySelector('textarea[name=\"message\"]').value;
+
+        if(!name || !email || !message) {
+            alert('请填写所有必填字段');
+            return;
+        }
+
+        // 模拟发送成功
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> 发送成功';
+        submitBtn.style.background = '#28a745';
+        form.reset();
+        
+        setTimeout(() => {
+            submitBtn.innerHTML = '发送询盘';
+            submitBtn.style.background = '';
+        }, 3000);
+    }
+
+    /* ============================================
+       初始化
+       ============================================ */
+    document.addEventListener('DOMContentLoaded', () => {
+        // 检查本地存储的语言偏好
+        const savedLang = localStorage.getItem('preferredLang');
+        if(savedLang) {
+            switchLanguage(savedLang);
+        } else {
+            // 可选：检测浏览器语言自动切换
+            // const userLang = navigator.language || navigator.userLanguage;
+            // if(userLang.startsWith('en')) switchLanguage('en');
+        }
+
+        initMobileMenu();
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
