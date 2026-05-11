@@ -3,85 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andas Industrial | Precision CNC Specialist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Andas Precision | Leading CNC Machining Excellence</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700;800&family=Orbitron:wght@700&display=swap');
-        body { font-family: 'Urbanist', sans-serif; background-color: #020617; color: white; }
-        .tech-font { font-family: 'Orbitron', sans-serif; }
-        /* 手机端背景优化：防止滚动时背景发虚 */
-        .hero-section {
-            min-height: 100vh;
-            background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)), 
-                        url('https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex; align-items: center;
+        :root {
+            --primary-gold: #ffc107;
+            --deep-dark: #0a0a0a;
+            --surface: #161616;
+            --text-main: #e0e0e0;
+            --text-dim: #888;
+            --mono: 'JetBrains Mono', monospace;
         }
+
+        /* 基础样式 */
+        body { background-color: var(--deep-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        .mono { font-family: var(--mono); }
+        .text-gold { color: var(--primary-gold); }
+        
+        /* 响应式视频背景 */
+        .hero-video-box { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; background: #000; }
+        #bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; }
+        .hero-content { position: relative; z-index: 10; padding-left: 5%; }
+
+        /* 模块化装饰 */
+        .section-padding { padding: 100px 0; }
+        .divider { width: 60px; height: 4px; background: var(--primary-gold); margin: 20px 0; }
+        
+        /* 卡片设计 - 工程师审美 */
+        .spec-card {
+            background: var(--surface); border: 1px solid #222; padding: 40px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); height: 100%;
+        }
+        .spec-card:hover { border-color: var(--primary-gold); transform: translateY(-10px); background: #1a1a1a; }
+        
+        /* 产品图画廊 */
+        .product-grid-item { position: relative; overflow: hidden; background: #000; aspect-ratio: 1/1; }
+        .product-grid-item img { transition: transform 0.6s; opacity: 0.8; width: 100%; height: 100%; object-fit: cover; }
+        .product-grid-item:hover img { transform: scale(1.1); opacity: 1; }
+        .img-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        /* 留言表单高级感 */
+        .form-input {
+            background: transparent; border: none; border-bottom: 1px solid #333;
+            color: white; padding: 15px 0; width: 100%; margin-bottom: 30px; border-radius: 0;
+        }
+        .form-input:focus { outline: none; border-bottom-color: var(--primary-gold); }
+
+        /* 悬浮侧边栏 */
+        .side-contact { position: fixed; right: 30px; bottom: 50px; z-index: 999; }
+        .contact-btn { 
+            width: 60px; height: 60px; background: var(--primary-gold); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255,193,7,0.3);
+            text-decoration: none; transition: 0.3s;
+        }
+        .contact-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/8615710829371" class="fixed bottom-6 right-6 z-50 bg-[#25d366] w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg uppercase tracking-tighter">Andas <span class="text-blue-500">Industrial</span></span>
-            <a href="https://wa.me/8615710829371" class="bg-blue-600 text-[10px] px-4 py-2 rounded-full font-bold uppercase">Inquiry</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent border-bottom border-secondary py-3 fixed-top" style="backdrop-filter: blur(10px);">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand mono fw-bold" href="#">ANDAS_PRECISION <span class="text-gold">V3.0</span></a>
+            <div class="ms-auto d-none d-lg-block">
+                <span class="small mono text-gold me-4">// ISO 9001:2015 CERTIFIED</span>
+                <span class="small mono text-dim me-4">LOC: DONGGUAN, CHINA</span>
+                <a href="#contact" class="btn btn-outline-warning btn-sm mono">GET_A_QUOTE</a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero-section pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                
-                <div class="space-y-6 text-center md:text-left">
-                    <h1 class="text-4xl md:text-7xl font-black tech-font leading-none">
-                        PRECISION <br><span class="text-blue-500 italic">CNC WORKS</span>
-                    </h1>
-                    <p class="text-slate-400 text-sm md:text-lg italic">
-                        ±0.005mm accuracy for Aerospace & Electronics. Based in Dongguan, China.
-                    </p>
-                    <a href="https://wa.me/8615710829371" class="inline-block bg-blue-600 px-8 py-4 rounded-xl font-extrabold uppercase tracking-widest text-sm shadow-xl shadow-blue-600/20">
-                        Chat on WhatsApp
-                    </a>
-                </div>
+    <section class="hero-video-box">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="YOUR_PROMO_VIDEO.mp4" type="video/mp4"> </video>
+        <div class="hero-content container">
+            <h1 class="display-1 fw-bold mb-0">MECHANICAL<br><span class="text-gold">INTEGRITY</span></h1>
+            <div class="divider"></div>
+            <p class="lead col-lg-6 text-dim mb-5">
+                为全球工程师提供高精密 CNC 加工解决方案。支持台币结算、开立三联式发票。专攻 3/5 轴精密铝合金与不锈钢零件。
+            </p>
+            <div class="d-flex gap-3">
+                <a href="#capability" class="btn btn-warning btn-lg rounded-0 px-5 fw-bold">EXPLORE CAPABILITY</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg rounded-0 px-5">SEND DRAWINGS</a>
+            </div>
+        </div>
+    </section>
 
-                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem] backdrop-blur-xl">
-                    <div class="space-y-4">
-                        <div class="flex justify-between border-b border-white/5 pb-2">
-                            <span class="text-slate-500 text-[10px] uppercase font-bold">Machines</span>
-                            <span class="font-bold">50+ Units</span>
-                        </div>
-                        <div class="flex justify-between border-b border-white/5 pb-2">
-                            <span class="text-slate-500 text-[10px] uppercase font-bold">Tolerance</span>
-                            <span class="font-bold">±0.005 mm</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-slate-500 text-[10px] uppercase font-bold">Standard</span>
-                            <span class="font-bold text-blue-500 italic uppercase">ISO 9001</span>
-                        </div>
+    <div class="container-fluid border-bottom border-secondary bg-black py-4">
+        <div class="row text-center mono">
+            <div class="col-md-3 border-end border-secondary">
+                <h2 class="text-gold mb-0">30+</h2>
+                <p class="small text-dim mb-0">CNC MACHINES</p>
+            </div>
+            <div class="col-md-3 border-end border-secondary">
+                <h2 class="text-gold mb-0">±0.005</h2>
+                <p class="small text-dim mb-0">TOLERANCE (mm)</p>
+            </div>
+            <div class="col-md-3 border-end border-secondary">
+                <h2 class="text-gold mb-0">24H</h2>
+                <p class="small text-dim mb-0">RESPONSE TIME</p>
+            </div>
+            <div class="col-md-3">
+                <h2 class="text-gold mb-0">100%</h2>
+                <p class="small text-dim mb-0">INSPECTION</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="capability" class="section-padding container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <h2 class="display-5 fw-bold mb-4">ENGINEERING<br>FIRST.</h2>
+                <p class="text-dim">我们理解工程师对公差和表面工艺的死磕。工厂由老板娘亲自管理，决策效率极高。无论是初创公司的试制，还是大厂的批量订单，我们都提供同等标准的精密把控。</p>
+                <ul class="list-unstyled mono text-gold mt-4">
+                    <li class="mb-2">/ 3-AXIS & 5-AXIS MILLING</li>
+                    <li class="mb-2">/ COMPLEX GEOMETRY SPECIALIST</li>
+                    <li class="mb-2">/ ANODIZING & SURFACE TREATMENT</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="row g-3">
+                    <div class="col-6"><div class="spec-card"><h4>AUTOMATION</h4><p class="small text-dim">精密机械手及夹具</p></div></div>
+                    <div class="col-6"><div class="spec-card"><h4>3C DEVICE</h4><p class="small text-dim">消费电子精密壳体</p></div></div>
+                    <div class="col-6"><div class="spec-card"><h4>AEROSPACE</h4><p class="small text-dim">轻量化结构件</p></div></div>
+                    <div class="col-6"><div class="spec-card"><h4>SEMICON</h4><p class="small text-dim">半导体设备支撑件</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-black">
+        <div class="container mb-5">
+            <h2 class="mono">// PRODUCT_GALLERY</h2>
+        </div>
+        <div class="row g-0">
+            <div class="col-md-3 product-grid-item">
+                <img src="PROD_1.jpg" alt="CNC Part">
+                <div class="img-overlay"><span class="mono small">AL-6061-T6 / ANODIZED</span></div>
+            </div>
+            <div class="col-md-3 product-grid-item">
+                <img src="PROD_2.jpg" alt="CNC Part">
+                <div class="img-overlay"><span class="mono small">SS-316 / POLISHED</span></div>
+            </div>
+            <div class="col-md-3 product-grid-item">
+                <img src="FACTORY_1.jpg" alt="Factory">
+                <div class="img-overlay"><span class="mono small">CLEAN ROOM WORKSHOP</span></div>
+            </div>
+            <div class="col-md-3 product-grid-item">
+                <img src="PROD_3.jpg" alt="CNC Part">
+                <div class="img-overlay"><span class="mono small">7075 AERO / HARD_ANO</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container text-center">
+        <h2 class="mb-5">METROLOGY & QUALITY</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="p-4 border border-secondary">
+                    <h5 class="text-gold">CMM INSPECTION</h5>
+                    <p class="small text-dim">配备海克斯康三次元，支持全尺寸报告输出。</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border border-secondary">
+                    <h5 class="text-gold">MATERIAL TRACE</h5>
+                    <p class="small text-dim">提供材质报告（Material Report），确保真材实料。</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 border border-secondary">
+                    <h5 class="text-gold">QC STANDARDS</h5>
+                    <p class="small text-dim">严格执行 ISO 9001 体系，每批次 100% 检。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="display-4 fw-bold">LET'S<br><span class="text-gold">QUOTE.</span></h2>
+                    <p class="text-dim mt-4">支持台币结账，开立台湾三联发票。<br>上传您的 STEP/DWG 图纸，获取工厂直营报盘。</p>
+                    <div class="mt-5 mono">
+                        <p>EMAIL: info@andas-industrial.com</p>
+                        <p>WHATSAPP: +86 18186298618</p>
+                        <p>LINE: line247327301</p>
                     </div>
                 </div>
-
+                <div class="col-lg-6 offset-lg-1">
+                    <form action="https://formspree.io/f/你的ID" method="POST">
+                        <input type="text" name="name" class="form-input" placeholder="NAME / COMPANY" required>
+                        <input type="email" name="email" class="form-input" placeholder="BUSINESS EMAIL" required>
+                        <textarea name="message" class="form-input" rows="4" placeholder="PROJECT DESCRIPTION & QUANTITY" required></textarea>
+                        <button type="submit" class="btn btn-warning btn-lg rounded-0 w-100 fw-bold">SEND INQUIRY</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white text-slate-900">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-black mb-8 uppercase italic">Request Quotation</h2>
-            <p class="text-slate-500 mb-10 text-sm">Send STEP/IGS files to our engineering team.</p>
-            <div class="space-y-4">
-                <p class="font-bold text-xs uppercase tracking-widest text-slate-400">Direct Contact</p>
-                <p class="text-xl font-black">+86 157 1082 9371</p>
-                <p class="text-slate-500 text-xs">Dongguan, Changan, Hechang Rd.</p>
-            </div>
-        </div>
-    </section>
+    <footer class="py-4 border-top border-secondary text-center small text-dim mono">
+        &copy; 2026 ANDAS INDUSTRIAL. ALL RIGHTS RESERVED. // MADE FOR PRECISION
+    </footer>
+
+    <div class="side-contact">
+        <a href="https://wa.me/8618186298618" target="_blank" class="contact-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+        </a>
+    </div>
 
 </body>
 </html>
