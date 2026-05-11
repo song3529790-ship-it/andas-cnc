@@ -3,222 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andas Precision | Leading CNC Machining Excellence</title>
+    <title>ANDAS PRECISION | 領航精密工業 - Digital Factory V6.0</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Noto+Sans+TC:wght@300;500;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-gold: #ffc107;
-            --deep-dark: #0a0a0a;
-            --surface: #161616;
-            --text-main: #e0e0e0;
-            --text-dim: #888;
-            --mono: 'JetBrains Mono', monospace;
+            --gold: #ffc107; --bg: #030303; --card: #0d0d0d; --line: rgba(255,255,255,0.06);
+            --text: #f5f5f5; --dim: #777; --mono: 'JetBrains Mono', monospace;
         }
 
-        /* 基础样式 */
-        body { background-color: var(--deep-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        /* 极致流畅度优化 */
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', 'Noto Sans TC', sans-serif; overflow-x: hidden; }
         .mono { font-family: var(--mono); }
-        .text-gold { color: var(--primary-gold); }
-        
-        /* 响应式视频背景 */
-        .hero-video-box { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; background: #000; }
-        #bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; }
-        .hero-content { position: relative; z-index: 10; padding-left: 5%; }
+        .gold { color: var(--gold); }
 
-        /* 模块化装饰 */
-        .section-padding { padding: 100px 0; }
-        .divider { width: 60px; height: 4px; background: var(--primary-gold); margin: 20px 0; }
-        
-        /* 卡片设计 - 工程师审美 */
-        .spec-card {
-            background: var(--surface); border: 1px solid #222; padding: 40px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); height: 100%;
+        /* 侧边导航指示器 */
+        .scroll-indicator {
+            position: fixed; left: 30px; top: 50%; transform: translateY(-50%); z-index: 1000;
+            display: flex; flex-direction: column; gap: 20px;
         }
-        .spec-card:hover { border-color: var(--primary-gold); transform: translateY(-10px); background: #1a1a1a; }
-        
-        /* 产品图画廊 */
-        .product-grid-item { position: relative; overflow: hidden; background: #000; aspect-ratio: 1/1; }
-        .product-grid-item img { transition: transform 0.6s; opacity: 0.8; width: 100%; height: 100%; object-fit: cover; }
-        .product-grid-item:hover img { transform: scale(1.1); opacity: 1; }
-        .img-overlay {
-            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-        }
+        .dot { width: 4px; height: 4px; background: #333; border-radius: 50%; transition: 0.3s; }
+        .dot.active { background: var(--gold); transform: scale(2); }
 
-        /* 留言表单高级感 */
-        .form-input {
-            background: transparent; border: none; border-bottom: 1px solid #333;
-            color: white; padding: 15px 0; width: 100%; margin-bottom: 30px; border-radius: 0;
+        /* 语言切换中心 */
+        .lang-hub {
+            position: fixed; top: 30px; right: 30px; z-index: 2000;
+            background: rgba(0,0,0,0.8); border: 1px solid var(--gold); padding: 5px; border-radius: 4px;
         }
-        .form-input:focus { outline: none; border-bottom-color: var(--primary-gold); }
+        .lang-btn { background: none; border: none; color: #555; padding: 2px 12px; font-size: 11px; font-weight: 700; cursor: pointer; }
+        .lang-btn.active { color: var(--gold); }
 
-        /* 悬浮侧边栏 */
-        .side-contact { position: fixed; right: 30px; bottom: 50px; z-index: 999; }
-        .contact-btn { 
-            width: 60px; height: 60px; background: var(--primary-gold); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255,193,7,0.3);
-            text-decoration: none; transition: 0.3s;
+        /* Section 01: 视觉巅峰 Hero */
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: -1; }
+        .hero-h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; line-height: 0.85; letter-spacing: -5px; }
+
+        /* Section 02: 深度参数表 */
+        .spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+        .spec-item { padding: 60px 40px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .spec-item h3 { font-family: var(--mono); font-size: 3rem; margin-bottom: 10px; }
+
+        /* Section 03: 产品 24 格矩阵 (翻倍展示) */
+        .matrix { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); }
+        .matrix-box { aspect-ratio: 1/1; position: relative; overflow: hidden; background: #000; }
+        .matrix-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: 0.6s; }
+        .matrix-box:hover img { opacity: 1; transform: scale(1.05); }
+        .matrix-label { position: absolute; bottom: 10px; left: 10px; font-size: 10px; color: var(--gold); font-family: var(--mono); }
+
+        /* Section 04: 工艺流程图 (Timeline) */
+        .process-line { position: relative; padding: 100px 0; }
+        .step-box { border-left: 1px solid var(--gold); padding: 0 0 50px 40px; position: relative; }
+        .step-box::before { content: ''; position: absolute; left: -6px; top: 0; width: 11px; height: 11px; background: var(--gold); border-radius: 50%; }
+
+        /* Section 05: 设备台账 (The Ledger) */
+        .ledger-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+        .ledger-table th { border-bottom: 2px solid var(--gold); padding: 15px; text-align: left; font-family: var(--mono); color: var(--gold); }
+        .ledger-table td { padding: 15px; border-bottom: 1px solid var(--line); font-size: 14px; }
+
+        /* 动画控制 */
+        .reveal { opacity: 0; transform: translateY(50px); transition: 1s cubic-bezier(0.2, 1, 0.2, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* 移动端优化 */
+        @media (max-width: 992px) {
+            .spec-grid { grid-template-columns: repeat(2, 1fr); }
+            .matrix { grid-template-columns: repeat(3, 1fr); }
+            .hero-h1 { font-size: 4rem; }
         }
-        .contact-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent border-bottom border-secondary py-3 fixed-top" style="backdrop-filter: blur(10px);">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand mono fw-bold" href="#">ANDAS_PRECISION <span class="text-gold">V3.0</span></a>
-            <div class="ms-auto d-none d-lg-block">
-                <span class="small mono text-gold me-4">// ISO 9001:2015 CERTIFIED</span>
-                <span class="small mono text-dim me-4">LOC: DONGGUAN, CHINA</span>
-                <a href="#contact" class="btn btn-outline-warning btn-sm mono">GET_A_QUOTE</a>
-            </div>
-        </div>
-    </nav>
+    <div class="lang-hub mono">
+        <button class="lang-btn active" onclick="switchL('en')">EN_US</button>
+        <button class="lang-btn" onclick="switchL('tw')">繁體中文</button>
+    </div>
 
-    <section class="hero-video-box">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="YOUR_PROMO_VIDEO.mp4" type="video/mp4"> </video>
-        <div class="hero-content container">
-            <h1 class="display-1 fw-bold mb-0">MECHANICAL<br><span class="text-gold">INTEGRITY</span></h1>
-            <div class="divider"></div>
-            <p class="lead col-lg-6 text-dim mb-5">
-                为全球工程师提供高精密 CNC 加工解决方案。支持台币结算、开立三联式发票。专攻 3/5 轴精密铝合金与不锈钢零件。
-            </p>
-            <div class="d-flex gap-3">
-                <a href="#capability" class="btn btn-warning btn-lg rounded-0 px-5 fw-bold">EXPLORE CAPABILITY</a>
-                <a href="#contact" class="btn btn-outline-light btn-lg rounded-0 px-5">SEND DRAWINGS</a>
+    <div class="scroll-indicator d-none d-md-flex">
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <section class="hero px-5">
+        <video autoplay muted loop playsinline class="hero-bg">
+            <source src="PROMO_VIDEO.mp4" type="video/mp4">
+        </video>
+        <div class="container-fluid">
+            <p class="mono gold mb-3 lang-node" data-en="// PRECISION MACHINING HUB" data-tw="// 精密加工核心中心">// PRECISION MACHINING HUB</p>
+            <h1 class="hero-h1 lang-node" data-en="ENGINEERING<br>ABSOLUTE<br><span class='gold'>TRUTH</span>" data-tw="工程實踐<br>絕對<br><span class='gold'>真理</span>">ENGINEERING<br>ABSOLUTE<br><span class="gold">TRUTH</span></h1>
+            <p class="lead col-lg-5 mt-5 text-secondary lang-node" data-en="Andas Industrial: Where extreme tolerances meet family-owned integrity. 3/5-axis CNC excellence from Dongguan to the world." data-tw="領航精密：當極致公差遇上家族經營的誠信。從東莞到全球，提供 3軸/5軸 CNC 的卓越加工服務。">Andas Industrial: Where extreme tolerances meet family-owned integrity. 3/5-axis CNC excellence from Dongguan to the world.</p>
+            <div class="mt-5 d-flex gap-4">
+                <a href="#inquiry" class="btn btn-warning btn-lg rounded-0 px-5 fw-bold mono lang-node" data-en="INITIALIZE_QUOTE" data-tw="啟動詢價">INITIALIZE_QUOTE</a>
+                <a href="#ledger" class="btn btn-outline-light btn-lg rounded-0 px-5 mono lang-node" data-en="VIEW_FACILITIES" data-tw="查看設備台賬">VIEW_FACILITIES</a>
             </div>
         </div>
     </section>
 
-    <div class="container-fluid border-bottom border-secondary bg-black py-4">
-        <div class="row text-center mono">
-            <div class="col-md-3 border-end border-secondary">
-                <h2 class="text-gold mb-0">30+</h2>
-                <p class="small text-dim mb-0">CNC MACHINES</p>
-            </div>
-            <div class="col-md-3 border-end border-secondary">
-                <h2 class="text-gold mb-0">±0.005</h2>
-                <p class="small text-dim mb-0">TOLERANCE (mm)</p>
-            </div>
-            <div class="col-md-3 border-end border-secondary">
-                <h2 class="text-gold mb-0">24H</h2>
-                <p class="small text-dim mb-0">RESPONSE TIME</p>
-            </div>
-            <div class="col-md-3">
-                <h2 class="text-gold mb-0">100%</h2>
-                <p class="small text-dim mb-0">INSPECTION</p>
-            </div>
+    <div class="spec-grid">
+        <div class="spec-item reveal">
+            <h3 class="gold">35+</h3>
+            <p class="lang-node" data-en="ACTIVE CNC CENTERS" data-tw="在役 CNC 加工中心">ACTIVE CNC CENTERS</p>
+        </div>
+        <div class="spec-item reveal">
+            <h3 class="gold">±0.005</h3>
+            <p class="lang-node" data-en="MAX TOLERANCE (MM)" data-tw="極限公差 (MM)">MAX TOLERANCE (MM)</p>
+        </div>
+        <div class="spec-item reveal">
+            <h3 class="gold">Ra 0.4</h3>
+            <p class="lang-node" data-en="SURFACE ROUGHNESS" data-tw="表面粗糙度控制">SURFACE ROUGHNESS</p>
+        </div>
+        <div class="spec-item reveal">
+            <h3 class="gold">ISO</h3>
+            <p class="lang-node" data-en="9001:2015 CERTIFIED" data-tw="ISO 9001:2015 認證">9001:2015 CERTIFIED</p>
         </div>
     </div>
 
-    <section id="capability" class="section-padding container">
-        <div class="row align-items-center">
-            <div class="col-lg-5">
-                <h2 class="display-5 fw-bold mb-4">ENGINEERING<br>FIRST.</h2>
-                <p class="text-dim">我们理解工程师对公差和表面工艺的死磕。工厂由老板娘亲自管理，决策效率极高。无论是初创公司的试制，还是大厂的批量订单，我们都提供同等标准的精密把控。</p>
-                <ul class="list-unstyled mono text-gold mt-4">
-                    <li class="mb-2">/ 3-AXIS & 5-AXIS MILLING</li>
-                    <li class="mb-2">/ COMPLEX GEOMETRY SPECIALIST</li>
-                    <li class="mb-2">/ ANODIZING & SURFACE TREATMENT</li>
-                </ul>
-            </div>
-            <div class="col-lg-6 offset-lg-1">
-                <div class="row g-3">
-                    <div class="col-6"><div class="spec-card"><h4>AUTOMATION</h4><p class="small text-dim">精密机械手及夹具</p></div></div>
-                    <div class="col-6"><div class="spec-card"><h4>3C DEVICE</h4><p class="small text-dim">消费电子精密壳体</p></div></div>
-                    <div class="col-6"><div class="spec-card"><h4>AEROSPACE</h4><p class="small text-dim">轻量化结构件</p></div></div>
-                    <div class="col-6"><div class="spec-card"><h4>SEMICON</h4><p class="small text-dim">半导体设备支撑件</p></div></div>
-                </div>
-            </div>
+    <section class="py-5 bg-black">
+        <div class="container-fluid px-5 mb-5 reveal">
+            <h2 class="mono lang-node" data-en="> MASTER_PRODUCT_MATRIX_V6" data-tw="> 核心產品矩陣 V6">> MASTER_PRODUCT_MATRIX_V6</h2>
+        </div>
+        <div class="matrix">
+            <div class="matrix-box"><img src="p1.jpg"><span class="matrix-label">#AL_6061_T6</span></div>
+            <div class="matrix-box"><img src="p2.jpg"><span class="matrix-label">#SS_316_CNC</span></div>
+            <div class="matrix-box"><img src="p3.jpg"><span class="matrix-label">#5AXIS_IMPELLER</span></div>
+            <div class="matrix-box"><img src="p4.jpg"><span class="matrix-label">#SEMICON_VALVE</span></div>
+            <div class="matrix-box"><img src="p5.jpg"><span class="matrix-label">#UAV_7075_FRAME</span></div>
+            <div class="matrix-box"><img src="p6.jpg"><span class="matrix-label">#MEDICAL_TITANIUM</span></div>
+            <div class="matrix-box"><img src="p7.jpg"><span class="matrix-label">#OPTICAL_HOUSING</span></div>
+            <div class="matrix-box"><img src="p8.jpg"><span class="matrix-label">#HEAT_SINK_PRO</span></div>
+            <div class="matrix-box"><img src="p9.jpg"><span class="matrix-label">#ROBOTIC_ARM_J</span></div>
+            <div class="matrix-box"><img src="p10.jpg"><span class="matrix-label">#SS_SMALL_HOLE</span></div>
+            <div class="matrix-box"><img src="p11.jpg"><span class="matrix-label">#POM_INSULATOR</span></div>
+            <div class="matrix-box"><img src="p12.jpg"><span class="matrix-label">#BRASS_PRECISION</span></div>
+            <div class="matrix-box"><img src="p13.jpg"><span class="matrix-label">#HARD_ANODIZING</span></div>
+            <div class="matrix-box"><img src="p14.jpg"><span class="matrix-label">#SANDBLAST_FINISH</span></div>
+            <div class="matrix-box"><img src="p15.jpg"><span class="matrix-label">#PEEK_MEDICAL</span></div>
+            <div class="matrix-box"><img src="p16.jpg"><span class="matrix-label">#LASER_ENGRAVING</span></div>
+            <div class="matrix-box"><img src="p17.jpg"><span class="matrix-label">#CUSTOM_FIXTURE</span></div>
+            <div class="matrix-box"><img src="p18.jpg"><span class="matrix-label">#3C_ELECTRONICS</span></div>
+            <div class="matrix-box"><img src="p19.jpg"><span class="matrix-label">#AERO_BRACKET</span></div>
+            <div class="matrix-box"><img src="p20.jpg"><span class="matrix-label">#MICRON_TOLERANCE</span></div>
+            <div class="matrix-box"><img src="p21.jpg"><span class="matrix-label">#MASS_PRODUCTION</span></div>
+            <div class="matrix-box"><img src="p22.jpg"><span class="matrix-label">#RAPID_PROTOTYPE</span></div>
+            <div class="matrix-box"><img src="p23.jpg"><span class="matrix-label">#ISO_COMPLIANT</span></div>
+            <div class="matrix-box"><img src="p24.jpg"><span class="matrix-label">#ZERO_DEFECT</span></div>
         </div>
     </section>
 
-    <section class="section-padding bg-black">
-        <div class="container mb-5">
-            <h2 class="mono">// PRODUCT_GALLERY</h2>
-        </div>
-        <div class="row g-0">
-            <div class="col-md-3 product-grid-item">
-                <img src="PROD_1.jpg" alt="CNC Part">
-                <div class="img-overlay"><span class="mono small">AL-6061-T6 / ANODIZED</span></div>
-            </div>
-            <div class="col-md-3 product-grid-item">
-                <img src="PROD_2.jpg" alt="CNC Part">
-                <div class="img-overlay"><span class="mono small">SS-316 / POLISHED</span></div>
-            </div>
-            <div class="col-md-3 product-grid-item">
-                <img src="FACTORY_1.jpg" alt="Factory">
-                <div class="img-overlay"><span class="mono small">CLEAN ROOM WORKSHOP</span></div>
-            </div>
-            <div class="col-md-3 product-grid-item">
-                <img src="PROD_3.jpg" alt="CNC Part">
-                <div class="img-overlay"><span class="mono small">7075 AERO / HARD_ANO</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding container text-center">
-        <h2 class="mb-5">METROLOGY & QUALITY</h2>
+    <section class="container py-5 reveal">
+        <h2 class="mono mb-5 lang-node" data-en="[ WORKFLOW_VISUALIZATION ]" data-tw="[ 加工流程可視化 ]">[ WORKFLOW_VISUALIZATION ]</h2>
         <div class="row">
-            <div class="col-md-4">
-                <div class="p-4 border border-secondary">
-                    <h5 class="text-gold">CMM INSPECTION</h5>
-                    <p class="small text-dim">配备海克斯康三次元，支持全尺寸报告输出。</p>
+            <div class="col-md-6">
+                <div class="step-box">
+                    <h5 class="gold lang-node" data-en="01. DFM Analysis" data-tw="01. 可製造性分析 (DFM)">01. DFM Analysis</h5>
+                    <p class="small text-secondary lang-node" data-en="We review your 3D files for geometry optimization and cost-saving." data-tw="我們審核您的 3D 圖紙，優化幾何形狀並節省加工成本。">We review your 3D files for geometry optimization and cost-saving.</p>
+                </div>
+                <div class="step-box">
+                    <h5 class="gold lang-node" data-en="02. Tooling & Fixture" data-tw="02. 刀具與夾具設計">02. Tooling & Fixture</h5>
+                    <p class="small text-secondary lang-node" data-en="Custom jig design for multi-axis setup to ensure zero axial deviation." data-tw="專為多軸加工設計定制夾具，確保軸向零偏差。">Custom jig design for multi-axis setup to ensure zero axial deviation.</p>
+                </div>
+                <div class="step-box">
+                    <h5 class="gold lang-node" data-en="03. Precision Machining" data-tw="03. 精密加工執行">03. Precision Machining</h5>
+                    <p class="small text-secondary lang-node" data-en="High-speed centers running at 24k RPM for mirror-finish surfaces." data-tw="24,000 轉高速加工中心，打造鏡面級表面質感。">High-speed centers running at 24k RPM for mirror-finish surfaces.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="p-4 border border-secondary">
-                    <h5 class="text-gold">MATERIAL TRACE</h5>
-                    <p class="small text-dim">提供材质报告（Material Report），确保真材实料。</p>
+            <div class="col-md-6">
+                <div class="step-box">
+                    <h5 class="gold lang-node" data-en="04. Metrology Verification" data-tw="04. 三次元量測驗證">04. Metrology Verification</h5>
+                    <p class="small text-secondary lang-node" data-en="CMM inspection against CAD data with full dimensional reports." data-tw="海克斯康三次元對比 CAD 數據，輸出完整尺寸報告。">CMM inspection against CAD data with full dimensional reports.</p>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 border border-secondary">
-                    <h5 class="text-gold">QC STANDARDS</h5>
-                    <p class="small text-dim">严格执行 ISO 9001 体系，每批次 100% 检。</p>
+                <div class="step-box">
+                    <h5 class="gold lang-node" data-en="05. Surface Treatment" data-tw="05. 表面處理工藝">05. Surface Treatment</h5>
+                    <p class="small text-secondary lang-node" data-en="In-house anodizing control for color consistency and thickness." data-tw="嚴格控制陽極氧化色差與膜厚一致性。">In-house anodizing control for color consistency and thickness.</p>
+                </div>
+                <div class="step-box">
+                    <h5 class="gold lang-node" data-en="06. Global Delivery" data-tw="06. 全球物流交付">06. Global Delivery</h5>
+                    <p class="small text-secondary lang-node" data-en="Secure packaging with TWD/USD settlement options." data-tw="安全包裝，支持台幣/美金結算選項。">Secure packaging with TWD/USD settlement options.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section-padding bg-black">
+    <section id="ledger" class="py-5 bg-dark reveal">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h2 class="display-4 fw-bold">LET'S<br><span class="text-gold">QUOTE.</span></h2>
-                    <p class="text-dim mt-4">支持台币结账，开立台湾三联发票。<br>上传您的 STEP/DWG 图纸，获取工厂直营报盘。</p>
+            <h2 class="mono mb-4 lang-node" data-en="> FACILITY_LEDGER_REPORT" data-tw="> 設備台賬報告">> FACILITY_LEDGER_REPORT</h2>
+            <div class="table-responsive">
+                <table class="ledger-table">
+                    <thead>
+                        <tr><th class="lang-node" data-en="Equipment" data-tw="設備名稱">Equipment</th><th class="lang-node" data-en="Model/Brand" data-tw="品牌/型號">Model/Brand</th><th class="lang-node" data-en="Precision" data-tw="加工精度">Precision</th><th class="lang-node" data-en="Quantity" data-tw="數量">Quantity</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>5-Axis CNC</td><td>Brother / Fanuc</td><td>±0.005mm</td><td>6 Sets</td></tr>
+                        <tr><td>3/4-Axis CNC</td><td>Hardinge / Taiwan Leadwell</td><td>±0.008mm</td><td>28 Sets</td></tr>
+                        <tr><td>CMM Inspection</td><td>Hexagon (Global S)</td><td>0.001mm</td><td>2 Sets</td></tr>
+                        <tr><td>Precision EDM</td><td>Makino</td><td>±0.003mm</td><td>4 Sets</td></tr>
+                        <tr><td>Optical Projector</td><td>Keyence</td><td>0.002mm</td><td>3 Sets</td></tr>
+                        <tr><td>Sandblasting Line</td><td>Full-Auto / Manual</td><td>N/A</td><td>2 Lines</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry" class="py-5 bg-black reveal">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h2 class="mono gold display-4 fw-bold lang-node" data-en="LET'S_BUILD<br>TOGETHER." data-tw="攜手<br>打造精密。">LET'S_BUILD<br>TOGETHER.</h2>
+                    <p class="text-secondary mt-4 lang-node" data-en="We support TWD settlement and provide 3-copy tax invoices. Zero barrier for Taiwan clients." data-tw="我們支持台幣結算並提供三聯式發票。為台灣客戶提供零障礙的跨境加工服務。">We support TWD settlement and provide 3-copy tax invoices. Zero barrier for Taiwan clients.</p>
                     <div class="mt-5 mono">
-                        <p>EMAIL: info@andas-industrial.com</p>
-                        <p>WHATSAPP: +86 18186298618</p>
-                        <p>LINE: line247327301</p>
+                        <p class="mb-1 text-secondary">// DIRECT_COMMUNICATION</p>
+                        <p class="h4">LINE: line247327301</p>
+                        <p class="h4">WHATSAPP: +86 18186298618</p>
                     </div>
                 </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <form action="https://formspree.io/f/你的ID" method="POST">
-                        <input type="text" name="name" class="form-input" placeholder="NAME / COMPANY" required>
-                        <input type="email" name="email" class="form-input" placeholder="BUSINESS EMAIL" required>
-                        <textarea name="message" class="form-input" rows="4" placeholder="PROJECT DESCRIPTION & QUANTITY" required></textarea>
-                        <button type="submit" class="btn btn-warning btn-lg rounded-0 w-100 fw-bold">SEND INQUIRY</button>
+                <div class="col-lg-7">
+                    <form action="https://formspree.io/f/你的ID" method="POST" class="p-5 border border-secondary">
+                        <div class="mb-4">
+                            <input type="text" name="name" class="form-control bg-transparent text-white border-0 border-bottom border-secondary rounded-0 mono" placeholder="YOUR_NAME / COMPANY" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" name="email" class="form-control bg-transparent text-white border-0 border-bottom border-secondary rounded-0 mono" placeholder="WORK_EMAIL" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea name="msg" class="form-control bg-transparent text-white border-0 border-bottom border-secondary rounded-0 mono" rows="5" placeholder="PROJECT_DETAILS (MATERIAL, QTY, TOLERANCE)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100 py-3 rounded-0 fw-bold mono lang-node" data-en="EXECUTE_REQUEST" data-tw="執行詢價請求">EXECUTE_REQUEST</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-4 border-top border-secondary text-center small text-dim mono">
-        &copy; 2026 ANDAS INDUSTRIAL. ALL RIGHTS RESERVED. // MADE FOR PRECISION
+    <footer class="py-5 text-center text-secondary border-top border-secondary bg-black mono small">
+        <p class="lang-node" data-en="&copy; 2026 ANDAS INDUSTRIAL // MECHANICAL INTEGRITY SYSTEMS" data-tw="&copy; 2026 領航精密工業 // 機械誠信系統">&copy; 2026 ANDAS INDUSTRIAL // MECHANICAL INTEGRITY SYSTEMS</p>
+        <p>GUANGDONG WORKSHOP | TAIWAN LIAISON OFFICE | GLOBAL DISTRIBUTION</p>
     </footer>
 
-    <div class="side-contact">
-        <a href="https://wa.me/8618186298618" target="_blank" class="contact-btn">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
-        </a>
-    </div>
+    <script>
+        // 1. 语言切换逻辑
+        function switchL(lang) {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.lang-node').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+        }
 
+        // 2. 滚动观察者 (Reveal Animation)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 3. 侧边导航同步
+        window.addEventListener('scroll', () => {
+            const dots = document.querySelectorAll('.dot');
+            const sections = document.querySelectorAll('section');
+            let current = 0;
+            sections.forEach((s, i) => {
+                if (window.pageYOffset >= s.offsetTop - 200) current = i;
+            });
+            dots.forEach(d => d.classList.remove('active'));
+            if(dots[current]) dots[current].classList.add('active');
+        });
+    </script>
 </body>
 </html>
