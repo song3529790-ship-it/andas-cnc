@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andas Precision | CNC Machining Experts</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Andas Precision | Mass Production CNC Experts</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- 导航栏 - 每个页面都相同 -->
     <header id="header">
         <div class="container">
             <nav>
@@ -27,72 +27,45 @@
         </div>
     </header>
 
-    <!-- Hero Section with Video Background -->
+    <!-- 英雄区域 - 使用外部视频 -->
     <section class="hero">
+        <!-- 视频占位符 - 稍后替换为你的视频链接 -->
         <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="videos/factory.mp4" type="video/mp4">
-                <!-- Fallback image if video doesn't load -->
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070" alt="Factory Background">
-            </video>
-            <div class="video-overlay"></div>
+            <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&controls=0&playlist=dQw4w9WgXcQ" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
+        <div class="video-overlay"></div>
         
         <div class="hero-content">
-            <div class="container">
-                <h1>ANDAS <span>PRECISION</span></h1>
-                <p>ISO 9001 Certified CNC Machining Services. High-volume 3-axis & 4-axis production with tolerances down to ±0.01mm.</p>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">±0.01mm</span>
-                        <span class="stat-label">Precision</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">3-4 Axis</span>
-                        <span class="stat-label">Equipment</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">ISO 9001</span>
-                        <span class="stat-label">Certified</span>
-                    </div>
+            <h1>ANDAS <span>PRECISION</span></h1>
+            <p>ISO 9001 Certified CNC Machining Services. High-volume 3-axis & 4-axis production with tolerances down to ±0.01mm.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">±0.01mm</span>
+                    <span class="stat-label">Precision</span>
                 </div>
-                
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn">Get a Quote</a>
-                    <a href="gallery.html" class="btn btn-outline">Watch Factory Tour</a>
+                <div class="stat-item">
+                    <span class="stat-number">3-4 Axis</span>
+                    <span class="stat-label">Equipment</span>
                 </div>
+                <div class="stat-item">
+                    <span class="stat-number">ISO 9001</span>
+                    <span class="stat-label">Certified</span>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn">Get a Quote</a>
+                <a href="gallery.html" class="btn btn-outline">Watch Factory Tour</a>
             </div>
         </div>
     </section>
 
-    <!-- Quick Overview -->
-    <section class="section quick-overview">
-        <div class="container">
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>CNC Machining</h3>
-                    <p>3-axis and 4-axis precision machining for complex parts.</p>
-                    <a href="capabilities.html" class="read-more">Learn More →</a>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Factory Tour</h3>
-                    <p>See our facilities and manufacturing process in action.</p>
-                    <a href="gallery.html" class="read-more">Watch Video →</a>
-                </div>
-                <div class="overview-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Quality Assured</h3>
-                    <p>ISO 9001 certified with rigorous quality control.</p>
-                    <a href="contact.html" class="read-more">Contact Us →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- 页脚 -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -124,7 +97,7 @@
         </div>
     </footer>
 
-    <!-- Floating Buttons -->
+    <!-- 浮动按钮 -->
     <div class="floating-buttons">
         <a href="https://wa.me/861571082937" target="_blank" class="float-btn whatsapp-btn">
             <i class="fab fa-whatsapp"></i>
