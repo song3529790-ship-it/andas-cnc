@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Andas Precision</title>
-    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- 导航栏 -->
     <header id="header">
-        <!-- ... same header ... -->
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">ANDAS <span>PRECISION</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <!-- Page Header -->
+    <!-- 页面标题 -->
     <section class="page-header">
         <div class="container">
             <h1>Contact Us</h1>
@@ -22,11 +35,11 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 联系表单 -->
     <section class="section">
         <div class="container">
             <div class="contact-grid">
-                <!-- Contact Info -->
+                <!-- 联系信息 -->
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     
@@ -71,7 +84,7 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
+                <!-- 联系表单 -->
                 <div class="contact-form">
                     <form id="inquiryForm" action="https://formspree.io/f/xvgrwwql" method="POST">
                         <div class="form-group">
@@ -120,14 +133,46 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 页脚 -->
     <footer>
-        <!-- ... same footer ... -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ANDAS PRECISION</h4>
+                    <p>Professional CNC machining services for industrial manufacturing worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> +86 157 1082 937</li>
+                        <li><i class="fab fa-line"></i> line247327301</li>
+                        <li><i class="fas fa-envelope"></i> sales@andas-industrial.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Andas Precision Industrial Co., Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Floating Buttons -->
+    <!-- 浮动按钮 -->
     <div class="floating-buttons">
-        <!-- ... same floating buttons ... -->
+        <a href="https://wa.me/861571082937" target="_blank" class="float-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://line.me/ti/p/~line247327301" target="_blank" class="float-btn line-btn">
+            <i class="fab fa-line"></i>
+        </a>
     </div>
 
     <script src="js/main.js"></script>
