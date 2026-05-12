@@ -80,13 +80,3 @@ if (inquiryForm) {
         }
     });
 }
-
-// Video lazy loading
-document.addEventListener('DOMContentLoaded', () => {
-    const videos = document.querySelectorAll('video');
-    videos.forEach(video => {
-        if (video.getAttribute('data-src')) {
-            video.setAttribute('src', video.getAttribute('data-src'));
-        }
-    });
-});
