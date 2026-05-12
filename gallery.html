@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Gallery | Andas Precision</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Gallery | Andas Precision</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header (same as others) -->
+    <!-- 导航栏 -->
     <header id="header">
-        <!-- ... same header ... -->
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">ANDAS <span>PRECISION</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="capabilities.html">Capabilities</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <!-- Page Header -->
+    <!-- 页面标题 -->
     <section class="page-header">
         <div class="container">
             <h1>Factory Gallery</h1>
-            <p>Tour our facilities and see our precision manufacturing in action</p>
+            <p>Tour our facilities and see our mass production capabilities in action</p>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="section video-showcase">
+    <!-- 视频展示 -->
+    <section class="section">
         <div class="container">
             <h2 class="section-title">Factory Tour Video</h2>
             <div class="video-container">
-                <video controls poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop">
-                    <source src="videos/factory-tour.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <!-- 视频占位符 - 稍后替换为你的视频链接 -->
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
             <div class="video-description">
                 <h3>Welcome to Andas Precision</h3>
@@ -39,12 +54,13 @@
         </div>
     </section>
 
-    <!-- Image Gallery -->
+    <!-- 图片画廊 -->
     <section class="section dark-bg">
         <div class="container">
             <h2 class="section-title">Production Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <!-- 图片占位符 - 稍后替换为你的图片链接 -->
                     <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop" alt="CNC Machine">
                     <div class="gallery-overlay">
                         <h4>3-Axis Machining Center</h4>
@@ -52,6 +68,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
+                    <!-- 图片占位符 - 稍后替换为你的图片链接 -->
                     <img src="https://images.unsplash.com/photo-1581092160607-ee226b3f3c44?w=600&h=400&fit=crop" alt="4-Axis Machine">
                     <div class="gallery-overlay">
                         <h4>4-Axis Rotary Machining</h4>
@@ -59,6 +76,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
+                    <!-- 图片占位符 - 稍后替换为你的图片链接 -->
                     <img src="https://images.unsplash.com/photo-1593081891731-e6232795c4d6?w=600&h=400&fit=crop" alt="Quality Control">
                     <div class="gallery-overlay">
                         <h4>Quality Inspection</h4>
@@ -66,6 +84,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
+                    <!-- 图片占位符 - 稍后替换为你的图片链接 -->
                     <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" alt="Packaging">
                     <div class="gallery-overlay">
                         <h4>Packaging & Shipping</h4>
@@ -76,14 +95,46 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 页脚 -->
     <footer>
-        <!-- ... same footer ... -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ANDAS PRECISION</h4>
+                    <p>Professional CNC machining services for industrial manufacturing worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="capabilities.html">Capabilities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> +86 157 1082 937</li>
+                        <li><i class="fab fa-line"></i> line247327301</li>
+                        <li><i class="fas fa-envelope"></i> sales@andas-industrial.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Andas Precision Industrial Co., Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Floating Buttons -->
+    <!-- 浮动按钮 -->
     <div class="floating-buttons">
-        <!-- ... same floating buttons ... -->
+        <a href="https://wa.me/861571082937" target="_blank" class="float-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://line.me/ti/p/~line247327301" target="_blank" class="float-btn line-btn">
+            <i class="fab fa-line"></i>
+        </a>
     </div>
 
     <script src="js/main.js"></script>
