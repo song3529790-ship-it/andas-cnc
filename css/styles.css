@@ -202,7 +202,7 @@ nav {
     z-index: -1;
 }
 
-.video-background video {
+.video-background iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -303,61 +303,6 @@ nav {
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto;
-}
-
-/* ============================================
-   QUICK OVERVIEW
-   ============================================ */
-.quick-overview {
-    background: var(--secondary-black);
-}
-
-.overview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.overview-card {
-    background: var(--primary-black);
-    padding: 40px 30px;
-    text-align: center;
-    border: 1px solid var(--border-color);
-    transition: var(--transition);
-}
-
-.overview-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-gold);
-}
-
-.overview-card i {
-    font-size: 3rem;
-    color: var(--accent-gold);
-    margin-bottom: 20px;
-}
-
-.overview-card h3 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--text-primary);
-}
-
-.overview-card p {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-}
-
-.read-more {
-    color: var(--accent-gold);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.read-more:hover {
-    color: var(--accent-gold-light);
 }
 
 /* ============================================
@@ -472,9 +417,10 @@ nav {
     overflow: hidden;
 }
 
-.video-container video {
+.video-container iframe {
     width: 100%;
-    display: block;
+    height: 500px;
+    border: none;
 }
 
 .video-description {
