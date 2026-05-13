@@ -1,4 +1,73 @@
 /* ============================================
+   NEW STYLES FOR UPGRADED COPY
+   ============================================ */
+
+/* Why Andas Grid */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.capability-card {
+    background: var(--void-black);
+    padding: 40px 30px;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.capability-card:hover {
+    border-color: var(--quantum-blue);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+}
+
+.capability-card i {
+    font-size: 3rem;
+    color: var(--quantum-blue);
+    margin-bottom: 20px;
+}
+
+.capability-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--plasma-gold);
+}
+
+.capability-card p {
+    color: var(--hologram-white);
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* Gallery Category Titles */
+.gallery-category {
+    margin-bottom: 100px;
+}
+
+.category-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--quantum-blue);
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.category-title span {
+    color: var(--plasma-gold);
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.category-desc {
+    color: var(--hologram-white);
+    opacity: 0.7;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+/* ============================================
    GLOBAL STYLES
    ============================================ */
 :root {
