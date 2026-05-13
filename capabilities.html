@@ -1,67 +1,148 @@
-<section class="section">
-    <div class="container">
-        <!-- 模块 1: 5-Axis Mastery -->
-        <div class="capability-detail">
-            <div class="capability-image">
-                <img src="YOUR_5AXIS_IMAGE_URL" alt="5-Axis CNC Machining">
-            </div>
-            <div class="capability-info">
-                <h2>5-Axis Simultaneous Machining</h2>
-                <p>We utilize advanced 5-axis machining centers to eliminate multi-setup errors and reduce lead times. By machining complex geometries in a single operation, we achieve positional accuracy of ±0.005mm, ensuring structural integrity for mission-critical components.</p>
-                <ul class="specs-list">
-                    <li><i class="fas fa-check"></i> Complex Geometry & Undercuts</li>
-                    <li><i class="fas fa-check"></i> Positional Accuracy: ±0.005mm</li>
-                    <li><i class="fas fa-check"></i> Reduced Assembly Requirements</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capabilities | Andas Industrial</title>
+    
+    <!-- 使用相同的工业风字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 复制 index.html 中的所有 CSS 样式到这里 */
+        /* 为节省篇幅，这里不再重复，请确保此文件包含上述 CSS */
+        :root { --concrete-dark: #1a1a1a; --steel-gray: #2d2d2d; --iron-gray: #3a3a3a; --warning-orange: #ff4d00; --safety-yellow: #ffcc00; --blueprint-blue: #0047ab; --text-light: #f0f0f0; --text-muted: #888888; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--concrete-dark); color: var(--text-light); line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(26, 26, 26, 0.95); border-bottom: 3px solid var(--warning-orange); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: 'Roboto Condensed', sans-serif; font-size: 1.8rem; font-weight: 900; text-decoration: none; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; }
+        .logo span { color: var(--warning-orange); }
+        .nav-links { display: flex; list-style: none; gap: 40px; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-family: 'Roboto Condensed', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active { color: var(--warning-orange); }
+        .section { padding: 100px 0; }
+        .page-header { background: var(--steel-gray); padding: 150px 0 80px; text-align: center; border-bottom: 3px solid var(--warning-orange); }
+        .page-header h1 { font-family: 'Roboto Condensed', sans-serif; font-size: 3.5rem; font-weight: 900; color: var(--text-light); text-transform: uppercase; }
+        .page-header p { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .capability-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px; }
+        .capability-image img { width: 100%; height: 400px; object-fit: cover; border: 3px solid var(--iron-gray); filter: grayscale(30%); }
+        .capability-info h2 { font-family: 'Roboto Condensed', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--warning-orange); text-transform: uppercase; margin-bottom: 20px; }
+        .capability-info p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; }
+        .specs-table { width: 100%; border-collapse: collapse; }
+        .specs-table th, .specs-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--iron-gray); }
+        .specs-table th { background: var(--steel-gray); color: var(--warning-orange); font-family: 'Roboto Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+        .specs-table td { color: var(--text-light); }
+        footer { background: #111; padding: 60px 0 30px; border-top: 3px solid var(--warning-orange); }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-section h4 { font-family: 'Roboto Condensed', sans-serif; font-size: 1.1rem; color: var(--warning-orange); margin-bottom: 20px; text-transform: uppercase; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; }
+        .footer-links a:hover { color: var(--warning-orange); }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--iron-gray); color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 992px) { .capability-detail { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">ANDAS <span>INDUSTRIAL</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="capabilities.html" class="active">Capabilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
+    </header>
 
-        <!-- 模块 2: Material Expertise -->
-        <div class="capability-detail reverse">
-            <div class="capability-image">
-                <img src="YOUR_MATERIAL_IMAGE_URL" alt="Hard Metal Machining">
-            </div>
-            <div class="capability-info">
-                <h2>High-Hardness Material Proficiency</h2>
-                <p>Mastering the art of machining 440C stainless steel and aerospace-grade alloys. We employ specialized tooling and adaptive cooling strategies to maintain dimensional stability even under extreme hardness levels (HRC 58+).</p>
-                <ul class="specs-list">
-                    <li><i class="fas fa-check"></i> 440C Stainless Steel (HRC 58+)</li>
-                    <li><i class="fas fa-check"></i> Aerospace Aluminum (7075-T6 / 6061)</li>
-                    <li><i class="fas fa-check"></i> Titanium & Inconel Alloys</li>
-                </ul>
-            </div>
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CORE CAPABILITIES</h1>
+            <p>Integrated manufacturing solutions for high-precision industrial components.</p>
         </div>
+    </section>
 
-        <!-- 模块 3: Dongguan Ecosystem Synergy -->
-        <div class="capability-detail">
-            <div class="capability-image">
-                <img src="YOUR_DONGGUAN_SUPPLY_CHAIN_IMAGE" alt="Dongguan Supply Chain">
+    <!-- 核心能力 -->
+    <section class="section">
+        <div class="container">
+            <!-- 5-Axis -->
+            <div class="capability-detail">
+                <div class="capability-image">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600&fit=crop" alt="5-Axis CNC">
+                </div>
+                <div class="capability-info">
+                    <h2>5-Axis Simultaneous Machining</h2>
+                    <p>Complex geometries, undercuts, and compound angles machined in a single setup. Eliminating fixture errors and reducing lead times for your most challenging components.</p>
+                    <table class="specs-table">
+                        <tr><th>Accuracy</th><td>±0.005mm Positional</td></tr>
+                        <tr><th>Max Workpiece</th><td>800 x 500 x 400mm</td></tr>
+                        <tr><th>Surface Finish</th><td>Ra 0.8 Achievable</td></tr>
+                    </table>
+                </div>
             </div>
-            <div class="capability-info">
-                <h2>Ecosystem Synergy (Dongguan Hub)</h2>
-                <p>Located in the heart of the world's factory, we offer true turnkey solutions. Within a 30-minute radius, we coordinate heat treatment, anodizing, passivation, and DLC coating. This vertical integration eliminates logistical delays and ensures batch-to-batch consistency.</p>
-                <ul class="specs-list">
-                    <li><i class="fas fa-check"></i> 30-Minute Secondary Processing Loop</li>
-                    <li><i class="fas fa-check"></i> Integrated Heat Treatment & Finishing</li>
-                    <li><i class="fas fa-check"></i> Single-Source Accountability</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- 模块 4: Validated Quality Control -->
-        <div class="capability-detail reverse">
-            <div class="capability-image">
-                <img src="YOUR_CMM_IMAGE_URL" alt="CMM Inspection">
+            <!-- Materials -->
+            <div class="capability-detail" style="direction: rtl;">
+                <div class="capability-image" style="direction: ltr;">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee226b3f3c44?w=800&h=600&fit=crop" alt="Hard Metal">
+                </div>
+                <div class="capability-info" style="direction: ltr;">
+                    <h2>High-Hardness Material Proficiency</h2>
+                    <p>Mastering the art of machining 440C stainless steel and aerospace-grade alloys. Maintaining tool integrity and dimensional stability under extreme hardness.</p>
+                    <table class="specs-table">
+                        <tr><th>440C Stainless</th><td>Hardened to HRC 58+</td></tr>
+                        <tr><th>Aluminum</th><td>7075-T6 / 6061-T6</td></tr>
+                        <tr><th>Special Alloys</th><td>Titanium & Inconel</td></tr>
+                    </table>
+                </div>
             </div>
-            <div class="capability-info">
-                <h2>Validated Quality Standards</h2>
-                <p>Our quality management system is battle-tested by the demands of top-tier EV manufacturers. Full CMM (Coordinate Measuring Machine) reporting is provided as standard, ensuring full traceability and compliance with automotive industry standards.</p>
-                <ul class="specs-list">
-                    <li><i class="fas fa-check"></i> Full CMM Reporting (ISO 10360)</li>
-                    <li><i class="fas fa-check"></i> Tesla & BYD Supply Chain Compliance</li>
-                    <li><i class="fas fa-check"></i> Strict NDA & IP Protection Protocols</li>
-                </ul>
+
+            <!-- Supply Chain -->
+            <div class="capability-detail">
+                <div class="capability-image">
+                    <img src="https://images.unsplash.com/photo-1565514158747-55d7a8c58f0a?w=800&h=600&fit=crop" alt="Supply Chain">
+                </div>
+                <div class="capability-info">
+                    <h2>Ecosystem Synergy (Dongguan Hub)</h2>
+                    <p>True vertical integration. Within a 30-minute radius, we coordinate heat treatment, anodizing, passivation, and DLC coating. Single-source accountability.</p>
+                    <table class="specs-table">
+                        <tr><th>Secondary Processing</th><td>30 Minute Loop</td></tr>
+                        <tr><th>Finishing Options</th><td>Anodizing, Plating, DLC</td></tr>
+                        <tr><th>Logistics</th><td>Consolidated Shipping</td></tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ANDAS INDUSTRIAL</h4>
+                    <p>Precision manufacturing for the next industrial revolution.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>DIRECT CHANNELS</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> +86 157 1082 937</li>
+                        <li><i class="fas fa-envelope"></i> sales@andas-industrial.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Andas Industrial Co., Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
