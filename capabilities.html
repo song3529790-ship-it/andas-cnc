@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capabilities | Andas Industrial</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 复制 index.html 中的所有 CSS 变量和基础样式 */
+        :root {
+            --concrete-dark: #2a2a2a;
+            --steel-gray: #3a3a3a;
+            --iron-gray: #4a4a4a;
+            --text-light: #e0e0e0;
+            --text-muted: #888888;
+            --accent-subtle: #5a5a5a;
+            --border-subtle: #444444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--concrete-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-decoration: none;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-light);
+        }
+
+        .section { padding: 100px 0; }
+
+        .page-header {
+            background: var(--steel-gray);
+            padding: 140px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .page-header h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 能力卡片 - 渐进动画 */
+        .capability-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .capability-detail.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .capability-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 1px solid var(--border-subtle);
+            filter: grayscale(30%);
+            transition: all 0.5s ease;
+        }
+
+        .capability-image:hover img {
+            filter: grayscale(0%);
+            border-color: var(--accent-subtle);
+        }
+
+        .capability-info h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .capability-info p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .specs-list {
+            list-style: none;
+        }
+
+        .specs-list li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .specs-list i {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        footer {
+            background: #222222;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { 
+            color: var(--text-muted); 
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--text-light); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 992px) {
+            .capability-detail {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">ANDAS <span>INDUSTRIAL</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="capabilities.html" class="active">Capabilities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CORE CAPABILITIES</h1>
+            <p>Integrated manufacturing solutions for high-precision industrial components.</p>
+        </div>
+    </section>
+
+    <!-- 核心能力 -->
+    <section class="section">
+        <div class="container">
+            <!-- 5-Axis -->
+            <div class="capability-detail">
+                <div class="capability-image">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600&fit=crop" alt="5-Axis CNC">
+                </div>
+                <div class="capability-info">
+                    <h2>5-AXIS SIMULTANEOUS MACHINING</h2>
+                    <p>Complex geometries, undercuts, and compound angles machined in a single setup. Eliminating fixture errors and reducing lead times.</p>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-minus"></i> Positional Accuracy: ±0.005mm</li>
+                        <li><i class="fas fa-minus"></i> Max Workpiece: 800 x 500 x 400mm</li>
+                        <li><i class="fas fa-minus"></i> Surface Finish: Ra 0.8 Achievable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Materials -->
+            <div class="capability-detail">
+                <div class="capability-image">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee226b3f3c44?w=800&h=600&fit=crop" alt="Hard Metal">
+                </div>
+                <div class="capability-info">
+                    <h2>HIGH-HARDNESS MATERIAL PROFICIENCY</h2>
+                    <p>Mastered experience in 440C stainless steel and aerospace-grade alloys. Maintaining tool integrity under extreme hardness.</p>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-minus"></i> 440C Stainless Steel (HRC 58+)</li>
+                        <li><i class="fas fa-minus"></i> Aerospace Aluminum (7075-T6)</li>
+                        <li><i class="fas fa-minus"></i> Titanium & Inconel Alloys</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Supply Chain -->
+            <div class="capability-detail">
+                <div class="capability-image">
+                    <img src="https://images.unsplash.com/photo-1565514158747-55d7a8c58f0a?w=800&h=600&fit=crop" alt="Supply Chain">
+                </div>
+                <div class="capability-info">
+                    <h2>ECOSYSTEM SYNERGY (DONGGUAN HUB)</h2>
+                    <p>True vertical integration. Within 30-minute radius, we coordinate heat treatment, anodizing, and plating.</p>
+                    <ul class="specs-list">
+                        <li><i class="fas fa-minus"></i> 30-Minute Secondary Processing</li>
+                        <li><i class="fas fa-minus"></i> Integrated Heat Treatment</li>
+                        <li><i class="fas fa-minus"></i> Single-Source Accountability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ANDAS INDUSTRIAL</h4>
+                    <p>Precision manufacturing for industrial applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>DIRECT CHANNELS</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> +86 157 1082 937</li>
+                        <li><i class="fas fa-envelope"></i> sales@andas-industrial.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Andas Industrial Co., Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 滚动触发动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // 观察所有能力卡片
+        document.querySelectorAll('.capability-detail').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 头部滚动效果
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(42, 42, 42, 0.98)';
+            } else {
+                header.style.background = 'rgba(42, 42, 42, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
