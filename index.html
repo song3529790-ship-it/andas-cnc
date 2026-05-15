@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andas Precision | Industrial Manufacturing</title>
+    <title>Andas Industrial | Precision Manufacturing</title>
     
-    <!-- 工业风字体：粗犷、无衬线 -->
+    <!-- 工业风字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* ============================================
-           INDUSTRIAL THEME COLORS
+           INDUSTRIAL COLOR PALETTE (低调版)
            ============================================ */
         :root {
-            --concrete-dark: #1a1a1a;      /* 深混凝土 */
-            --steel-gray: #2d2d2d;        /* 钢板灰 */
-            --iron-gray: #3a3a3a;         /* 铁锈灰 */
-            --warning-orange: #ff4d00;    /* 工业警示橙 */
-            --safety-yellow: #ffcc00;    /* 安全黄 */
-            --blueprint-blue: #0047ab;   /* 蓝图蓝 */
-            --text-light: #f0f0f0;       /* 高亮白 */
-            --text-muted: #888888;       /* 弱化灰 */
+            --concrete-dark: #2a2a2a;      /* 深混凝土灰 */
+            --steel-gray: #3a3a3a;        /* 钢板灰 */
+            --iron-gray: #4a4a4a;         /* 铁锈灰 */
+            --text-light: #e0e0e0;        /* 柔光白 */
+            --text-muted: #888888;         /* 弱化灰 */
+            --accent-subtle: #5a5a5a;     /* 微妙强调色 */
+            --border-subtle: #444444;      /* 极细边框 */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; font-size: 16px; }
+        html { 
+            scroll-behavior: smooth; 
+            font-size: 16px;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -36,10 +38,15 @@
             overflow-x: hidden;
         }
 
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { 
+            width: 90%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
 
         /* ============================================
-           HEADER - HEAVY DUTY STYLE
+           HEADER - 极简工业风
            ============================================ */
         header {
             position: fixed;
@@ -47,20 +54,21 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(26, 26, 26, 0.95);
-            border-bottom: 3px solid var(--warning-orange);
+            background: rgba(42, 42, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 70px;
         }
 
         .logo {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 900;
             text-decoration: none;
             color: var(--text-light);
@@ -69,20 +77,20 @@
         }
 
         .logo span {
-            color: var(--warning-orange);
+            color: var(--text-muted);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 35px;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -92,162 +100,191 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--warning-orange);
+            color: var(--text-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--text-light);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
 
         /* ============================================
-           HERO SECTION - INDUSTRIAL GRIT
+           HERO SECTION - 动态滚动效果
            ============================================ */
         .hero {
-            height: 100vh;
-            min-height: 700px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 70px;
+            background: linear-gradient(rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.7)), 
                         url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            border-bottom: 5px solid var(--warning-orange);
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.3s;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: var(--warning-orange);
-            color: var(--concrete-dark);
-            padding: 8px 20px;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+            color: var(--text-light);
         }
 
         .hero h1 span {
-            color: var(--warning-orange);
+            color: var(--text-muted);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #cccccc;
+            font-size: 1.1rem;
+            color: var(--text-muted);
             margin-bottom: 40px;
-            max-width: 700px;
+            max-width: 600px;
             font-weight: 300;
+            line-height: 1.7;
         }
 
-        /* 工业指标面板 */
+        /* 工业指标面板 - 数字增长动画 */
         .hero-specs {
             display: flex;
             gap: 40px;
             margin: 50px 0;
             flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.6s;
         }
 
         .spec-block {
-            border-left: 4px solid var(--warning-orange);
+            border-left: 2px solid var(--border-subtle);
             padding-left: 15px;
         }
 
         .spec-value {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 900;
             color: var(--text-light);
         }
 
         .spec-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* 工业按钮 */
+        /* 工业按钮 - 微妙悬停 */
         .btn-industrial {
             display: inline-block;
             background: transparent;
             color: var(--text-light);
-            padding: 15px 35px;
+            padding: 14px 32px;
             text-decoration: none;
             font-family: 'Roboto Condensed', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 2px solid var(--text-light);
+            border: 1px solid var(--border-subtle);
             transition: all 0.3s ease;
             margin-right: 15px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.9s;
         }
 
         .btn-industrial:hover {
-            background: var(--warning-orange);
-            border-color: var(--warning-orange);
-            color: var(--concrete-dark);
-        }
-
-        .btn-industrial.primary {
-            background: var(--warning-orange);
-            border-color: var(--warning-orange);
+            background: var(--text-light);
+            border-color: var(--text-light);
             color: var(--concrete-dark);
         }
 
         /* ============================================
-           SECTIONS
+           SECTIONS - 滚动触发动画
            ============================================ */
-        .section { padding: 100px 0; }
+        .section { 
+            padding: 100px 0; 
+        }
 
         .section-title {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--text-light);
             text-transform: uppercase;
             margin-bottom: 60px;
             padding-bottom: 15px;
-            border-bottom: 3px solid var(--warning-orange);
+            border-bottom: 1px solid var(--border-subtle);
             display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
         }
 
-        /* Why Andas */
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 优势卡片 - 滚动动画 */
         .advantages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .advantage-card {
             background: var(--steel-gray);
-            padding: 40px 30px;
-            border: 1px solid var(--iron-gray);
-            transition: all 0.3s ease;
+            padding: 35px 30px;
+            border: 1px solid var(--border-subtle);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .advantage-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .advantage-card:hover {
-            border-color: var(--warning-orange);
-            transform: translateY(-5px);
+            border-color: var(--accent-subtle);
         }
 
         .advantage-card h3 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--warning-orange);
+            color: var(--text-light);
             margin-bottom: 15px;
             text-transform: uppercase;
         }
@@ -255,110 +292,16 @@
         .advantage-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* ============================================
-           CONTACT & FOOTER
+           FOOTER
            ============================================ */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-        }
-
-        .contact-info h3 {
-            font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--warning-orange);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: var(--steel-gray);
-            border-left: 4px solid var(--warning-orange);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--concrete-dark);
-            border: 2px solid var(--warning-orange);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--warning-orange);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .contact-form {
-            background: var(--steel-gray);
-            padding: 40px;
-            border: 1px solid var(--iron-gray);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-light);
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 15px;
-            background: var(--concrete-dark);
-            border: 1px solid var(--iron-gray);
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--warning-orange);
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--warning-orange);
-            color: var(--concrete-dark);
-            padding: 16px;
-            border: none;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: var(--safety-yellow);
-        }
-
         footer {
-            background: #111;
+            background: #222222;
             padding: 60px 0 30px;
-            border-top: 3px solid var(--warning-orange);
+            border-top: 1px solid var(--border-subtle);
         }
 
         .footer-content {
@@ -370,23 +313,29 @@
 
         .footer-section h4 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 1.1rem;
-            color: var(--warning-orange);
+            font-size: 1rem;
+            color: var(--text-light);
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; }
-        .footer-links a:hover { color: var(--warning-orange); }
+        .footer-links a { 
+            color: var(--text-muted); 
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover { color: var(--text-light); }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid var(--iron-gray);
+            border-top: 1px solid var(--border-subtle);
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* ============================================
@@ -394,8 +343,14 @@
            ============================================ */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-specs { gap: 20px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-specs { gap: 25px; }
+            .spec-value { font-size: 1.6rem; }
+            .btn-industrial { 
+                display: block; 
+                margin-bottom: 15px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -419,37 +374,34 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <!-- 工业背书 -->
-                <div class="hero-badge">Tier 1 EV Supply Chain Verified</div>
-                
                 <h1>PRECISION<br>COST<br><span>ENGINEERING</span></h1>
                 
                 <p>Leveraging the Dongguan Industrial Ecosystem to deliver Tesla & BYD validated quality at engineered cost-efficiencies.</p>
                 
                 <div class="hero-specs">
                     <div class="spec-block">
-                        <div class="spec-value">±0.005</div>
+                        <div class="spec-value" data-target="0.005">0.000</div>
                         <div class="spec-label">MM ACCURACY</div>
                     </div>
                     <div class="spec-block">
-                        <div class="spec-value">5-AXIS</div>
-                        <div class="spec-label">SIMULTANEOUS</div>
+                        <div class="spec-value" data-target="5">0</div>
+                        <div class="spec-label">AXIS READY</div>
                     </div>
                     <div class="spec-block">
-                        <div class="spec-value">30 MIN</div>
-                        <div class="spec-label">SUPPLY CHAIN LOOP</div>
+                        <div class="spec-value" data-target="30">0</div>
+                        <div class="spec-label">MIN LOOP</div>
                     </div>
                 </div>
                 
                 <div>
-                    <a href="contact.html" class="btn-industrial primary">REQUEST QUOTE</a>
-                    <a href="capabilities.html" class="btn-industrial">OUR CAPABILITIES</a>
+                    <a href="contact.html" class="btn-industrial">REQUEST QUOTE</a>
+                    <a href="capabilities.html" class="btn-industrial">CAPABILITIES</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Andas -->
+    <!-- 优势板块 -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">OPERATIONAL ADVANTAGES</h2>
@@ -464,7 +416,7 @@
                 </div>
                 <div class="advantage-card">
                     <h3>VALIDATED QUALITY</h3>
-                    <p>Operating under the stringent quality protocols required by Tesla and BYD. Full CMM reporting and traceability.</p>
+                    <p>Operating under the stringent quality protocols required by top-tier EV manufacturers. Full CMM reporting.</p>
                 </div>
             </div>
         </div>
@@ -476,7 +428,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>ANDAS INDUSTRIAL</h4>
-                    <p>Precision manufacturing for the next industrial revolution.</p>
+                    <p>Precision manufacturing for industrial applications.</p>
                 </div>
                 <div class="footer-section">
                     <h4>DIRECT CHANNELS</h4>
@@ -493,16 +445,69 @@
     </footer>
 
     <script>
-        // 简单的滚动和导航交互
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.style.background = 'rgba(26, 26, 26, 0.98)';
-                } else {
-                    header.style.background = 'rgba(26, 26, 26, 0.95)';
+        // 滚动触发动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
+        }, observerOptions);
+
+        // 观察所有需要动画的元素
+        document.querySelectorAll('.section-title, .advantage-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 数字增长动画
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = progress * (end - start) + start;
+                
+                if (end === 0.005) {
+                    element.textContent = current.toFixed(3);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // 当 hero 区域可见时启动数字动画
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.spec-value').forEach(el => {
+                        const target = parseFloat(el.getAttribute('data-target'));
+                        animateValue(el, 0, target, 2000);
+                    });
+                    heroObserver.disconnect(); // 只运行一次
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroObserver.observe(document.querySelector('.hero'));
+
+        // 头部滚动效果
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(42, 42, 42, 0.98)';
+            } else {
+                header.style.background = 'rgba(42, 42, 42, 0.95)';
+            }
         });
     </script>
 </body>
