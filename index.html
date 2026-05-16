@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andas Precision | CNC Machining</title>
+    <!-- Tailwind CSS CDN (无需安装) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0D0F12; }
+        /* 自定义动画：流光扫描 */
+        @keyframes scanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .animate-scanline { animation: scanline 2s linear infinite; }
+    </style>
+</head>
+<body class="bg-[#0D0F12] text-gray-200 font-sans">
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- 背景视频 (已注入 vc_auto,q_auto) -->
+        <video class="absolute inset-0 w-full h-full object-cover" 
+                src="https://res.cloudinary.com/dpjjfd8pf/video/upload/vc_auto,q_auto/v1778946160/andas-cnc-machining-hero-bg_oqizbs.mp4" 
+                autoplay muted loop playsinline></video>
+        
+        <!-- 网格遮罩 -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        
+        <!-- 状态代码 -->
+        <div class="absolute top-8 left-8 font-mono text-xs text-cyan-400/80">SYS_STATUS: <span class="text-green-400">OPERATIONAL</span></div>
+
+        <!-- 主内容 -->
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">
+                <span class="block bg-gradient-to-b from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">Precision CNC</span>
+                <span class="block mt-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Machining.</span>
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-400">
+                Since 2015 | ISO 9001 | 3, 4, 5-Axis | Tolerance ±0.01mm | Optimized for 100+ PCS Batches.
+            </p>
+            <!-- CTA 按钮 (记得改链接!) -->
+            <a href="https://wa.me/8613800000000" target="_blank" 
+               class="mt-12 inline-block px-10 py-5 bg-[#FF3366] text-white font-bold text-lg tracking-widest shadow-[0_0_40px_rgba(255,51,102,0.4)] hover:scale-105 transition-transform">
+                GET A RAPID QUOTE →
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BRAND WALL -->
+    <section class="py-24 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="font-mono text-sm text-gray-600 mb-12">// VALIDATED SUPPLY CHAIN ECOSYSTEM</div>
+            <!-- 黑科技滤镜 -->
+            <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778949034/andas-automotive-machinery-brand-logo-wall_aldrd4.jpg" 
+                 class="w-full mix-blend-screen contrast-125" alt="Brand Wall">
+        </div>
+    </section>
+
+    <!-- SECTION 3: GALLERY -->
+    <section class="py-24 bg-[#0D0F12]">
+        <div class="container mx-auto px-6">
+            <div class="font-mono text-sm text-gray-600 mb-12">// METALLIC PORTFOLIO EXHIBITION</div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- 样件 1-10 (全部嵌入) -->
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938329/custom-automotive-racing-parts-cnc-milling_da3wc3.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938328/premium-surface-treatment-laser-engraving_xsgg3j.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/andas-cnc-machining-hero-bg_zn6uzu.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/custom-machined-metal-components-portfolio_jb5qjk.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/robotics-automation-precision-structure-components_q1fqmz.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938302/high-precision-cnc-turning-lathe-services_kamhwl.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938294/telecom-enclosure-black-anodized-box-machining_ebzbdf.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938284/precision-5-axis-cnc-milling-aluminum_ouxi8d.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938273/multi-axis-cnc-milling-anodized-heatsink_towaht.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800">
+                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
+                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938265/consumer-electronics-cnc-machining-gopro-parts_uiy099.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-gray-800 font-mono text-sm text-gray-500">
+        <div class="container mx-auto px-6 flex justify-between">
+            <span>ANDAS PRECISION © 2026</span>
+            <span>Email: yourname@andas.com | WhatsApp: +86 138 XXXX XXXX</span>
+        </div>
+    </footer>
+
+</body>
+</html>
