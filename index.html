@@ -1,1261 +1,599 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANDA INDUSTRIAL | Precision Metal Manufacturing & Supply Chain Solutions</title>
+    <title>Andas Precision | CNC Machining & Industrial Manufacturing</title>
     
-    <!-- SEO Meta Tags for B2B -->
-    <meta name="description" content="ANDA INDUSTRIAL: ISO 9001 certified precision manufacturing for 6061 Aluminum & 440C Steel. Specialized in high-volume CNC machining, sub-assembly, and tariff-efficient supply chain solutions for global trading companies.">
-    <meta name="keywords" content="Precision CNC Machining, 6061 Aluminum, 440C Stainless Steel, Sheet Metal Fabrication, Contract Manufacturing, Sub-assembly Partner, Taiwan Trading Company, Vietnam Sourcing, ISO 9001 Factory, Mass Production, Metal Components">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ANDA INDUSTRIAL offers high-precision CNC machining for 6061 Aluminum & 440C Steel. Specialized in batch production, sub-assembly, and global supply chain solutions for OEMs.">
+    <meta name="keywords" content="CNC Machining, Precision Parts, 6061 Aluminum, 440C Steel, Contract Manufacturing, Sub-assembly, Supply Chain Solutions">
     
-    <!-- Open Graph / Social Media Tags -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.vercel.app/">
-    <meta property="og:title" content="ANDA INDUSTRIAL - Your Trusted Metal Manufacturing Partner">
-    <meta property="og:description" content="Expert CNC machining and metal fabrication for industrial OEMs. Providing seamless logistics and assembly solutions to streamline your supply chain.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1581092335397-9fa5c460e21c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://your-domain.vercel.app/">
+    <meta property="og:url" content="https://www.andas-precision.com/">
+    <meta property="og:title" content="Industrial CNC Precision Manufacturing">
+    <meta property="og:description" content="Top-tier CNC machining services for complex metal parts. ISO 9001 certified.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- JSON-LD Structured Data (Schema Markup) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Factory",
-      "name": "ANDA INDUSTRIAL",
-      "image": "https://images.unsplash.com/photo-1581092335397-9fa5c460e21c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "@id": "https://your-domain.vercel.app/",
-      "url": "https://your-domain.vercel.app/",
-      "telephone": "+86-15710829371",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 30.57,
-        "longitude": 114.27
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://www.instagram.com/andas_precision/",
-        "https://www.linkedin.com/company/andas-industrial/"
-      ],
-      "priceRange": "$$",
-      "description": "ISO 9001 certified contract manufacturer specializing in precision CNC machining of aluminum and stainless steel for global B2B clients.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "88"
-      },
-      "knowsAbout": [
-        "6061 Aluminum CNC",
-        "440C Stainless Steel",
-        "Precision Sheet Metal",
-        "Mass Production",
-        "Supply Chain Optimization"
-      ]
-    }
-    </script>
-    
+
     <style>
-        /* ========================================================= */
-        /* 1. CSS RESET & BASE STYLES (Global Foundation)         */
-        /* ========================================================= */
         :root {
-            --primary-cyan: #00f5ff;
-            --primary-blue: #0066ff;
-            --dark-bg: #050a15;
-            --dark-panel: #0f172a;
-            --glass-bg: rgba(15, 23, 42, 0.7);
+            --neon-cyan: #00f5ff;
+            --neon-blue: #0066ff;
+            --dark-bg: #020617;
+            --dark-card: #0f172a;
             --text-light: #e2e8f0;
-            --text-muted: #64748b;
-            --danger-red: #ef4444;
-            --success-green: #22c55e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --text-gray: #94a3b8;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ========================================================= */
-        /* 2. CUSTOM SCROLLBAR (Cyberpunk Style)                   */
-        /* ========================================================= */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 4px; }
 
-        ::-webkit-scrollbar-track {
-            background: var(--dark-bg);
-            border-radius: 10px;
+        /* Loading Screen */
+        #loader {
+            position: fixed; z-index: 9999; width: 100%; height: 100%;
+            background: radial-gradient(circle, #0f172a 0%, #020617 100%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.5s, visibility 0.5s;
         }
+        .loader-text { font-family: 'Orbitron', monospace; color: var(--neon-cyan); font-size: 1.5rem; letter-spacing: 2px; margin-top: 20px; }
+        
+        /* Particle Network Canvas */
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--primary-blue), var(--primary-cyan));
-            border-radius: 10px;
-            border: 2px solid var(--dark-bg);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-cyan);
-        }
-
-        /* ========================================================= */
-        /* 3. BACKGROUND GRID & ANIMATIONS (Visual FX)             */
-        /* ========================================================= */
-        .bg-grid-pattern {
+        /* Hero Section */
+        .hero-section { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+        
+        /* Tech Grid Background */
+        .grid-bg {
+            position: absolute; width: 200%; height: 200%;
             background-image: 
-                linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
+            animation: scrollGrid 20s linear infinite;
+            z-index: 0;
+        }
+        @keyframes scrollGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-40px, -40px); }
+        }
+
+        /* Neon Text Effect */
+        .text-glow-cyan { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 245, 255, 0.5); }
+        .text-glow-blue { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+
+        /* Buttons */
+        .btn-neon {
+            background: transparent; border: 2px solid var(--neon-cyan); color: var(--neon-cyan);
+            padding: 12px 32px; font-family: 'Orbitron', sans-serif; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+            position: relative; overflow: hidden; z-index: 1;
+        }
+        .btn-neon:hover { color: #020617; box-shadow: 0 0 20px var(--neon-cyan); }
+        .btn-neon::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--neon-cyan); transition: left 0.4s; z-index: -1; }
+        .btn-neon:hover::before { left: 0; }
+
+        /* Cards */
+        .tech-card {
+            background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(0, 245, 255, 0.2);
+            backdrop-filter: blur(10px); transition: all 0.3s ease;
+            position: relative;
+        }
+        .tech-card:hover { border-color: var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 245, 255, 0.1); transform: translateY(-5px); }
+
+        /* Form Inputs */
+        .form-input {
+            background: rgba(2, 6, 23, 0.8); border: 1px solid rgba(148, 163, 184, 0.3);
+            color: white; padding: 12px 16px; border-radius: 4px; width: 100%;
+            transition: border-color 0.3s;
+        }
+        .form-input:focus { outline: none; border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 245, 255, 0.2); }
+
+        /* Language Switcher */
+        .lang-btn { background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 20px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent; }
+        .lang-btn.active { background: var(--neon-cyan); color: black; font-weight: bold; border-color: white; }
+
+        /* Utility Classes */
+        .hidden-lang { display: none; }
+        .visible-lang { display: block; }
+
+        /* Mobile Menu */
+        .mobile-menu { display: none; position: absolute; top: 70px; left: 0; right: 0; background: #0f172a; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 50; }
+        .mobile-menu a { display: block; padding: 10px 0; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .mobile-menu a:hover { color: var(--neon-cyan); }
+
+        /* Scanline Effect */
+        .scanlines {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+            z-index: 2; pointer-events: none; opacity: 0.3;
+        }
+
+        /* Glowing Border Animation */
+        .glow-border {
+            position: relative;
+            border: 1px solid transparent;
+        }
+        .glow-border::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-blue), var(--neon-cyan));
             z-index: -1;
-            animation: gridMove 20s linear infinite;
+            border-radius: inherit;
+            animation: glow-animation 3s linear infinite;
+            background-size: 400% 400%;
         }
-
-        @keyframes gridMove {
-            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
-            100% { transform: perspective(500px) rotateX(60deg) translateY(40px); }
-        }
-
-        /* ========================================================= */
-        /* 4. TEXT GRADIENT & TYPOGRAPHY (Brand Identity)          */
-        /* ========================================================= */
-        .text-gradient-cyan {
-            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        .text-stroke-cyan {
-            -webkit-text-stroke: 1px var(--primary-cyan);
-            color: transparent;
-        }
-
-        /* ========================================================= */
-        /* 5. GLASSMORPHISM CARD (Modern UI Standard)            */
-        /* ========================================================= */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), transparent);
-            transition: left 0.7s ease;
-            z-index: 1;
-        }
-
-        .glass-card:hover::before {
-            left: 100%;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 102, 255, 0.25);
-            border-color: rgba(0, 245, 255, 0.4);
-        }
-
-        /* ========================================================= */
-        /* 6. LOADING SCREEN (Immersive Experience)                */
-        /* ========================================================= */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--dark-bg);
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-        
-        #loading-screen.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        
-        .loader-ring {
-            width: 80px;
-            height: 80px;
-            border: 4px solid rgba(0, 102, 255, 0.2);
-            border-top: 4px solid var(--primary-cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loader-text {
-            font-family: 'Inter', monospace;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* ========================================================= */
-        /* 7. HEADER & NAVIGATION (Sticky & Interactive)           */
-        /* ========================================================= */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-            background: rgba(5, 10, 21, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        header.scrolled {
-            background: rgba(5, 10, 21, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-link {
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-blue));
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* ========================================================= */
-        /* 8. BUTTONS (Call to Action)                             */
-        /* ========================================================= */
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-cyan));
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.875rem;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-cyan);
-            padding: 0.75rem 2rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.875rem;
-            border: 2px solid var(--primary-cyan);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-cyan);
-            color: var(--dark-bg);
-            transform: scale(1.05);
-        }
-
-        /* ========================================================= */
-        /* 9. HERO SECTION (Video Background Fix for Mobile)      */
-        /* ========================================================= */
-        .hero-section {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 1rem;
-            overflow: hidden;
-        }
-
-        .hero-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
-        .hero-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3; /* Fallback opacity */
-        }
-
-        /* Mobile specific fix: Show poster image instead of video if video fails */
-        @media (max-width: 768px) {
-            .hero-video {
-                display: none; /* Hide video on mobile to prevent loading issues */
-            }
-            .hero-section {
-                background: linear-gradient(rgba(5, 10, 21, 0.9), rgba(5, 10, 21, 0.9)), url('https://images.unsplash.com/photo-1581092335397-9fa5c460e21c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            }
-        }
-
-        /* ========================================================= */
-        /* 10. SECTIONS & TITLES (Content Layout)                  */
-        /* ========================================================= */
-        section {
-            padding: 6rem 1rem;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-cyan));
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 4rem auto;
-            font-size: 1.125rem;
-        }
-
-        /* ========================================================= */
-        /* 11. SERVICE CARDS (Interactive Grid)                    */
-        /* ========================================================= */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-cyan);
-            transition: transform 0.3s ease;
-        }
-
-        .glass-card:hover .service-card-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        /* ========================================================= */
-        /* 12. STATS COUNTER (Trust Building)                      */
-        /* ========================================================= */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 1rem;
-            background: var(--dark-panel);
-            border: 1px solid rgba(0, 102, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-cyan);
+        @keyframes glow-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-cyan);
-            margin-bottom: 0.5rem;
-            font-family: 'Inter', monospace;
-        }
-
-        /* ========================================================= */
-        /* 13. PORTFOLIO GALLERY (Image Showcase)                 */
-        /* ========================================================= */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-            aspect-ratio: 1 / 1;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            transform: translateY(0);
-        }
-
-        /* ========================================================= */
-        /* 14. CONTACT FORM (Lead Generation)                      */
-        /* ========================================================= */
-        .contact-form {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem;
-            border-radius: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .form-input, .form-select, .form-textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            border-radius: 0.5rem;
-            color: white;
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
-            outline: none;
-            border-color: var(--primary-cyan);
-            box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.1);
-        }
-
-        /* ========================================================= */
-        /* 15. FOOTER (Site Information)                           */
-        /* ========================================================= */
-        footer {
-            background: var(--dark-panel);
-            padding: 4rem 1rem 2rem 1rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-
-        .footer-link {
-            display: block;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--primary-cyan);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-
-        /* ========================================================= */
-        /* 16. LANGUAGE SWITCHER (Bilingual Support)               */
-        /* ========================================================= */
-        .lang-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        /* Floating Animation */
+        .float { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
 
-        .lang-content.active {
-            display: block;
-            opacity: 1;
-        }
-
-        /* ========================================================= */
-        /* 17. RESPONSIVE DESIGN (Mobile Optimization)             */
-        /* ========================================================= */
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--dark-panel);
-                padding: 1rem;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-                border-top: 1px solid rgba(148, 163, 184, 0.1);
-            }
-            .mobile-menu.active {
-                display: block;
-            }
-            .desktop-nav {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            section {
-                padding: 4rem 1rem;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .mobile-menu-btn {
-                display: none;
-            }
-            .desktop-nav {
-                display: flex;
-            }
-        }
-
-        /* ========================================================= */
-        /* 18. PARTICLE BACKGROUND (Advanced Visual)               */
-        /* ========================================================= */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        /* ========================================================= */
-        /* 19. CUSTOM CURSOR (Desktop Enhancement)                 */
-        /* ========================================================= */
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary-cyan);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-            mix-blend-mode: difference;
-        }
-
-        .custom-cursor.hover {
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 245, 255, 0.1);
-        }
-
-        /* ========================================================= */
-        /* 20. ANIMATIONS ON SCROLL (Intersection Observer)        */
-        /* ========================================================= */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ========================================================= */
-        /* 21. UTILITY CLASSES (Helper Styles)                     */
-        /* ========================================================= */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .text-center { text-align: center; }
-        .text-right { text-align: right; }
-        .font-bold { font-weight: 700; }
-        .font-semibold { font-weight: 600; }
-        .text-sm { font-size: 0.875rem; }
-        .text-lg { font-size: 1.125rem; }
-        .text-xl { font-size: 1.25rem; }
-        .text-2xl { font-size: 1.5rem; }
-        .text-3xl { font-size: 1.875rem; }
-        .text-4xl { font-size: 2.25rem; }
-        .text-5xl { font-size: 3rem; }
-        .text-6xl { font-size: 3.75rem; }
+        /* Pulse Animation */
+        .pulse-slow { animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-12 { margin-bottom: 3rem; }
+        /* Rotating Icons */
+        .spin-slow { animation: spin 8s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        .mt-2 { margin-top: 0.5rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mt-12 { margin-top: 3rem; }
+        /* Progress Bar */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue)); z-index: 9999; width: 0%; transition: width 0.3s; }
 
-        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
-
-        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .px-8 { padding-left: 2rem; padding-right: 2rem; }
-
-        .flex { display: flex; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        .gap-2 { gap: 0.5rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-6 { gap: 1.5rem; }
-        .gap-8 { gap: 2rem; }
-
-        .hidden { display: none; }
-        .block { display: block; }
-        .inline-block { display: inline-block; }
-
-        /* ========================================================= */
-        /* 22. ADDITIONAL B2B TRUST ELEMENTS                       */
-        /* ========================================================= */
-        .trust-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 9999px;
-            border: 1px solid rgba(148, 163, 184, 0.1);
-        }
-
-        .trust-badge i {
-            color: var(--success-green);
-        }
-
-        /* ========================================================= */
-        /* 23. FINAL TOUCHES (Polish)                              */
-        /* ========================================================= */
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Ensure form elements inherit font */
-        input, select, textarea, button {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Disable tap highlight on mobile */
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
     </style>
 </head>
 <body>
-    <!-- Custom Cursor (Desktop Only) -->
-    <div class="custom-cursor"></div>
 
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
 
     <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader-ring"></div>
-        <p class="loader-text">
-            <span class="lang-content active" data-lang="en">Initializing Precision Systems...</span>
-            <span class="lang-content" data-lang="zh">正在初始化精密系統...</span>
-        </p>
+    <div id="loader">
+        <div class="loader-text">ANDA INDUSTRIAL</div>
+        <div style="width: 200px; height: 2px; background: rgba(255,255,255,0.1); margin-top: 20px; position: relative; overflow: hidden;">
+            <div id="loaderBar" style="width: 0%; height: 100%; background: var(--neon-cyan); animation: loadAnim 3s ease-in-out infinite;"></div>
+        </div>
     </div>
 
     <!-- Header -->
-    <header id="header">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">
-                <span class="text-gradient-cyan">ANDA</span>
-                <span class="text-white font-light">INDUSTRIAL</span>
+    <header class="fixed top-0 left-0 right:0 z-50 bg-[#020617]/80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-orbitron tracking-wider">
+                <span class="text-white">ANDA</span> <span class="text-glow-cyan">INDUSTRIAL</span>
             </a>
-            <nav class="desktop-nav items-center space-x-8">
-                <a href="#services" class="nav-link text-gray-300 hover:text-white transition">Services</a>
-                <a href="#solutions" class="nav-link text-gray-300 hover:text-white transition">Solutions</a>
-                <a href="#materials" class="nav-link text-gray-300 hover:text-white transition">Materials</a>
-                <a href="#capacity" class="nav-link text-gray-300 hover:text-white transition">Capacity</a>
-                <div class="flex space-x-2 bg-white/5 rounded-full p-1">
-                    <button onclick="setLanguage('en')" id="lang-en-header" class="px-4 py-1.5 rounded-full text-sm font-medium transition-all bg-cyan-500 text-black">EN</button>
-                    <button onclick="setLanguage('zh')" id="lang-zh-header" class="px-4 py-1.5 rounded-full text-sm font-medium transition-all text-gray-400 hover:text-white">繁中</button>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 items-center text-gray-300 font-medium">
+                <a href="#services" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Services</span><span class="lang-content hidden" data-lang="zh">服務</span></a>
+                <a href="#solutions" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Solutions</span><span class="lang-content hidden" data-lang="zh">解決方案</span></a>
+                <a href="#materials" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Materials</span><span class="lang-content hidden" data-lang="zh">材質</span></a>
+                <a href="#capacity" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Capacity</span><span class="lang-content hidden" data-lang="zh">產能</span></a>
+                
+                <!-- Language Switcher -->
+                <div class="flex space-x-2 ml-4">
+                    <div class="lang-btn active" onclick="switchLang('en')" id="btn-en">EN</div>
+                    <div class="lang-btn" onclick="switchLang('zh')" id="btn-zh">繁中</div>
                 </div>
-                <a href="#contact" class="btn-primary !py-2 !px-6 !text-sm">Inquiry</a>
+
+                <a href="#inquiry" class="btn-neon ml-4 !px-6 !py-2 text-sm">
+                    <span class="lang-content active" data-lang="en">Inquiry</span>
+                    <span class="lang-content hidden" data-lang="zh">詢盤</span>
+                </a>
             </nav>
-            <button class="mobile-menu-btn text-white text-2xl" id="mobile-menu-btn">
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white text-2xl md:hidden" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="#services" class="block py-2 text-gray-300 hover:text-white">Services</a>
-            <a href="#solutions" class="block py-2 text-gray-300 hover:text-white">Solutions</a>
-            <a href="#materials" class="block py-2 text-gray-300 hover:text-white">Materials</a>
-            <a href="#capacity" class="block py-2 text-gray-300 hover:text-white">Capacity</a>
-            <a href="#contact" class="block py-3 mt-4 btn-primary text-center">Inquiry</a>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden hidden">
+            <a href="#services" class="mobile-link"><span class="lang-content active" data-lang="en">Services</span><span class="lang-content hidden" data-lang="zh">服務</span></a>
+            <a href="#solutions" class="mobile-link"><span class="lang-content active" data-lang="en">Solutions</span><span class="lang-content hidden" data-lang="zh">解決方案</span></a>
+            <a href="#materials" class="mobile-link"><span class="lang-content active" data-lang="en">Materials</span><span class="lang-content hidden" data-lang="zh">材質</span></a>
+            <a href="#capacity" class="mobile-link"><span class="lang-content active" data-lang="en">Capacity</span><span class="lang-content hidden" data-lang="zh">產能</span></a>
+            <a href="#inquiry" class="mobile-link font-bold text-cyan-400"><span class="lang-content active" data-lang="en">Inquiry</span><span class="lang-content hidden" data-lang="zh">詢盤</span></a>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-video-container">
-            <!-- Video with poster image fallback -->
-            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1581092335397-9fa5c460e21c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-cnc-machine-cutting-metal-15863-large.mp4" type="video/mp4">
-                <!-- Fallback text if video doesn't load -->
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="bg-grid-pattern"></div>
+        <div class="grid-bg"></div>
+        <div id="particles-js" class="opacity-30"></div>
+        <div class="scanlines"></div>
+        
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-                <span class="block text-white">Manufacturing Excellence,</span>
-                <span class="block text-gradient-cyan">Engineered for Scale.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                <span class="lang-content active" data-lang="en">
-                    We are a dedicated industrial partner specializing in high-complexity metal components. 
-                    Providing seamless capacity for trading firms and OEMs worldwide.
-                </span>
-                <span class="lang-content" data-lang="zh">
-                    我們是專注於高複雜度金屬零組件的工業製造夥伴。
-                    為全球貿易公司與 OEM 提供無縫的產能支援。
-                </span>
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#inquiry" class="btn-primary text-lg">
-                    <i class="fas fa-comment-dots mr-2"></i>
-                    <span class="lang-content active" data-lang="en">Request Capacity Callback</span>
-                    <span class="lang-content" data-lang="zh">索取產能評估</span>
-                </a>
-                <a href="#materials" class="btn-secondary text-lg">
-                    <i class="fas fa-cogs mr-2"></i>
-                    <span class="lang-content active" data-lang="en">Our Materials</span>
-                    <span class="lang-content" data-lang="zh">加工材質</span>
-                </a>
-            </div>
-            <div class="trust-badges mt-12">
-                <div class="trust-badge"><i class="fas fa-check-circle"></i> <span>ISO 9001 Certified</span></div>
-                <div class="trust-badge"><i class="fas fa-check-circle"></i> <span>MOQ 100+ PCS</span></div>
-                <div class="trust-badge"><i class="fas fa-check-circle"></i> <span>±0.01mm Tolerance</span></div>
-                <div class="trust-badge"><i class="fas fa-check-circle"></i> <span>NDA Protected</span></div>
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-orbitron mb-6 leading-tight float">
+                    <span class="text-white block" data-en="Manufacturing Excellence" data-zh="卓越製造工藝">Manufacturing Excellence,</span>
+                    <span class="text-glow-cyan block" data-en="Engineered for Scale." data-zh="專為規模化而生。">Engineered for Scale.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto h-16">
+                    <span class="lang-content active" data-lang="en">
+                        We provide seamless manufacturing capacity for trading firms and OEMs worldwide. 
+                        Specializing in high-complexity metal components with precision and speed.
+                    </span>
+                    <span class="lang-content hidden" data-lang="zh">
+                        我們為全球貿易公司與 OEM 提供無縫的產能支援。
+                        專注於高精度、高複雜度的金屬零組件製造。
+                    </span>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#inquiry" class="btn-neon text-lg">
+                        <i class="fas fa-comment-dots mr-2"></i>
+                        <span class="lang-content active" data-lang="en">Request Callback</span>
+                        <span class="lang-content hidden" data-lang="zh">索取產能評估</span>
+                    </a>
+                    <a href="#materials" class="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black rounded-lg font-semibold text-lg transition-all duration-300 px-8 py-4">
+                        <i class="fas fa-cogs mr-2"></i>
+                        <span class="lang-content active" data-lang="en">Our Materials</span>
+                        <span class="lang-content hidden" data-lang="zh">加工材質</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">
-                <span class="lang-content active" data-lang="en">Core Manufacturing Capabilities</span>
-                <span class="lang-content" data-lang="zh">核心製造能力</span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-content active" data-lang="en">From prototype to mass production, we deliver precision and reliability at every stage.</span>
-                <span class="lang-content" data-lang="zh">從原型到量產，我們在每個階段都提供精準與可靠的交付。</span>
-            </p>
-            <div class="service-grid">
-                <!-- Card 1 -->
-                <div class="glass-card p-8 fade-in-up">
-                    <div class="service-card-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-content active" data-lang="en">CNC Machining</span>
-                        <span class="lang-content" data-lang="zh">CNC 數控加工</span>
-                    </h3>
-                    <p class="text-gray-400 mb-6">
-                        <span class="lang-content active" data-lang="en">3, 4, and 5-axis machining for complex geometries. Tight tolerance control for critical components.</span>
-                        <span class="lang-content" data-lang="zh">3、4、5 軸加工，應對複雜幾何結構。關鍵零件嚴格公差控制。</span>
-                    </p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Milling & Turning</span><span class="lang-content" data-lang="zh">銑削與車削</span></li>
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Multi-Axis Simultaneous</span><span class="lang-content" data-lang="zh">多軸聯動</span></li>
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Precision Grinding</span><span class="lang-content" data-lang="zh">精密研磨</span></li>
-                    </ul>
-                </div>
-                <!-- Card 2 -->
-                <div class="glass-card p-8 fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="service-card-icon"><i class="fas fa-industry"></i></div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-content active" data-lang="en">Sheet Metal Fabrication</span>
-                        <span class="lang-content" data-lang="zh">鈑金製作</span>
-                    </h3>
-                    <p class="text-gray-400 mb-6">
-                        <span class="lang-content active" data-lang="en">Laser cutting, bending, welding, and assembly. Full-service metal forming solutions.</span>
-                        <span class="lang-content" data-lang="zh">雷射切割、折彎、焊接與組裝。全方位的鈑金成型解決方案。</span>
-                    </p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Laser Cutting</span><span class="lang-content" data-lang="zh">雷射切割</span></li>
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Precision Bending</span><span class="lang-content" data-lang="zh">精密折彎</span></li>
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Spot Welding</span><span class="lang-content" data-lang="zh">點焊</span></li>
-                    </ul>
-                </div>
-                <!-- Card 3 -->
-                <div class="glass-card p-8 fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="service-card-icon"><i class="fas fa-layer-group"></i></div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-content active" data-lang="en">Secondary Operations</span>
-                        <span class="lang-content" data-lang="zh">二次加工</span>
-                    </h3>
-                    <p class="text-gray-400 mb-6">
-                        <span class="lang-content active" data-lang="en">Complete finishing services to meet your exact specifications and aesthetic requirements.</span>
-                        <span class="lang-content" data-lang="zh">完整的後處理服務，滿足您精確的規格與外觀需求。</span>
-                    </p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Anodizing & Plating</span><span class="lang-content" data-lang="zh">陽極氧化與電鍍</span></li>
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Heat Treatment</span><span class="lang-content" data-lang="zh">熱處理</span></li>
-                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> <span class="lang-content active" data-lang="en">Laser Marking</span><span class="lang-content" data-lang="zh">雷射雕刻</span></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="absolute bottom-10 left:1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#services" class="text-gray-500 hover:text-cyan-400 text-3xl transition">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section id="stats" class="py-20 bg-dark-panel">
+    <section class="py-16 bg-[#0a0f1f] relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="tech-card p-6 rounded-lg glow-border">
+                    <div class="text-4xl font-bold text-glow-cyan mb-2 counter" data-target="850">0</div>
+                    <div class="text-gray-400 lang-content active" data-lang="en">Projects Completed</div>
+                    <div class="text-gray-400 lang-content hidden" data-lang="zh">已完成項目</div>
+                </div>
+                <div class="tech-card p-6 rounded-lg glow-border">
+                    <div class="text-4xl font-bold text-glow-cyan mb-2 counter" data-target="45">0</div>
+                    <div class="text-gray-400 lang-content active" data-lang="en">Global Partners</div>
+                    <div class="text-gray-400 lang-content hidden" data-lang="zh">全球合作夥伴</div>
+                </div>
+                <div class="tech-card p-6 rounded-lg glow-border">
+                    <div class="text-4xl font-bold text-glow-cyan mb-2 counter" data-target="99">0</div>
+                    <div class="text-gray-400 lang-content active" data-lang="en">Success Rate %</div>
+                    <div class="text-gray-400 lang-content hidden" data-lang="zh">成功率 %</div>
+                </div>
+                <div class="tech-card p-6 rounded-lg glow-border">
+                    <div class="text-4xl font-bold text-glow-cyan mb-2 counter" data-target="24">0</div>
+                    <div class="text-gray-400 lang-content active" data-lang="en">Hours Response</div>
+                    <div class="text-gray-400 lang-content hidden" data-lang="zh">小時響應</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20">
         <div class="container mx-auto px-6">
-            <div class="stats-grid">
-                <div class="stat-item fade-in-up">
-                    <div class="stat-number" data-target="5">0</div>
-                    <div class="text-gray-400">
-                        <span class="lang-content active" data-lang="en">Years Experience</span>
-                        <span class="lang-content" data-lang="zh">年專業經驗</span>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-orbitron mb-4">
+                    <span class="lang-content active" data-lang="en">Our Core Services</span>
+                    <span class="lang-content hidden" data-lang="zh">核心服務</span>
+                </h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="tech-card p-8 rounded-lg glow-border group">
+                    <div class="text-cyan-400 text-4xl mb-4 spin-slow">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-3 font-orbitron" data-en="Precision CNC Machining" data-zh="精密CNC加工">Precision CNC Machining</h3>
+                    <p class="text-gray-400 mb-4 lang-content active" data-lang="en">
+                        Multi-axis machining for complex geometries in 6061 Aluminum and 440C Stainless Steel.
+                    
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">5-Axis Milling</span><span class="lang-content hidden" data-lang="zh">五軸銑削</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en"> Swiss-Type Turning</span><span class="lang-content hidden" data-lang="zh">走心機車削</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">Surface Grinding</span><span class="lang-content hidden" data-lang="zh">表面研磨</span></li>
+                    </ul>
                 </div>
-                <div class="stat-item fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="stat-number" data-target="100">0</div>
-                    <div class="text-gray-400">
-                        <span class="lang-content active" data-lang="en">+ Employees</span>
-                        <span class="lang-content" data-lang="zh">位員工</span>
+
+                <!-- Card 2 -->
+                <div class="tech-card p-8 rounded-lg glow-border group">
+                    <div class="text-cyan-400 text-4xl mb-4 pulse-slow">
+                        <i class="fas fa-boxes"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-3 font-orbitron" data-en="Contract Assembly" data-zh="合約組裝">Contract Assembly</h3>
+                    <p class="text-gray-400 mb-4 lang-content active" data-lang="en">
+                        End-to-end sub-assembly support to streamline your logistics and reduce lead times.
+                    
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">Module Integration</span><span class="lang-content hidden" data-lang="zh">模組整合</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">Kitting & Packing</span><span class="lang-content hidden" data-lang="zh">套件與包裝</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">FAI/CPK Reporting</span><span class="lang-content hidden" data-lang="zh">首件/過程能力報告</span></li>
+                    </ul>
                 </div>
-                <div class="stat-item fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="stat-number" data-target="500">0</div>
-                    <div class="text-gray-400">
-                        <span class="lang-content active" data-lang="en">+ Projects Completed</span>
-                        <span class="lang-content" data-lang="zh">個完成項目</span>
+
+                <!-- Card 3 -->
+                <div class="tech-card p-8 rounded-lg glow-border group">
+                    <div class="text-cyan-400 text-4xl mb-4 float">
+                        <i class="fas fa-globe-americas"></i>
                     </div>
-                </div>
-                <div class="stat-item fade-in-up" style="transition-delay: 0.3s;">
-                    <div class="stat-number" data-target="24">0</div>
-                    <div class="text-gray-400">
-                        <span class="lang-content active" data-lang="en">/7 Engineering Support</span>
-                        <span class="lang-content" data-lang="zh">小時工程支援</span>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-orbitron" data-en="Supply Chain Solutions" data-zh="供應鏈解決方案">Supply Chain Solutions</h3>
+                    <p class="text-gray-400 mb-4 lang-content active" data-lang="en">
+                        Strategic manufacturing hubs to optimize your regional delivery and inventory costs.
+                    
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">Asia-Based Capacity</span><span class="lang-content hidden" data-lang="zh">亞洲產能基地</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">Inventory Management</span><span class="lang-content hidden" data-lang="zh">庫存管理</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-2"></i> <span class="lang-content active" data-lang="en">Logistics Efficiency</span><span class="lang-content hidden" data-lang="zh">物流效率優化</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Materials Section -->
-    <section id="materials" class="py-20">
+    <section id="materials" class="py-20 bg-[#0a0f1f]">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">
-                <span class="lang-content active" data-lang="en">Material Expertise</span>
-                <span class="lang-content" data-lang="zh">材料專精</span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-content active" data-lang="en">Specializing in high-demand industrial metals with proven machining strategies.</span>
-                <span class="lang-content" data-lang="zh">專精於高需求的工業金屬，並擁有成熟的加工策略。</span>
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Material 1 -->
-                <div class="glass-card p-8 fade-in-up">
-                    <h3 class="text-3xl font-bold text-cyan-400 mb-4">6061 Aluminum</h3>
-                    <p class="text-gray-400 mb-6">
-                        <span class="lang-content active" data-lang="en">Excellent strength-to-weight ratio, good corrosion resistance, and superb machinability. Ideal for structural components.</span>
-                        <span class="lang-content" data-lang="zh">優異的強度重量比，良好的耐腐蝕性和出色的加工性。適用於結構件。</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">Aircraft Grade</span>
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">Anodizing Ready</span>
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">High Speed Machining</span>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-orbitron mb-4">
+                    <span class="lang-content active" data-lang="en">Advanced Materials</span>
+                    <span class="lang-content hidden" data-lang="zh">先進材質</span>
+                </h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 font-orbitron" data-en="Aluminum & Steel Specialists" data-zh="鋁材與鋼材專家">Aluminum & Steel Specialists</h3>
+                    <p class="text-gray-300 mb-6 lang-content active" data-lang="en">
+                        We handle the most demanding alloys with tight tolerances. Our quality control ensures every component meets aerospace and medical-grade standards.
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-[#020617] rounded-lg border border-gray-800 hover:border-cyan-500 transition">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-industry text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" data-en="6061-T6 Aluminum" data-zh="6061-T6 鋁合金">6061-T6 Aluminum</h4>
+                                <p class="text-sm text-gray-400" data-en="Lightweight & Strong" data-zh="輕量且堅固">Lightweight & Strong
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-[#020617] rounded-lg border border-gray-800 hover:border-cyan-500 transition">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-shield-alt text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" data-en="440C Stainless Steel" data-zh="440C 不鏽鋼">440C Stainless Steel</h4>
+                                <p class="text-sm text-gray-400" data-en="High Hardness & Corrosion Resistant" data-zh="高硬度耐腐蝕">High Hardness & Corrosion Resistant
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Material 2 -->
-                <div class="glass-card p-8 fade-in-up" style="transition-delay: 0.1s;">
-                    <h3 class="text-3xl font-bold text-cyan-400 mb-4">440C Stainless Steel</h3>
-                    <p class="text-gray-400 mb-6">
-                        <span class="lang-content active" data-lang="en">High carbon martensitic stainless steel with excellent hardness and wear resistance after heat treatment.</span>
-                        <span class="lang-content" data-lang="zh">高碳馬氏體不鏽鋼，熱處理後具有極佳的硬度和耐磨性。</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">HRC 58 Hardness</span>
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">Corrosion Resistant</span>
-                        <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">Precision Ground</span>
+                <div class="tech-card p-8 rounded-lg glow-border relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full filter blur-3xl -mr-20 -mt-20"></div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10" data-en="Quality Assurance" data-zh="品質保證">Quality Assurance</h3>
+                    <p class="text-gray-300 mb-6 relative z-10 lang-content active" data-lang="en">
+                        Every batch undergoes rigorous inspection to ensure zero-defect delivery.
+                    
+                    <div class="relative z-10 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400" data-en="CNC Machining Tolerance" data-zh="CNC加工公差">CNC Machining Tolerance</span>
+                            <span class="font-bold text-cyan-400">±0.01mm</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-gray-400" data-en="Surface Roughness (Ra)" data-zh="表面粗糙度(Ra)">Surface Roughness (Ra)</span>
+                            <span class="font-bold text-cyan-400">≤0.8μm</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-gray-400" data-en="On-Time Delivery Rate" data-zh="準時交付率">On-Time Delivery Rate</span>
+                            <span class="font-bold text-cyan-400">99.2%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style="width: 99%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-dark-panel">
+    <!-- Anti-Retail Guard & B2B Inquiry Form -->
+    <section id="inquiry" class="py-20">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">
-                <span class="lang-content active" data-lang="en">Manufacturing Portfolio</span>
-                <span class="lang-content" data-lang="zh">製造作品集</span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-content active" data-lang="en">A showcase of precision components manufactured for various industries.</span>
-                <span class="lang-content" data-lang="zh">為各行業製造的精密零件展示。</span>
-            </p>
-            <div class="portfolio-grid">
-                <!-- Item 1 -->
-                <div class="portfolio-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CNC Part 1">
-                    <div class="portfolio-overlay">
-                        <h4 class="text-xl font-bold text-white">Aerospace Bracket</h4>
-                        <p class="text-gray-300">6061-T6 Aluminum</p>
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Left Side: Anti-Retail Guard -->
+                <div class="tech-card p-8 rounded-lg glow-border relative">
+                    <div class="absolute -top-4 -right-4 bg-red-500 text-black text-xs font-bold px-3 py-1 rounded-full rotate-12">
+                        <span class="lang-content active" data-lang="en">Strictly B2B</span>
+                        <span class="lang-content hidden" data-lang="zh">嚴格B2B</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-orbitron text-red-400">
+                        <span class="lang-content active" data-lang="en">Anti-Retail Guard</span>
+                        <span class="lang-content hidden" data-lang="zh">散客防護機制</span>
+                    </h3>
+                    <p class="text-gray-300 mb-6 lang-content active" data-lang="en">
+                        This facility is dedicated exclusively to high-volume industrial manufacturing. We do not serve individual DIY projects or single-piece prototyping.
+                    
+                    <div class="bg-red-500/10 border border-red-500/30 p-4 rounded-lg mb-6">
+                        <h4 class="font-bold text-red-400 mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            <span class="lang-content active" data-lang="en">Minimum Order Quantity (MOQ)</span>
+                            <span class="lang-content hidden" data-lang="zh">最低訂購數量(MOQ)</span>
+                        </h4>
+                        <p class="text-sm text-gray-300 lang-content active" data-lang="en">
+                            Our production lines are optimized for scale. Please inquire only if your project requires a minimum of 100 pieces per SKU or annual volume commitments.
+                        
+                    </div>
+
+                    <div class="space-y-3 text-sm text-gray-400">
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                            <span class="lang-content active" data-lang="en">No personal DIY or hobbyist projects.</span>
+                            <span class="lang-content hidden" data-lang="zh">不接受個人DIY或愛好者專案。</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                            <span class="lang-content active" data-lang="en">No single-unit cosmetic modifications.</span>
+                            <span class="lang-content hidden" data-lang="zh">不接受單件式汽車改裝。</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="lang-content active" data-lang="en">Focused on OEMs, Trading Firms & System Integrators.</span>
+                            <span class="lang-content hidden" data-lang="zh">專注服務 OEM、貿易商與系統整合商。</span>
+                        </div>
                     </div>
                 </div>
-                <!-- Item 2 -->
-                <div class="portfolio-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1565793298595-6a8b5b3b5b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CNC Part 2">
-                    <div class="portfolio-overlay">
-                        <h4 class="text-xl font-bold text-white">Hydraulic Valve Body</h4>
-                        <p class="text-gray-300">440C Stainless Steel</p>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="portfolio-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CNC Part 3">
-                    <div class="portfolio-overlay">
-                        <h4 class="text-xl font-bold text-white">Robotic Joint</h4>
-                        <p class="text-gray-300">Aluminum Alloy</p>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="portfolio-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CNC Part 4">
-                    <div class="portfolio-overlay">
-                        <h4 class="text-xl font-bold text-white">Electronic Enclosure</h4>
-                        <p class="text-gray-300">Sheet Metal</p>
-                    </div>
-                </div>
-                <!-- Item 5 -->
-                <div class="portfolio-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CNC Part 5">
-                    <div class="portfolio-overlay">
-                        <h4 class="text-xl font-bold text-white">Precision Gear</h4>
-                        <p class="text-gray-300">Steel 4140</p>
-                    </div>
-                </div>
-                <!-- Item 6 -->
-                <div class="portfolio-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CNC Part 6">
-                    <div class="portfolio-overlay">
-                        <h4 class="text-xl font-bold text-white">Cooling Plate</h4>
-                        <p class="text-gray-300">Copper Alloy</p>
-                    </div>
+
+                <!-- Right Side: Inquiry Form -->
+                <div class="tech-card p-8 rounded-lg glow-border">
+                    <h3 class="text-2xl font-bold mb-6 font-orbitron">
+                        <span class="lang-content active" data-lang="en">Submit Batch Inquiry</span>
+                        <span class="lang-content hidden" data-lang="zh">提交批量詢盤</span>
+                    </h3>
+                    <form id="inquiryForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-400 mb-2" for="companyName">
+                                    <span class="lang-content active" data-lang="en">Company Name *</span>
+                                    <span class="lang-content hidden" data-lang="zh">公司名稱 *</span>
+                                </label>
+                                <input type="text" id="companyName" class="form-input" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-2" for="email">
+                                    <span class="lang-content active" data-lang="en">Business Email *</span>
+                                    <span class="lang-content hidden" data-lang="zh">企業郵箱 *</span>
+                                </label>
+                                <input type="email" id="email" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-400 mb-2" for="material">
+                                    <span class="lang-content active" data-lang="en">Target Material *</span>
+                                    <span class="lang-content hidden" data-lang="zh">目標材料 *</span>
+                                </label>
+                                <select id="material" class="form-input" required>
+                                    <option value="">Select...</option>
+                                    <option value="6061">6061 Aluminum</option>
+                                    <option value="440c">440C Stainless Steel</option>
+                                    <option value="other">Other Industrial Metal</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-2" for="quantity">
+                                    <span class="lang-content active" data-lang="en">Estimated Annual Quantity *</span>
+                                    <span class="lang-content hidden" data-lang="zh">預計年採購量 *</span>
+                                </label>
+                                <select id="quantity" class="form-input" required>
+                                    <option value="">Select...</option>
+                                    <option value="100-500">100 - 500 pcs</option>
+                                    <option value="500-1000">500 - 1,000 pcs</option>
+                                    <option value="1000+">1,000+ pcs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 mb-2" for="message">
+                                <span class="lang-content active" data-lang="en">Project Details / RFQ *</span>
+                                <span class="lang-content hidden" data-lang="zh">項目細節 / RFQ *</span>
+                            </label>
+                            <textarea id="message" rows="5" class="form-input" required placeholder="Please include material specs, tolerances, and application details."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 mb-2" for="drawings">
+                                <span class="lang-content active" data-lang="en">Upload 2D/3D Drawings (STEP, IGES, PDF) *</span>
+                                <span class="lang-content hidden" data-lang="zh">上傳 2D/3D 圖紙 (STEP, IGES, PDF) *</span>
+                            </label>
+                            <input type="file" id="drawings" class="form-input" accept=".step,.stp,.iges,.igs,.pdf" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn-neon w-full md:w-auto px-12 py-4">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                <span class="lang-content active" data-lang="en">Submit Inquiry</span>
+                                <span class="lang-content hidden" data-lang="zh">提交詢盤</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">
-                <span class="lang-content active" data-lang="en">Submit a Batch Inquiry</span>
-                <span class="lang-content" data-lang="zh">提交批量詢盤</span>
-            </h2>
-            <p class="section-subtitle">
-                <span class="lang-content active" data-lang="en">Strictly B2B. We do not accept personal DIY, single prototypes, or retail inquiries.</span>
-                <span class="lang-content" data-lang="zh">嚴格 B2B 業務。我們不接受個人 DIY、單件打樣或零售諮詢。</span>
-            </p>
-            <div class="contact-form glass-card fade-in-up">
-                <form id="inquiry-form">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                            <label for="company-name" class="form-label">
-                                <span class="lang-content active" data-lang="en">Company Name *</span>
-                                <span class="lang-content" data-lang="zh">公司名稱 *</span>
-                            </label>
-                            <input type="text" id="company-name" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">
-                                <span class="lang-content active" data-lang="en">Business Email *</span>
-                                <span class="lang-content" data-lang="zh">企業郵箱 *</span>
-                            </label>
-                            <input type="email" id="email" class="form-input" required>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                            <label for="material" class="form-label">
-                                <span class="lang-content active" data-lang="en">Target Material *</span>
-                                <span class="lang-content" data-lang="zh">目標材料 *</span>
-                            </label>
-                            <select id="material" class="form-select" required>
-                                <option value="">Select...</option>
-                                <option value="6061-aluminum">6061 Aluminum</option>
-                                <option value="440c-steel">440C Stainless Steel</option>
-                                <option value="other">Other Industrial Metal</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity" class="form-label">
-                                <span class="lang-content active" data-lang="en">Estimated Annual Quantity *</span>
-                                <span class="lang-content" data-lang="zh">預計年採購量 *</span>
-                            </label>
-                            <select id="quantity" class="form-select" required>
-                                <option value="">Select...</option>
-                                <option value="100-500">100 - 500 pcs</option>
-                                <option value="500-1000">500 - 1,000 pcs</option>
-                                <option value="1000+">1,000+ pcs</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">
-                            <span class="lang-content active" data-lang="en">Project Details / RFQ *</span>
-                            <span class="lang-content" data-lang="zh">項目細節 / RFQ *</span>
-                        </label>
-                        <textarea id="message" rows="5" class="form-textarea" required placeholder="Please include material specs, tolerances, and application details."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="drawings" class="form-label">
-                            <span class="lang-content active" data-lang="en">Upload 2D/3D Drawings (STEP, IGES, PDF) *</span>
-                            <span class="lang-content" data-lang="zh">上傳 2D/3D 圖紙 (STEP, IGES, PDF) *</span>
-                        </label>
-                        <input type="file" id="drawings" class="form-input" accept=".step,.stp,.iges,.igs,.pdf" required>
-                    </div>
-                    <div class="text-center mt-8">
-                        <button type="submit" class="btn-primary text-lg px-12 py-4">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            <span class="lang-content active" data-lang="en">Submit Inquiry</span>
-                            <span class="lang-content" data-lang="zh">提交詢盤</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer>
+    <footer class="py-12 bg-[#0a0f1f] border-t border-gray-800">
         <div class="container mx-auto px-6">
-            <div class="footer-grid">
+            <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="footer-title">ANDA INDUSTRIAL</h3>
-                    <p class="text-gray-400 mb-4">
-                        <span class="lang-content active" data-lang="en">Precision manufacturing partner for global B2B clients. ISO 9001 certified since 2018.</span>
-                        <span class="lang-content" data-lang="zh">全球 B2B 客戶的精密製造夥伴。自 2018 年起通過 ISO 9001 認證。</span>
-                    </p>
+                    <h3 class="text-xl font-bold font-orbitron mb-4">
+                        <span class="text-white">ANDA</span> <span class="text-glow-cyan">INDUSTRIAL</span>
+                    </h3>
+                    <p class="text-gray-400 mb-4 lang-content active" data-lang="en">
+                        Precision manufacturing partner for global B2B clients. ISO 9001 certified since 2018.
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">
+                        <span class="lang-content active" data-lang="en">Quick Links</span>
+                        <span class="lang-content hidden" data-lang="zh">快速連結</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Services</span><span class="lang-content hidden" data-lang="zh">服務</span></a></li>
+                        <li><a href="#materials" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Materials</span><span class="lang-content hidden" data-lang="zh">材質</span></a></li>
+                        <li><a href="#inquiry" class="hover:text-cyan-400 transition"><span class="lang-content active" data-lang="en">Inquiry</span><span class="lang-content hidden" data-lang="zh">詢盤</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">
+                        <span class="lang-content active" data-lang="en">Contact Info</span>
+                        <span class="lang-content hidden" data-lang="zh">聯繫資訊</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2 text-cyan-400"></i> sales@andas-industrial.com</li>
+                        <li><i class="fab fa-whatsapp mr-2 text-cyan-400"></i> +86 157 1082 9371</li>
+                        <li><i class="fab fa-line mr-2 text-cyan-400"></i> LINE ID: line247327301</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">
+                        <span class="lang-content active" data-lang="en">Follow Us</span>
+                        <span class="lang-content hidden" data-lang="zh">關注我們</span>
+                    </h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl transition"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h3 class="footer-title">Quick Links</h3>
-                    <a href="#services" class="footer-link">Services</a>
-                    <a href="#materials" class="footer-link">Materials</a>
-                    <a href="#portfolio" class="footer-link">Portfolio</a>
-                    <a href="#contact" class="footer-link">Contact</a>
-                </div>
-                <div>
-                    <h3 class="footer-title">Contact Info</h3>
-                    <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2 text-cyan-400"></i> sales@andas-industrial.com</p>
-                    <p class="text-gray-400 mb-2"><i class="fab fa-whatsapp mr-2 text-cyan-400"></i> +86 157 1082 9371</p>
-                    <p class="text-gray-400"><i class="fab fa-line mr-2 text-cyan-400"></i> LINE ID: line247327301</p>
-                </div>
             </div>
-            <div class="footer-bottom">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; 2026 ANDA INDUSTRIAL. All Rights Reserved. | ISO 9001:2015 Certified Facility</p>
             </div>
         </div>
@@ -1266,32 +604,30 @@
     
     <script>
         // =========================================================
-        // 1. LOADING SCREEN LOGIC
+        // 1. LOADING SCREEN
         // =========================================================
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 1000); // Simulate loading time
+                document.getElementById('loader').style.opacity = '0';
+                document.getElementById('loader').style.visibility = 'hidden';
+            }, 1500);
         });
 
         // =========================================================
-        // 2. LANGUAGE SWITCHER LOGIC
+        // 2. LANGUAGE SWITCHER
         // =========================================================
-        function setLanguage(lang) {
-            // Update button styles
-            document.getElementById('lang-en-header').classList.toggle('bg-cyan-500', lang === 'en');
-            document.getElementById('lang-en-header').classList.toggle('text-black', lang === 'en');
-            document.getElementById('lang-en-header').classList.toggle('text-gray-400', lang !== 'en');
-            
-            document.getElementById('lang-zh-header').classList.toggle('bg-cyan-500', lang === 'zh');
-            document.getElementById('lang-zh-header').classList.toggle('text-black', lang === 'zh');
-            document.getElementById('lang-zh-header').classList.toggle('text-gray-400', lang !== 'zh');
+        function switchLang(lang) {
+            // Update buttons
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
 
-            // Switch all text content
+            // Update all text content
             document.querySelectorAll('.lang-content').forEach(el => {
                 if (el.dataset.lang === lang) {
+                    el.classList.remove('hidden');
                     el.classList.add('active');
                 } else {
+                    el.classList.add('hidden');
                     el.classList.remove('active');
                 }
             });
@@ -1303,98 +639,53 @@
         // =========================================================
         // 3. MOBILE MENU TOGGLE
         // =========================================================
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.remove('active');
-            });
-        });
-
-        // =========================================================
-        // 4. STICKY HEADER ON SCROLL
-        // =========================================================
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // =========================================================
-        // 5. CUSTOM CURSOR (DESKTOP ONLY)
-        // =========================================================
-        const cursor = document.querySelector('.custom-cursor');
-        if (cursor) {
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-
-            document.querySelectorAll('a, button, .glass-card').forEach(item => {
-                item.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                item.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-            });
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
         }
 
         // =========================================================
-        // 6. SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+        // 4. SCROLL PROGRESS BAR
         // =========================================================
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+
+        // =========================================================
+        // 5. COUNTER ANIMATION
+        // =========================================================
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
-
-        // =========================================================
-        // 7. STATS COUNTER ANIMATION
-        // =========================================================
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach(stat => {
-                        const target = parseInt(stat.getAttribute('data-target'));
-                        let current = 0;
-                        const increment = target / 100;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                stat.textContent = target + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('/') ? '/7' : '');
-                                clearInterval(timer);
+                    counters.forEach(counter => {
+                        const updateCount = () => {
+                            const target = +counter.getAttribute('data-target');
+                            const count = +counter.innerText;
+                            const inc = target / speed;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 10);
                             } else {
-                                stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('/') ? '/7' : '');
+                                counter.innerText = target;
                             }
-                        }, 20);
+                        };
+                        updateCount();
                     });
-                    statsObserver.disconnect(); // Stop observing once animated
+                    observer.disconnect();
                 }
             });
         }, { threshold: 0.5 });
 
-        const statsSection = document.getElementById('stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
+        observer.observe(document.querySelector('.counter'));
 
         // =========================================================
-        // 8. PARTICLES.JS CONFIGURATION
+        // 6. PARTICLES.JS CONFIGURATION
         // =========================================================
         particlesJS('particles-js', {
             particles: {
@@ -1431,18 +722,19 @@
         });
 
         // =========================================================
-        // 9. FORM SUBMISSION HANDLER
+        // 7. FORM SUBMISSION
         // =========================================================
-        document.getElementById('inquiry-form').addEventListener('submit', function(e) {
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your inquiry! We will contact you within 24 business hours.');
             this.reset();
         });
 
         // =========================================================
-        // 10. INITIALIZE DEFAULT LANGUAGE
+        // 8. INITIALIZE
         // =========================================================
-        setLanguage('en');
+        // Set default language to English
+        switchLang('en');
     </script>
 </body>
 </html>
