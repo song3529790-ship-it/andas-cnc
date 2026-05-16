@@ -1,1246 +1,448 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ========================================================= -->
-<!-- 第一部分：硬核 SEO 拦截优化代码 -->
-<!-- ========================================================= -->
-<title>ANDAS PRECISION | High-Volume 6061 Aluminum & 440C Steel CNC Machining | ISO 9001 Certified</title>
-<meta name="description" content="Since 2018. ISO 9001 Certified. Specializing in high-volume batch production of 6061 Aluminum & 440C Stainless Steel components. Strategic manufacturing partner for Taiwan & Southeast Asia supply chains.">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://www.andas-precision.com/">
-
-<!-- 核心关键词 -->
-<meta name="keywords" content="6061 aluminum machining, 440c stainless steel processing, cnc batch production, iso 9001 cnc factory, supply chain optimization, taiwan sourcing, southeast asia contract manufacturing, high volume cnc parts">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="ANDAS PRECISION | Batch Production Specialist for Industrial Metals">
-<meta property="og:description" content="ISO 9001 Certified. Specializing in 6061 Aluminum & 440C Steel. Supporting Taiwan & SEA supply chain optimization.">
-<meta property="og:url" content="https://www.andas-precision.com/">
-<meta property="og:image" content="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778946160/andas-cnc-machining-hero-bg_oqizbs.jpg">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ANDAS PRECISION | Industrial Metal Batch Production">
-<meta name="twitter:description" content="ISO 9001 Certified. Specializing in 6061 Aluminum & 440C Steel. Supporting Taiwan & SEA supply chain optimization.">
-<meta name="twitter:image" content="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778946160/andas-cnc-machining-hero-bg_oqizbs.jpg">
-
-<!-- JSON-LD 结构化数据 -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ManufacturingBusiness",
-  "name": "Andas Precision",
-  "alternateName": "Andas Industrial Co., Ltd.",
-  "description": "ISO 9001 certified CNC machining factory specializing in high-volume batch production of 6061 Aluminum and 440C Stainless Steel components. We support B2B trading companies with supply chain optimization strategies.",
-  "foundingDate": "2018",
-  "industry": "Contract Manufacturing",
-  "certification": "ISO 9001",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "CN",
-    "addressRegion": "Guangdong"
-  },
-  "areaServed": [
-    { "@type": "Place", "name": "Taiwan" },
-    { "@type": "Place", "name": "Southeast Asia" },
-    { "@type": "Place", "name": "United States" }
-  ],
-  "knowsAbout": ["Supply Chain Optimization", "Regional Assembly Support", "Batch Production"],
-  "minimumOrderQuantity": "100 Units"
-}
-</script>
-
-<!-- Tailwind CSS & Fonts -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-    /* ========================================================= */
-    /* 全局样式与变量 */
-    /* ========================================================= */
-    :root {
-        --primary: #06b6d4;
-        --primary-dark: #0891b2;
-        --secondary: #ff3366;
-        --dark: #050505;
-        --dark-light: #0a0a0a;
-        --gray: #1a1a1a;
-        --light-gray: #2a2a2a;
-    }
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: var(--dark);
-        color: #e5e7eb;
-        line-height: 1.6;
-        overflow-x: hidden;
-        cursor: none;
-    }
-    
-    .font-display {
-        font-family: 'Space Grotesk', sans-serif;
-    }
-    
-    .font-mono {
-        font-family: 'JetBrains Mono', monospace;
-    }
-    
-    /* ========================================================= */
-    /* 自定义光标 */
-    /* ========================================================= */
-    .cursor-dot {
-        width: 8px;
-        height: 8px;
-        background-color: var(--primary);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease;
-    }
-    
-    .cursor-outline {
-        width: 40px;
-        height: 40px;
-        border: 2px solid rgba(6, 182, 212, 0.5);
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9998;
-        transition: all 0.2s ease-out;
-    }
-    
-    /* ========================================================= */
-    /* 粒子背景动画 */
-    /* ========================================================= */
-    #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-    
-    /* ========================================================= */
-    /* 滚动条样式 */
-    /* ========================================================= */
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-    
-    ::-webkit-scrollbar-track {
-        background: var(--dark);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 3px;
-    }
-    
-    /* ========================================================= */
-    /* 高级动画效果 */
-    /* ========================================================= */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes pulse {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.5;
-        }
-    }
-    
-    @keyframes shimmer {
-        0% {
-            background-position: -200% 0;
-        }
-        100% {
-            background-position: 200% 0;
-        }
-    }
-    
-    @keyframes scanline {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(100%);
-        }
-    }
-    
-    @keyframes glitch {
-        0% {
-            transform: translate(0);
-        }
-        20% {
-            transform: translate(-2px, 2px);
-        }
-        40% {
-            transform: translate(-2px, -2px);
-        }
-        60% {
-            transform: translate(2px, 2px);
-        }
-        80% {
-            transform: translate(2px, -2px);
-        }
-        100% {
-            transform: translate(0);
-        }
-    }
-    
-    .animate-fade-in-up {
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
-    
-    .shimmer-effect {
-        background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-        background-size: 200% 100%;
-        animation: shimmer 3s infinite;
-    }
-    
-    .scanline-effect {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .scanline-effect::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary), transparent);
-        animation: scanline 4s linear infinite;
-    }
-    
-    .glitch-effect {
-        animation: glitch 0.3s ease-in-out;
-    }
-    
-    /* ========================================================= */
-    /* 产品卡片悬停效果 */
-    /* ========================================================= */
-    .product-card {
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .product-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.25);
-    }
-    
-    .product-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-        transition: left 0.7s ease;
-        z-index: 1;
-    }
-    
-    .product-card:hover::before {
-        left: 100%;
-    }
-    
-    /* ========================================================= */
-    /* 语言切换样式 */
-    /* ========================================================= */
-    .lang-content {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .lang-content.active {
-        display: block;
-        opacity: 1;
-    }
-    
-    /* ========================================================= */
-    /* 按钮样式 */
-    /* ========================================================= */
-    .btn-primary {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
-    }
-    
-    .btn-primary::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.7s ease;
-    }
-    
-    .btn-primary:hover::before {
-        left: 100%;
-    }
-    
-    /* ========================================================= */
-    /* 分区分隔线 */
-    /* ========================================================= */
-    .section-divider {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--primary), transparent);
-        position: relative;
-    }
-    
-    .section-divider::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 10px;
-        height: 10px;
-        background-color: var(--primary);
-        border-radius: 50%;
-        box-shadow: 0 0 20px var(--primary);
-    }
-    
-    /* ========================================================= */
-    /* 图片覆盖效果 */
-    /* ========================================================= */
-    .image-overlay {
-        position: relative;
-    }
-    
-    .image-overlay::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to top, rgba(5, 5, 5, 0.8) 0%, transparent 50%);
-        pointer-events: none;
-    }
-    
-    /* ========================================================= */
-    /* 网格背景 */
-    /* ========================================================= */
-    .grid-background {
-        background-image: 
-            linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
-        background-size: 50px 50px;
-    }
-    
-    /* ========================================================= */
-    /* 全息投影效果 */
-    /* ========================================================= */
-    .holographic {
-        position: relative;
-    }
-    
-    .holographic::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            45deg,
-            transparent 30%,
-            rgba(6, 182, 212, 0.1) 50%,
-            transparent 70%
-        );
-        animation: shimmer 3s infinite;
-        pointer-events: none;
-    }
-    
-    /* ========================================================= */
-    /* 响应式调整 */
-    /* ========================================================= */
-    @media (max-width: 768px) {
-        body {
-            cursor: auto;
-        }
-        
-        .cursor-dot,
-        .cursor-outline {
-            display: none;
-        }
-        
-        .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        
-        h1 {
-            font-size: 3rem !important;
-        }
-        
-        h2 {
-            font-size: 2.5rem !important;
-        }
-    }
-</style>
-</head>
-
-<body class="antialiased">
-
-<div class="cursor-dot"></div>
-
-<div class="cursor-outline"></div>
-<!-- 粒子背景 -->
-<div id="particles-js"></div>
-
-<!-- ========================================================= -->
-<!-- 导航栏 -->
-<!-- ========================================================= -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-800">
-    <div class="container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <span class="font-display font-bold text-xl text-white">A</span>
-                </div>
-                <div>
-                    <span class="font-display font-bold text-xl text-white tracking-wider">ANDAS</span>
-                    <span class="text-cyan-400 text-sm ml-1">PRECISION</span>
-                </div>
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="nav-link text-white hover:text-cyan-400 transition-colors font-medium">Home</a>
-                <a href="#capabilities" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Capabilities</a>
-                <a href="#supply-chain" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">
-                    <span class="lang-content active" data-lang="en">Supply Chain</span>
-                    <span class="lang-content" data-lang="zh">供應鏈協同</span>
-                </a>
-                <a href="#portfolio" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Portfolio</a>
-                <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition-colors font-medium">Contact</a>
-            </div>
-            
-            <!-- Language Switcher -->
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center bg-gray-900 rounded-full p-1">
-                    <button onclick="setLanguage('en')" id="lang-en" class="lang-btn px-4 py-1.5 rounded-full text-sm font-medium transition-all bg-cyan-500 text-black">EN</button>
-                    <button onclick="setLanguage('zh')" id="lang-zh" class="lang-btn px-4 py-1.5 rounded-full text-sm font-medium transition-all text-gray-400 hover:text-white">繁體</button>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-800">
-            <div class="flex flex-col space-y-4 pt-4">
-                <a href="#home" class="text-white hover:text-cyan-400 transition-colors">Home</a>
-                <a href="#capabilities" class="text-gray-300 hover:text-cyan-400 transition-colors">Capabilities</a>
-                <a href="#supply-chain" class="text-gray-300 hover:text-cyan-400 transition-colors">
-                    <span class="lang-content active" data-lang="en">Supply Chain</span>
-                    <span class="lang-content" data-lang="zh">供應鏈協同</span>
-                </a>
-                <a href="#portfolio" class="text-gray-300 hover:text-cyan-400 transition-colors">Portfolio</a>
-                <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- ========================================================= -->
-<!-- 1. 英雄区域 (Hero Section) - 使用您的视频背景 -->
-<!-- ========================================================= -->
-<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-    <!-- 视频背景（已添加 vc_auto,q_auto 参数） -->
-    <video class="absolute inset-0 w-full h-full object-cover opacity-60" 
-            src="https://res.cloudinary.com/dpjjfd8pf/video/upload/vc_auto,q_auto/v1778946160/andas-cnc-machining-hero-bg_oqizbs.mp4" 
-            autoplay muted loop playsinline></video>
-    
-    <!-- 网格背景 -->
-    <div class="absolute inset-0 grid-background opacity-30"></div>
-    
-    <!-- 扫描线效果 -->
-    <div class="absolute inset-0 scanline-effect"></div>
-    
-    <!-- 装饰性元素 -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-5xl mx-auto text-center">
-            <!-- 状态指示器 -->
-            <div class="inline-flex items-center bg-cyan-500/10 border border-cyan-500/20 rounded-full px-6 py-2 mb-8 animate-fade-in-up">
-                <span class="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></span>
-                <span class="text-cyan-400 font-medium text-sm font-mono">
-                    <span class="lang-content active" data-lang="en">ESTABLISHED 2018 • ISO 9001 CERTIFIED • BATCH PRODUCTION SPECIALIST</span>
-                    <span class="lang-content" data-lang="zh">成立於 2018 年 • ISO 9001 認證 • 批量生產專家</span>
-                </span>
-            </div>
-            
-            <!-- 主标题 -->
-            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">
-                <span class="text-white">PRECISION</span><br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 holographic">MANUFACTURING</span>
-            </h1>
-            
-            <!-- 副标题 -->
-            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s;">
-                <span class="lang-content active" data-lang="en">
-                    High-volume CNC machining specialists for 6061 Aluminum & 440C Stainless Steel. 
-                    Strategic manufacturing partner for Taiwan & Southeast Asia supply chains.
-                </span>
-                <span class="lang-content" data-lang="zh">
-                    6061 鋁與 440C 不鏽鋼大批量 CNC 加工專家。台灣及東南亞供應鏈的策略性製造合作夥伴。
-                </span>
-            </p>
-            
-            <!-- CTA 按钮 -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 animate-fade-in-up" style="animation-delay: 0.6s;">
-                <a href="#contact" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center">
-                    <i class="fas fa-paper-plane mr-3"></i>
-                    <span class="lang-content active" data-lang="en">Submit Batch Inquiry</span>
-                    <span class="lang-content" data-lang="zh">提交批量詢盤</span>
-                </a>
-                <a href="#capabilities" class="px-8 py-4 rounded-lg font-semibold text-lg border-2 border-gray-700 hover:border-cyan-500 text-white hover:text-cyan-400 transition-all flex items-center justify-center">
-                    <i class="fas fa-eye mr-3"></i>
-                    <span class="lang-content active" data-lang="en">Explore Capabilities</span>
-                    <span class="lang-content" data-lang="zh">探索製造能力</span>
-                </a>
-            </div>
-            
-            <!-- 统计数据 -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up" style="animation-delay: 0.8s;">
-                <div class="text-center">
-                    <div class="font-display text-3xl md:text-4xl font-bold text-cyan-400 mb-2">5+</div>
-                    <div class="text-gray-400 text-sm">
-                        <span class="lang-content active" data-lang="en">Years Experience</span>
-                        <span class="lang-content" data-lang="zh">年專業經驗</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="font-display text-3xl md:text-4xl font-bold text-cyan-400 mb-2">±0.01mm</div>
-                    <div class="text-gray-400 text-sm">
-                        <span class="lang-content active" data-lang="en">Precision Tolerance</span>
-                        <span class="lang-content" data-lang="zh">精密公差標準</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="font-display text-3xl md:text-4xl font-bold text-cyan-400 mb-2">100%</div>
-                    <div class="text-gray-400 text-sm">
-                        <span class="lang-content active" data-lang="en">Quality Inspection</span>
-                        <span class="lang-content" data-lang="zh">全檢品質保證</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="font-display text-3xl md:text-4xl font-bold text-cyan-400 mb-2">24/7</div>
-                    <div class="text-gray-400 text-sm">
-                        <span class="lang-content active" data-lang="en">Engineering Support</span>
-                        <span class="lang-content" data-lang="zh">工程技術支援</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 滚动指示器 -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div class="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-            <div class="w-1 h-3 bg-cyan-400 rounded-full mt-2"></div>
-        </div>
-    </div>
-</section>
-
-<!-- ========================================================= -->
-<!-- 2. 品牌墙 (使用您的品牌图片) -->
-<!-- ========================================================= -->
-<section class="py-12 bg-black border-y border-gray-800">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-8">
-            <p class="text-gray-500 font-mono text-sm">
-                <span class="lang-content active" data-lang="en">TRUSTED BY INDUSTRY LEADERS WORLDWIDE</span>
-                <span class="lang-content" data-lang="zh">全球產業領導者信賴之選</span>
-            </p>
-        </div>
-        <div class="flex justify-center items-center">
-            <!-- 使用您的品牌墙图片（已添加 q_auto,f_auto 参数 + 加载失败透明背景） -->
-            <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778949034/andas-automotive-machinery-brand-logo-wall_aldrd4.jpg" 
-                 class="w-full max-w-6xl h-auto brightness-0 invert mix-blend-screen contrast-125 opacity-80 hover:opacity-100 transition-opacity duration-500"
-                 alt="Automotive and Machinery Brand Logos"
-                 onerror="this.style.background='transparent';this.style.border='none';">
-        </div>
-    </div>
-</section>
-
-<!-- ========================================================= -->
-<!-- 3. 核心能力 (使用您的图片) -->
-<!-- ========================================================= -->
-<section id="capabilities" class="py-24 bg-gradient-to-b from-black to-gray-900">
-    <div class="container mx-auto px-6">
-        <!-- 标题 -->
-        <div class="text-center mb-20">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                <span class="lang-content active" data-lang="en">CORE MANUFACTURING CAPABILITIES</span>
-                <span class="lang-content" data-lang="zh">核心製造能力</span>
-            </h2>
-            <div class="section-divider w-24 mx-auto mb-8"></div>
-            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                <span class="lang-content active" data-lang="en">
-                    Specialized in high-volume production of industrial metals. We focus exclusively on 6061 Aluminum 
-                    and 440C Stainless Steel components for demanding B2B applications.
-                </span>
-                <span class="lang-content" data-lang="zh">
-                    專注於工業金屬的大批量生產。我們專精於 6061 鋁與 440C 不鏽鋼零件，滿足苛刻的 B2B 應用需求。
-                </span>
-            </p>
-        </div>
-        
-        <!-- 能力网格 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 6061 Aluminum -->
-            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 hover:border-cyan-500/50 transition-all duration-300 group product-card">
-                <div class="w-16 h-16 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                    <i class="fas fa-cube text-cyan-400 text-2xl"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold text-white mb-4">
-                    <span class="lang-content active" data-lang="en">6061 Aluminum Machining</span>
-                    <span class="lang-content" data-lang="zh">6061 鋁合金加工</span>
-                </h3>
-                <p class="text-gray-400 mb-6">
-                    <span class="lang-content active" data-lang="en">
-                        High-speed 3, 4, and 5-axis milling of 6061-T6 aluminum. Ideal for structural components 
-                        requiring high strength-to-weight ratios and excellent corrosion resistance.
-                    </span>
-                    <span class="lang-content" data-lang="zh">
-                        6061-T6 鋁合金的高速 3、4、5 軸銑削。適用於要求高強度重量比和優異耐腐蝕性的結構件。
-                    </span>
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Tolerance: ±0.01mm</span>
-                        <span class="lang-content" data-lang="zh">公差：±0.01mm</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">High-Volume Batch Focus</span>
-                        <span class="lang-content" data-lang="zh">專注大批量生產</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Structural Applications</span>
-                        <span class="lang-content" data-lang="zh">結構性應用</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- 440C Steel -->
-            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 hover:border-cyan-500/50 transition-all duration-300 group product-card">
-                <div class="w-16 h-16 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                    <i class="fas fa-cogs text-cyan-400 text-2xl"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold text-white mb-4">
-                    <span class="lang-content active" data-lang="en">440C Steel Processing</span>
-                    <span class="lang-content" data-lang="zh">440C 鋼加工</span>
-                </h3>
-                <p class="text-gray-400 mb-6">
-                    <span class="lang-content active" data-lang="en">
-                        Precision machining of hardened 440C stainless steel. Expertise in maintaining dimensional 
-                        stability on high-hardness materials for wear-resistant applications.
-                    </span>
-                    <span class="lang-content" data-lang="zh">
-                        硬化 440C 不鏽鋼的精密加工。擅長在高硬度材料上保持尺寸穩定性，用於耐磨應用。
-                    </span>
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Hardness up to HRC 58</span>
-                        <span class="lang-content" data-lang="zh">硬度高達 HRC 58</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Wear-Resistant Parts</span>
-                        <span class="lang-content" data-lang="zh">耐磨零件加工</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Precision Ground Finish</span>
-                        <span class="lang-content" data-lang="zh">精密研磨表面</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- Secondary Operations -->
-            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 hover:border-cyan-500/50 transition-all duration-300 group product-card">
-                <div class="w-16 h-16 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
-                    <i class="fas fa-industry text-cyan-400 text-2xl"></i>
-                </div>
-                <h3 class="font-display text-2xl font-bold text-white mb-4">
-                    <span class="lang-content active" data-lang="en">Secondary Operations</span>
-                    <span class="lang-content" data-lang="zh">二次加工</span>
-                </h3>
-                <p class="text-gray-400 mb-6">
-                    <span class="lang-content active" data-lang="en">
-                        Complete finishing services including anodizing, passivation, heat treatment, and laser marking 
-                        to meet your exact specifications and aesthetic requirements.
-                    </span>
-                    <span class="lang-content" data-lang="zh">
-                        完整的後處理服務，包含陽極氧化、鈍化、熱處理及雷射雕刻，滿足您精確的規格與外觀需求。
-                    </span>
-                </p>
-                <ul class="space-y-2 text-gray-300">
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Anodizing & Plating</span>
-                        <span class="lang-content" data-lang="zh">陽極氧化與電鍍</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">Heat Treatment</span>
-                        <span class="lang-content" data-lang="zh">熱處理工藝</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check text-cyan-400 mr-3 text-sm"></i>
-                        <span class="lang-content active" data-lang="en">100% Dimensional Inspection</span>
-                        <span class="lang-content" data-lang="zh">全尺寸檢測</span>
-                    </li>
-                </ul>
-                <!-- 工程塑料件图片（已添加 q_auto,f_auto 参数 + 加载失败透明背景） -->
-                <div class="mt-6">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778946342/engineering-plastic-machining-pom-acrylic-parts_whtl5r.png" 
-                         alt="Engineering Plastic Machining Parts" 
-                         class="w-full h-48 object-cover rounded-lg product-card"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-            </div>
-        </div>
-        
-        <!-- 质量控制 (使用您的图片) -->
-        <div class="mt-16 bg-gray-900/30 border border-gray-800 rounded-2xl p-8 md:p-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="font-display text-3xl font-bold text-white mb-6">
-                        <span class="lang-content active" data-lang="en">Quality Assurance System</span>
-                        <span class="lang-content" data-lang="zh">品質保證體系</span>
-                    </h3>
-                    <p class="text-gray-400 mb-8">
-                        <span class="lang-content active" data-lang="en">
-                            Our ISO 9001 certified quality management system ensures consistent precision across all production batches. 
-                            Climate-controlled metrology lab with advanced CMM (Coordinate Measuring Machine) technology.
-                        </span>
-                        <span class="lang-content" data-lang="zh">
-                            我們的 ISO 9001 認證品質管理體系確保所有生產批次的一致性精度。恆溫檢測室配備先進的三座標測量儀（CMM）技術。
-                        </span>
-                    </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-ruler-combined text-cyan-400 mr-3"></i>
-                            <span class="text-gray-300">
-                                <span class="lang-content active" data-lang="en">CMM Inspection</span>
-                                <span class="lang-content" data-lang="zh">CMM 檢測</span>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-clipboard-check text-cyan-400 mr-3"></i>
-                            <span class="text-gray-300">
-                                <span class="lang-content active" data-lang="en">First Article Approval</span>
-                                <span class="lang-content" data-lang="zh">首件檢驗批准</span>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-chart-line text-cyan-400 mr-3"></i>
-                            <span class="text-gray-300">
-                                <span class="lang-content active" data-lang="en">Statistical Process Control</span>
-                                <span class="lang-content" data-lang="zh">統計製程管制</span>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-file-alt text-cyan-400 mr-3"></i>
-                            <span class="text-gray-300">
-                                <span class="lang-content active" data-lang="en">Full Documentation</span>
-                                <span class="lang-content" data-lang="zh">完整文件記錄</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <!-- 三坐标检测主图（已添加 q_auto,f_auto 参数 + 加载失败透明背景） -->
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778946129/iso9001-cnc-factory-quality-control-cmm_ngfo1b.jpg" 
-                         alt="ISO9001 Factory Quality Control CMM" 
-                         class="rounded-xl image-overlay product-card"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                    <div class="absolute -bottom-6 -right-6 bg-cyan-500 text-black p-4 rounded-lg font-bold font-mono">
-                        <span class="lang-content active" data-lang="en">ISO 9001</span>
-                        <span class="lang-content" data-lang="zh">ISO 9001</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========================================================= -->
-<!-- 4. 供应链协同方案 (安全表述版) -->
-<!-- ========================================================= -->
-<section id="supply-chain" class="py-24 bg-black">
-    <div class="container mx-auto px-6">
-        <div class="max-w-6xl mx-auto">
-            <!-- 标题 -->
+    <!-- ========================================================= -->
+    <!-- 5. 案例展示 (Portfolio) -->
+    <!-- ========================================================= -->
+    <section id="portfolio" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                    <span class="lang-content active" data-lang="en">Supply Chain Optimization Solutions</span>
-                    <span class="lang-content" data-lang="zh">供應鏈協同優化解決方案</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-white">
+                        <span class="lang-content active" data-lang="en">MANUFACTURING</span>
+                        <span class="lang-content" data-lang="zh">製造</span>
+                    </span>
+                    <span class="text-cyan-400">
+                        <span class="lang-content active" data-lang="en">PORTFOLIO</span>
+                        <span class="lang-content" data-lang="zh">作品集</span>
+                    </span>
                 </h2>
-                <div class="section-divider w-24 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-400 max-w-4xl mx-auto">
-                    <span class="lang-content active" data-lang="en">
-                        Strategic manufacturing support for optimized regional assembly. We help trading companies 
-                        streamline their supply chains while maintaining competitive cost structures.
-                    </span>
-                    <span class="lang-content" data-lang="zh">
-                        針對區域組裝優化的策略性製造支援。我們協助貿易商簡化供應鏈流程，同時維持具競爭力的成本結構。
-                    </span>
+                <p class="text-gray-400 max-w-3xl mx-auto">
+                    <span class="lang-content active" data-lang="en">Explore our precision-machined components across diverse industries. Each part reflects our commitment to accuracy and durability.</span>
+                    <span class="lang-content" data-lang="zh">探索我們跨足各產業的精密加工零件。每個部件都體現了我們對精度與耐用性的承諾。</span>
                 </p>
             </div>
-            
-            <!-- 方案说明 -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                <!-- 左侧：挑战 -->
-                <div class="bg-red-950/30 border border-red-900/50 rounded-2xl p-8">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-exclamation-triangle text-red-400 text-3xl mr-4"></i>
-                        <h3 class="font-display text-2xl font-bold text-red-400">
-                            <span class="lang-content active" data-lang="en">Market Challenges</span>
-                            <span class="lang-content" data-lang="zh">市場挑戰</span>
-                        </h3>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Item 1: Telecom Enclosure -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938294/telecom-enclosure-black-anodized-box-machining_ebzbdf.jpg" 
+                            alt="Telecom Enclosure Black Anodized Box Machining" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-server text-4xl"></i>
+                        </div>
                     </div>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-start">
-                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
-                            <span class="lang-content active" data-lang="en">Fluctuating international trade policies affecting cost structures.</span>
-                            <span class="lang-content" data-lang="zh">波動的國際貿易政策影響成本結構。</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
-                            <span class="lang-content active" data-lang="en">Need for flexible regional assembly options to optimize logistics.</span>
-                            <span class="lang-content" data-lang="zh">需要靈活的區域組裝選項來優化物流。</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
-                            <span class="lang-content active" data-lang="en">Maintaining quality consistency across distributed manufacturing networks.</span>
-                            <span class="lang-content" data-lang="zh">在分散的製造網路中維持品質一致性。</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- 右侧：我们的方案 -->
-                <div class="bg-cyan-950/30 border border-cyan-900/50 rounded-2xl p-8">
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-shield-alt text-cyan-400 text-3xl mr-4"></i>
-                        <h3 class="font-display text-2xl font-bold text-cyan-400">
-                            <span class="lang-content active" data-lang="en">Our Capacity-Only Solution</span>
-                            <span class="lang-content" data-lang="zh">我們的純產能解決方案</span>
-                        </h3>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Telecom Enclosures</span>
+                            <span class="lang-content" data-lang="zh">通訊機箱</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
                     </div>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-cyan-500 mt-1 mr-3"></i>
-                            <span class="lang-content active" data-lang="en">We machine core 6061 & 440C parts only, ensuring highest precision.</span>
-                            <span class="lang-content" data-lang="zh">我們僅負責核心 6061 與 440C 零件加工，確保最高精度。</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-cyan-500 mt-1 mr-3"></i>
-                            <span class="lang-content active" data-lang="en">Flexible shipping to Taiwan/SEA for regional final assembly.</span>
-                            <span class="lang-content" data-lang="zh">靈活發貨至台灣/東南亞進行區域最終組裝。</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-cyan-500 mt-1 mr-3"></i>
-                            <span class="lang-content active" data-lang="en">Support optimized product composition strategies for better logistics.</span>
-                            <span class="lang-content" data-lang="zh">支援優化的產品構成策略，改善物流效率。</span>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-            
-            <!-- 合作定位 -->
-            <div class="text-center bg-gray-900/50 border border-gray-800 rounded-xl p-8">
-                <p class="text-lg text-gray-300 italic">
-                    <span class="lang-content active" data-lang="en">
-                        "We are your invisible technical backbone. We never touch your end-customers, nor compete for your projects. 
-                        We simply provide the most stable, high-volume precision machining capacity so you can win bigger contracts."
-                    </span>
-                    <span class="lang-content" data-lang="zh">
-                        「我們是您隱形的技術後盾。我們絕不接觸您的終端客戶，也不競爭您的項目。我們僅提供最穩定的大批量精密加工產能，助您贏得更大的訂單。」
-                    </span>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- ========================================================= -->
-<!-- 5. 产品展示 (使用您的10个样件图片) -->
-<!-- ========================================================= -->
-<section id="portfolio" class="py-24 bg-gradient-to-b from-gray-900 to-black">
-    <div class="container mx-auto px-6">
-        <!-- 标题 -->
-        <div class="text-center mb-16">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                <span class="lang-content active" data-lang="en">MANUFACTURING PORTFOLIO</span>
-                <span class="lang-content" data-lang="zh">製造作品集</span>
-            </h2>
-            <div class="section-divider w-24 mx-auto mb-8"></div>
-            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                <span class="lang-content active" data-lang="en">
-                    Explore our portfolio of precision-manufactured components across various industries and applications.
-                </span>
-                <span class="lang-content" data-lang="zh">
-                    探索我們跨足各產業與應用的精密製造零件作品集。
-                </span>
-            </p>
-        </div>
-        
-        <!-- 样件网格 - 使用您的10个图片（全部添加 q_auto,f_auto 参数 + 加载失败透明背景） -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            <!-- 样件 1（改装红盖） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938329/custom-automotive-racing-parts-cnc-milling_da3wc3.jpg" 
-                         alt="Custom Automotive Racing Parts" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
+                <!-- Item 2: Robotics Structures -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/robotics-automation-precision-structure-components_q1fqmz.jpg" 
+                            alt="Robotics Automation Precision Structure Components" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-robot text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Robotics Structures</span>
+                            <span class="lang-content" data-lang="zh">機器人結構件</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">440C Stainless Steel</p>
+                    </div>
                 </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Racing Components</span>
-                        <span class="lang-content" data-lang="zh">賽車零件</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
-                </div>
-            </div>
-            
-            <!-- 样件 2（镭雕件） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938328/premium-surface-treatment-laser-engraving_xsgg3j.jpg" 
-                         alt="Premium Surface Treatment Laser Engraving Parts" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Laser Engraved Parts</span>
-                        <span class="lang-content" data-lang="zh">雷射雕刻零件</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">440C Stainless Steel</p>
-                </div>
-            </div>
-            
-            <!-- 样件 3（阳极全景） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/andas-cnc-machining-hero-bg_zn6uzu.jpg" 
-                         alt="Anodized Panoramic Components" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Anodized Components</span>
-                        <span class="lang-content" data-lang="zh">陽極氧化零件</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
-                </div>
-            </div>
-            
-            <!-- 样件 4（多孔组合） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/custom-machined-metal-components-portfolio_jb5qjk.jpg" 
-                         alt="Custom Machined Metal Components Portfolio" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Metal Component Sets</span>
-                        <span class="lang-content" data-lang="zh">金屬零件套組</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">Mixed Alloys</p>
-                </div>
-            </div>
-            
-            <!-- 样件 5（自动化结构件） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/robotics-automation-precision-structure-components_q1fqmz.jpg" 
-                         alt="Robotics Automation Precision Structure Components" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Robotics Structures</span>
-                        <span class="lang-content" data-lang="zh">機器人結構件</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">440C Stainless Steel</p>
-                </div>
-            </div>
-            
-            <!-- 样件 6（数控车床件） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938302/high-precision-cnc-turning-lathe-services_kamhwl.jpg" 
-                         alt="High Precision CNC Turning Lathe Services" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Turned Components</span>
-                        <span class="lang-content" data-lang="zh">車削零件</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
-                </div>
-            </div>
-            
-            <!-- 样件 7（黑色深腔箱体） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938294/telecom-enclosure-black-anodized-box-machining_ebzbdf.jpg" 
-                         alt="Telecom Enclosure Black Anodized Box Machining" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Enclosure Boxes</span>
-                        <span class="lang-content" data-lang="zh">機箱外殼</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">Black Anodized Aluminum</p>
-                </div>
-            </div>
-            
-            <!-- 样件 8（五轴高亮铝块） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938284/precision-5-axis-cnc-milling-aluminum_ouxi8d.jpg" 
-                         alt="Precision 5-Axis CNC Milling Aluminum" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">5-Axis Milled Blocks</span>
-                        <span class="lang-content" data-lang="zh">五軸銑削鋁塊</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
-                </div>
-            </div>
-            
-            <!-- 样件 9（密集散热片） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938273/multi-axis-cnc-milling-anodized-heatsink_towaht.jpg" 
-                         alt="Multi-Axis CNC Milling Anodized Heatsink" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Heatsinks</span>
-                        <span class="lang-content" data-lang="zh">散熱片</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">Anodized Aluminum</p>
-                </div>
-            </div>
-            
-            <!-- 样件 10（数码结构件） -->
-            <div class="product-card bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden group">
-                <div class="aspect-square overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938265/consumer-electronics-cnc-machining-gopro-parts_uiy099.jpg" 
-                         alt="Consumer Electronics CNC Machining GoPro Parts" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                         onerror="this.style.background='transparent';this.style.border='none';">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-display text-lg font-bold text-white mb-1">
-                        <span class="lang-content active" data-lang="en">Electronics Parts</span>
-                        <span class="lang-content" data-lang="zh">電子零件</span>
-                    </h3>
-                    <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- ========================================================= -->
-<!-- 6. 联系我们 -->
-<!-- ========================================================= -->
-<section id="contact" class="py-24 bg-black border-t border-gray-800">
-    <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-                <span class="lang-content active" data-lang="en">READY TO START YOUR PROJECT?</span>
-                <span class="lang-content" data-lang="zh">準備開始您的項目？</span>
-            </h2>
-            <p class="text-xl text-gray-400 mb-12">
-                <span class="lang-content active" data-lang="en">
-                    Contact us today to discuss your high-volume CNC machining requirements. Our team is ready to support your supply chain optimization goals.
-                </span>
-                <span class="lang-content" data-lang="zh">
-                    立即聯繫我們討論您的大批量 CNC 加工需求。我們的團隊已準備好支持您的供應鏈優化目標。
-                </span>
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="mailto:info@andas-precision.com" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center">
-                    <i class="fas fa-envelope mr-3"></i>
-                    <span class="lang-content active" data-lang="en">Email Us</span>
-                    <span class="lang-content" data-lang="zh">發送郵件</span>
-                </a>
-                <a href="tel:+8612345678901" class="px-8 py-4 rounded-lg font-semibold text-lg border-2 border-gray-700 hover:border-cyan-500 text-white hover:text-cyan-400 transition-all flex items-center justify-center">
-                    <i class="fas fa-phone mr-3"></i>
-                    <span class="lang-content active" data-lang="en">Call Us</span>
-                    <span class="lang-content" data-lang="zh">撥打電話</span>
-                </a>
+                <!-- Item 3: Consumer Electronics -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938265/consumer-electronics-cnc-machining-gopro-parts_uiy099.jpg" 
+                            alt="Consumer Electronics CNC Machining GoPro Parts" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-microchip text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Electronics Parts</span>
+                            <span class="lang-content" data-lang="zh">電子零件</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: 5-Axis Milling -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938284/precision-5-axis-cnc-milling-aluminum_ouxi8d.jpg" 
+                            alt="Precision 5-Axis CNC Milling Aluminum" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-cogs text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">5-Axis Milled Blocks</span>
+                            <span class="lang-content" data-lang="zh">五軸銑削鋁塊</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Heatsinks -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938273/multi-axis-cnc-milling-anodized-heatsink_towaht.jpg" 
+                            alt="Multi-Axis CNC Milling Anodized Heatsink" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-temperature-low text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Heatsinks</span>
+                            <span class="lang-content" data-lang="zh">散熱片</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">Anodized Aluminum</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: CNC Turning -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938302/high-precision-cnc-turning-lathe-services_kamhwl.jpg" 
+                            alt="High Precision CNC Turning Lathe Services" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-sync-alt text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Turned Components</span>
+                            <span class="lang-content" data-lang="zh">車削零件</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
+                    </div>
+                </div>
+
+                <!-- Item 7: Custom Metal Components -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/custom-machined-metal-components-portfolio_jb5qjk.jpg" 
+                            alt="Custom Machined Metal Components Portfolio" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-layer-group text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Metal Component Sets</span>
+                            <span class="lang-content" data-lang="zh">金屬零件套組</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">Mixed Alloys</p>
+                    </div>
+                </div>
+
+                <!-- Item 8: Anodized Components -->
+                <div class="product-card group">
+                    <div class="img-container rounded-xl overflow-hidden">
+                        <img 
+                            src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/andas-cnc-machining-hero-bg_zn6uzu.jpg" 
+                            alt="Anodized Panoramic Components" 
+                            loading="lazy"
+                            onerror="this.classList.add('hidden'); this.nextElementSibling.style.opacity='1';">
+                        <div class="fallback-icon">
+                            <i class="fas fa-cube text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-display font-bold text-white">
+                            <span class="lang-content active" data-lang="en">Anodized Components</span>
+                            <span class="lang-content" data-lang="zh">陽極氧化零件</span>
+                        </h4>
+                        <p class="text-gray-400 text-sm">6061-T6 Aluminum</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ========================================================= -->
-<!-- 页脚 -->
-<!-- ========================================================= -->
-<footer class="py-12 bg-gray-900 border-t border-gray-800">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-3 mb-6 md:mb-0">
-                <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <span class="font-display font-bold text-lg text-white">A</span>
+    <!-- 分隔线 -->
+    <div class="section-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 6. 联系我们 (Contact) -->
+    <!-- ========================================================= -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Left: Contact Info -->
+                <div class="lg:w-1/2">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
+                        <span class="text-white">
+                            <span class="lang-content active" data-lang="en">GET IN</span>
+                            <span class="lang-content" data-lang="zh">取得</span>
+                        </span>
+                        <span class="text-cyan-400">
+                            <span class="lang-content active" data-lang="en">TOUCH</span>
+                            <span class="lang-content" data-lang="zh">聯繫</span>
+                        </span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8">
+                        <span class="lang-content active" data-lang="en">Ready to start your next project? Contact us today for a free consultation and quote. We're here to support your manufacturing needs.</span>
+                        <span class="lang-content" data-lang="zh">準備好開始您的下一個項目了嗎？立即聯繫我們獲取免費諮詢與報價。我們隨時準備支持您的製造需求。</span>
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">
+                                    <span class="lang-content active" data-lang="en">Email Us</span>
+                                    <span class="lang-content" data-lang="zh">電子郵件</span>
+                                </h4>
+                                <a href="mailto:sales@andas-precision.com" class="text-cyan-400 hover:underline">sales@andas-precision.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">
+                                    <span class="lang-content active" data-lang="en">Call Us</span>
+                                    <span class="lang-content" data-lang="zh">電話聯繫</span>
+                                </h4>
+                                <a href="tel:+8612345678901" class="text-cyan-400 hover:underline">+86 123 4567 8901</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">
+                                    <span class="lang-content active" data-lang="en">WhatsApp</span>
+                                    <span class="lang-content" data-lang="zh">WhatsApp</span>
+                                </h4>
+                                <a href="https://wa.me/8612345678901" target="_blank" class="text-cyan-400 hover:underline">+86 123 4567 8901</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-cyan-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">
+                                    <span class="lang-content active" data-lang="en">Location</span>
+                                    <span class="lang-content" data-lang="zh">地址</span>
+                                </h4>
+                                <p class="text-gray-400">Dongguan, Guangdong, China</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span class="font-display font-bold text-lg text-white tracking-wider">ANDAS</span>
-                    <span class="text-cyan-400 text-xs ml-1">PRECISION</span>
+
+                <!-- Right: Contact Form -->
+                <div class="lg:w-1/2 bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                    <h3 class="font-display text-2xl font-bold text-white mb-6">
+                        <span class="lang-content active" data-lang="en">Send us a Message</span>
+                        <span class="lang-content" data-lang="zh">發送訊息</span>
+                    </h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-400 mb-2">
+                                    <span class="lang-content active" data-lang="en">Name *</span>
+                                    <span class="lang-content" data-lang="zh">姓名 *</span>
+                                </label>
+                                <input type="text" id="name" required class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-400 mb-2">
+                                    <span class="lang-content active" data-lang="en">Email *</span>
+                                    <span class="lang-content" data-lang="zh">電子郵件 *</span>
+                                </label>
+                                <input type="email" id="email" required class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-400 mb-2">
+                                <span class="lang-content active" data-lang="en">Subject *</span>
+                                <span class="lang-content" data-lang="zh">主旨 *</span>
+                            </label>
+                            <input type="text" id="subject" required class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 mb-2">
+                                <span class="lang-content active" data-lang="en">Message *</span>
+                                <span class="lang-content" data-lang="zh">訊息內容 *</span>
+                            </label>
+                            <textarea id="message" rows="5" required class="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-primary w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-3"></i>
+                                <span class="lang-content active" data-lang="en">Send Message</span>
+                                <span class="lang-content" data-lang="zh">發送訊息</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="text-gray-500 text-sm font-mono">
-                © 2024 Andas Precision. All Rights Reserved. ISO 9001 Certified.
             </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<!-- JavaScript -->
-<script>
-    // 语言切换功能
-    function setLanguage(lang) {
-        // 更新按钮状态
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.remove('bg-cyan-500', 'text-black');
-            btn.classList.add('text-gray-400', 'hover:text-white');
-        });
-        document.getElementById(`lang-${lang}`).classList.remove('text-gray-400', 'hover:text-white');
-        document.getElementById(`lang-${lang}`).classList.add('bg-cyan-500', 'text-black');
-        
-        // 切换内容显示
-        document.querySelectorAll('.lang-content').forEach(content => {
-            content.classList.remove('active');
-        });
-        document.querySelectorAll(`.lang-content[data-lang="${lang}"]`).forEach(content => {
-            content.classList.add('active');
-        });
-        
-        // 保存语言偏好
-        localStorage.setItem('preferred-language', lang);
-    }
-    
-    // 初始化语言
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('preferred-language') || 'en';
-        setLanguage(savedLang);
-        
-        // 移动端菜单切换
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // 自定义光标跟随
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
+    <!-- 分隔线 -->
+    <div class="section-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 7. 页脚 (Footer) -->
+    <!-- ========================================================= -->
+    <footer class="py-12 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="font-display font-bold text-xl text-white">A</span>
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-xl text-white tracking-wider">ANDAS</span>
+                        <span class="text-cyan-400 text-sm ml-1">PRECISION</span>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-gray-500 text-sm font-mono">
+                    © 2024 Andas Precision. All Rights Reserved. ISO 9001 Certified.
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4 mt-6 md:mt-0">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-cyan-500 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- JavaScript -->
+    <!-- ========================================================= -->
+    <script>
+        // 语言切换功能
+        function setLanguage(lang) {
+            // 更新按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-cyan-500', 'text-black');
+                btn.classList.add('text-gray-400', 'hover:text-white');
+            });
+            document.getElementById(`lang-${lang}`).classList.remove('text-gray-400', 'hover:text-white');
+            document.getElementById(`lang-${lang}`).classList.add('bg-cyan-500', 'text-black');
             
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
+            // 切换内容显示
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll(`.lang-content[data-lang="${lang}"]`).forEach(content => {
+                content.classList.add('active');
+            });
             
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: 'forwards' });
-        });
-        
-        // 粒子背景初始化（简化版）
-        const particlesContainer = document.getElementById('particles-js');
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.style.position = 'absolute';
-            particle.style.width = `${Math.random() * 3 + 1}px`;
-            particle.style.height = particle.style.width;
-            particle.style.backgroundColor = 'rgba(6, 182, 212, 0.3)';
-            particle.style.borderRadius = '50%';
-            particle.style.left = `${Math.random() * 100}%`;
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.animation = `fadeInUp ${Math.random() * 3 + 2}s infinite alternate`;
-            particlesContainer.appendChild(particle);
+            // 保存语言偏好
+            localStorage.setItem('preferred-language', lang);
         }
-    });
-</script>
-</body>
+        
+        // 初始化语言
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language') || 'en';
+            setLanguage(savedLang);
+            
+            // 移动端菜单切换
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 自定义光标跟随
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorOutline = document.querySelector('.cursor-outline');
+            
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+                
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: 'forwards' });
+            });
+            
+            // 粒子背景初始化
+            const particlesContainer = document.getElementById('particles-js');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = 'rgba(6, 182, 212, 0.3)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animation = `fadeInUp ${Math.random() * 3 + 2}s infinite alternate`;
+                particlesContainer.appendChild(particle);
+            }
 
+            // 表单提交处理
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
 </html>
