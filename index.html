@@ -1,120 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andas Precision | CNC Machining</title>
-    <!-- Tailwind CSS CDN (无需安装) -->
+    <title>Andas Precision | 五軸 CNC 與快速打樣專家</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #0D0F12; }
-        /* 自定义动画：流光扫描 */
-        @keyframes scanline {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        .animate-scanline { animation: scanline 2s linear infinite; }
+        @keyframes scanline { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .animate-scanline { animation: scanline 2.5s linear infinite; }
     </style>
 </head>
 <body class="bg-[#0D0F12] text-gray-200 font-sans">
 
-    <!-- SECTION 1: HERO -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- 背景视频 (已注入 vc_auto,q_auto) -->
-        <video class="absolute inset-0 w-full h-full object-cover" 
+    <!-- 顶部导航 & 语言切换器 -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0D0F12]/80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-widest text-white">ANDAS<span class="text-cyan-400">.</span></div>
+            <div id="lang-switcher" class="flex items-center gap-2 text-sm font-mono">
+                <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 border border-cyan-500 text-cyan-400">EN</button>
+                <button onclick="setLanguage('zh')" class="lang-btn px-3 py-1 border border-gray-600 text-gray-400">繁中</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-16">
+        <video class="absolute inset-0 w-full h-full object-cover opacity-60" 
                 src="https://res.cloudinary.com/dpjjfd8pf/video/upload/vc_auto,q_auto/v1778946160/andas-cnc-machining-hero-bg_oqizbs.mp4" 
                 autoplay muted loop playsinline></video>
-        
-        <!-- 网格遮罩 -->
         <div class="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         
-        <!-- 状态代码 -->
-        <div class="absolute top-8 left-8 font-mono text-xs text-cyan-400/80">SYS_STATUS: <span class="text-green-400">OPERATIONAL</span></div>
-
-        <!-- 主内容 -->
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter">
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9]">
                 <span class="block bg-gradient-to-b from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">Precision CNC</span>
                 <span class="block mt-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Machining.</span>
             </h1>
-            <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-400">
-                Since 2015 | ISO 9001 | 3, 4, 5-Axis | Tolerance ±0.01mm | Optimized for 100+ PCS Batches.
+            
+            <p class="mt-6 max-w-4xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed" id="hero-subtitle">
+                Established 2003. Single-Source Rapid Prototyping & Manufacturing Center. 
+                ISO-Grade Inspection. 3, 4, 5-Axis Multi-Axis Machining. Tolerance down to ±0.01mm.
             </p>
-            <!-- CTA 按钮 (记得改链接!) -->
-            <a href="https://wa.me/8613800000000" target="_blank" 
-               class="mt-12 inline-block px-10 py-5 bg-[#FF3366] text-white font-bold text-lg tracking-widest shadow-[0_0_40px_rgba(255,51,102,0.4)] hover:scale-105 transition-transform">
-                GET A RAPID QUOTE →
-            </a>
-        </div>
-    </section>
 
-    <!-- SECTION 2: BRAND WALL -->
-    <section class="py-24 bg-black">
-        <div class="container mx-auto px-6">
-            <div class="font-mono text-sm text-gray-600 mb-12">// VALIDATED SUPPLY CHAIN ECOSYSTEM</div>
-            <!-- 黑科技滤镜 -->
-            <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778949034/andas-automotive-machinery-brand-logo-wall_aldrd4.jpg" 
-                 class="w-full mix-blend-screen contrast-125" alt="Brand Wall">
-        </div>
-    </section>
+            <!-- 扩充后的服务列表 -->
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
+                <div class="border border-gray-800 bg-black/40 p-4 rounded-sm">
+                    <h4 class="text-cyan-400 font-bold mb-2">CNC Machining</h4>
+                    <ul class="text-xs space-y-1 text-gray-400">
+                        <li>› 3, 4, 5-Axis Milling</li>
+                        <li>› Turning & Drilling</li>
+                        <li>› Sheet Metal Fabrication</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-800 bg-black/40 p-4 rounded-sm">
+                    <h4 class="text-cyan-400 font-bold mb-2">Rapid Prototyping</h4>
+                    <ul class="text-xs space-y-1 text-gray-400">
+                        <li>› SLA (Stereolithography)</li>
+                        <li>› SLS (Selective Laser Sintering)</li>
+                        <li>› Polyurethane Vacuum Casting</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-800 bg-black/40 p-4 rounded-sm">
+                    <h4 class="text-cyan-400 font-bold mb-2">Tooling & Molding</h4>
+                    <ul class="text-xs space-y-1 text-gray-400">
+                        <li>› Silicone Mould</li>
+                        <li>› Low Pressure Casting</li>
+                        <li>› Injection Molding</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-800 bg-black/40 p-4 rounded-sm">
+                    <h4 class="text-cyan-400 font-bold mb-2">Secondary Ops</h4>
+                    <ul class="text-xs space-y-1 text-gray-400">
+                        <li>› Painting & Plating</li>
+                        <li>› Anodizing & Powder Coat</li>
+                        <li>› Tapping & Welding</li>
+                    </ul>
+                </div>
+            </div>
 
-    <!-- SECTION 3: GALLERY -->
-    <section class="py-24 bg-[#0D0F12]">
-        <div class="container mx-auto px-6">
-            <div class="font-mono text-sm text-gray-600 mb-12">// METALLIC PORTFOLIO EXHIBITION</div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <!-- 样件 1-10 (全部嵌入) -->
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938329/custom-automotive-racing-parts-cnc-milling_da3wc3.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938328/premium-surface-treatment-laser-engraving_xsgg3j.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/andas-cnc-machining-hero-bg_zn6uzu.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/custom-machined-metal-components-portfolio_jb5qjk.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/robotics-automation-precision-structure-components_q1fqmz.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938302/high-precision-cnc-turning-lathe-services_kamhwl.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938294/telecom-enclosure-black-anodized-box-machining_ebzbdf.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938284/precision-5-axis-cnc-milling-aluminum_ouxi8d.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938273/multi-axis-cnc-milling-anodized-heatsink_towaht.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="group relative aspect-square overflow-hidden border border-gray-800">
-                    <div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div>
-                    <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938265/consumer-electronics-cnc-machining-gopro-parts_uiy099.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                </div>
+            <!-- CTA 按钮 (动态切换) -->
+            <div class="mt-12">
+                <a id="cta-button" href="https://wa.me/8615710829371" target="_blank" 
+                   class="inline-flex items-center gap-3 px-10 py-5 bg-[#FF3366] text-white font-bold text-lg tracking-widest hover:scale-105 transition-transform">
+                    <!-- WhatsApp Icon -->
+                    <svg id="icon-whatsapp" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm.01 1.67c4.73 0 8.58 3.85 8.58 8.58 0 2.28-.89 4.43-2.51 6.05l.33.97-1.23-.4c-1.56.88-3.34 1.35-5.17 1.35-4.73 0-8.58-3.85-8.58-8.58 0-4.73 3.85-8.58 8.58-8.58zm4.49 11.84c-.19-.1-1.11-.55-1.28-.61s-.3-.1-.42.1c-.13.19-.49.61-.6.74-.11.13-.22.15-.41.05s-.79-.29-1.5-.93c-.56-.5-.94-.89-1.05-1.04s-.01-.23.07-.33c.07-.1.19-.26.28-.39.09-.13.12-.22.18-.37.06-.15.03-.28-.02-.39s-.42-1.01-.58-1.39c-.15-.36-.31-.31-.42-.31s-.3-.01-.47-.01c-.17 0-.44.06-.67.31-.23.26-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16s-.18-.16-.37-.26z"/></svg>
+                    <!-- LINE Icon (隐藏) -->
+                    <svg id="icon-line" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.145c-1.992-2.929-5.715-3.822-8.804-2.85-1.96.662-3.477 2.293-4.207 4.406-.732 2.114-.366 4.364.99 6.016.66.832 1.51 1.478 2.476 1.896.965.418 2.013.586 3.052.502 1.038-.084 2.034-.466 2.867-1.131.833-.665 1.48-1.514 1.896-2.476.417-.962.585-2.011.501-3.049-.084-1.038-.465-2.034-1.13-2.867zM12.004 2C6.486 2 2 6.486 2 12.004c0 2.537.938 4.857 2.488 6.636L2.086 22l3.452-2.402A9.955 9.955 0 0012.004 22c5.518 0 10.004-4.486 10.004-10.004S17.522 2 12.004 2z"/></svg>
+                    <span id="cta-text">GET A RAPID QUOTE</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-8 border-t border-gray-800 font-mono text-sm text-gray-500">
-        <div class="container mx-auto px-6 flex justify-between">
-            <span>ANDAS PRECISION © 2026</span>
-            <span>Email: yourname@andas.com | WhatsApp: +86 138 XXXX XXXX</span>
+    <!-- SECTION 2: BRAND TRUST WALL (黑魔法修复版) -->
+    <section class="py-24 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="font-mono text-sm text-gray-600 mb-12">// VALIDATED SUPPLY CHAIN ECOSYSTEM</div>
+            <!-- 使用 brightness-0 invert 强制反转颜色，再配合 mix-blend-screen 去除黑底 -->
+            <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778949034/andas-automotive-machinery-brand-logo-wall_aldrd4.jpg" 
+                 class="w-full brightness-0 invert mix-blend-screen contrast-125 opacity-80 hover:opacity-100 transition-opacity"
+                 alt="Automotive and Machinery Brand Logos">
+        </div>
+    </section>
+
+    <!-- SECTION 3: CAPABILITIES & EXHIBITION -->
+    <section class="py-24 bg-[#0D0F12]">
+        <div class="container mx-auto px-6">
+            <!-- 双列卡片 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
+                <!-- 质量控制 -->
+                <div class="group relative overflow-hidden border border-cyan-900/50 bg-gradient-to-br from-black/80 to-[#0D0F12] p-8">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
+                    <h3 class="text-3xl font-bold text-white mb-4" id="qc-title">100% Verifiable Dimensional Tolerance</h3>
+                    <p class="text-gray-400 mb-8" id="qc-desc">Climate-controlled metrology lab with CMM. Closed-loop control over ±0.01mm tolerances.</p>
+                    <div class="overflow-hidden rounded-sm border border-gray-800">
+                        <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778946129/iso9001-cnc-factory-quality-control-cmm_ngfo1b.jpg" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+                <!-- 塑料加工 -->
+                <div class="group relative overflow-hidden border border-red-900/50 bg-gradient-to-br from-black/80 to-[#0D0F12] p-8">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FF3366] to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
+                    <h3 class="text-3xl font-bold text-white mb-4" id="plastic-title">Advanced Engineering Plastic Milling</h3>
+                    <p class="text-gray-400 mb-8" id="plastic-desc">Precision cutting of POM, PEEK, Nylon. Mastering polymer thermal dynamics.</p>
+                    <div class="overflow-hidden rounded-sm border border-gray-800">
+                        <img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778946342/engineering-plastic-machining-pom-acrylic-parts_whtl5r.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 样件展厅网格 -->
+            <div class="font-mono text-sm text-gray-600 mb-12">// METALLIC PORTFOLIO EXHIBITION</div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- 这里循环输出10个样件 -->
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938329/custom-automotive-racing-parts-cnc-milling_da3wc3.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938328/premium-surface-treatment-laser-engraving_xsgg3j.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/andas-cnc-machining-hero-bg_zn6uzu.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/custom-machined-metal-components-portfolio_jb5qjk.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938327/robotics-automation-precision-structure-components_q1fqmz.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938302/high-precision-cnc-turning-lathe-services_kamhwl.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938294/telecom-enclosure-black-anodized-box-machining_ebzbdf.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938284/precision-5-axis-cnc-milling-aluminum_ouxi8d.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938273/multi-axis-cnc-milling-anodized-heatsink_towaht.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+                <div class="group relative aspect-square overflow-hidden border border-gray-800 bg-black"><div class="absolute inset-0 z-10 opacity-0 group-hover:opacity-100"><div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scanline"></div></div><img src="https://res.cloudinary.com/dpjjfd8pf/image/upload/q_auto,f_auto/v1778938265/consumer-electronics-cnc-machining-gopro-parts_uiy099.jpg" class="w-full h-full object-cover grayscale-[80%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (新联系方式) -->
+    <footer class="py-12 border-t border-gray-800 font-mono text-sm text-gray-500">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <span class="text-white font-bold">ANDAS PRECISION</span> © 2026 All Rights Reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- 已更新为你提供的企业邮箱 -->
+                    <span>Email: sales@andas-industrial.com</span>
+                    <!-- 已更新为你提供的 WhatsApp -->
+                    <span>WhatsApp: +86 157 1082 9371</span>
+                    <!-- 已更新为你提供的 LINE ID -->
+                    <span>LINE ID: line247327301</span>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script>
+        const translations = {
+            en: {
+                subtitle: "Established 2003. Single-Source Rapid Prototyping & Manufacturing Center. ISO-Grade Inspection. 3, 4, 5-Axis Multi-Axis Machining. Tolerance down to ±0.01mm.",
+                cta_text: "GET A RAPID QUOTE",
+                cta_link: "https://wa.me/8615710829371", // 你的 WhatsApp
+                qc_title: "100% Verifiable Dimensional Tolerance",
+                qc_desc: "Climate-controlled metrology lab with CMM. Closed-loop control over ±0.01mm tolerances.",
+                plastic_title: "Advanced Engineering Plastic Milling",
+                plastic_desc: "Precision cutting of POM, PEEK, Nylon. Mastering polymer thermal dynamics."
+            },
+            zh: {
+                subtitle: "成立於 2003 年。一站式快速打樣與製造中心。ISO 級檢測標準。3軸、4軸、5軸聯動加工。公差穩控在 ±0.01mm。",
+                cta_text: "立即獲取報價 (LINE)",
+                cta_link: "https://line.me/ti/p/~line247327301", // 你的 LINE ID
+                qc_title: "100% 可驗證的尺寸精度",
+                qc_desc: "恆溫檢測室配備高端三座標測量儀 (CMM)，對 ±0.01mm 公差進行閉環管控。",
+                plastic_title: "高階工程塑膠銑削",
+                plastic_desc: "精通 POM、PEEK、尼龍等工程塑膠切削，精準掌控熱變形與毛邊處理。"
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('hero-subtitle').innerText = t.subtitle;
+            document.getElementById('cta-text').innerText = t.cta_text;
+            document.getElementById('cta-button').href = t.cta_link;
+            document.getElementById('qc-title').innerText = t.qc_title;
+            document.getElementById('qc-desc').innerText = t.qc_desc;
+            document.getElementById('plastic-title').innerText = t.plastic_title;
+            document.getElementById('plastic-desc').innerText = t.plastic_desc;
+
+            // 切换图标显示
+            if (lang === 'en') {
+                document.getElementById('icon-whatsapp').classList.remove('hidden');
+                document.getElementById('icon-line').classList.add('hidden');
+            } else {
+                document.getElementById('icon-whatsapp').classList.add('hidden');
+                document.getElementById('icon-line').classList.remove('hidden');
+            }
+
+            // 更新按钮样式
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('border-cyan-500', 'text-cyan-400');
+                btn.classList.add('border-gray-600', 'text-gray-400');
+            });
+            event.target.classList.remove('border-gray-600', 'text-gray-400');
+            event.target.classList.add('border-cyan-500', 'text-cyan-400');
+        }
+    </script>
 </body>
 </html>
